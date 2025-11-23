@@ -227,6 +227,25 @@ if(testimonialsRoot){
   }
 }
 
+// Watermark switcher: allow previewing different SVG variants and persist choice
+(function(){
+  const wm = document.querySelector('.page-watermark');
+  const switcher = document.querySelector('.watermark-switcher');
+  if(!wm || !switcher) return;
+  const buttons = Array.from(switcher.querySelectorAll('button'));
+  function setWatermark(url){
+    wm.style.backgroundImage = `url('${url}')`;
+    localStorage.setItem('watermark', url);
+    buttons.forEach(b=> b.classList.toggle('active', b.getAttribute('data-wm')===url));
+  }
+  // restore saved
+  const saved = localStorage.getItem('watermark') || 'assets/watermark.svg';
+  setWatermark(saved);
+  buttons.forEach(btn=>{
+    btn.addEventListener('click', ()=> setWatermark(btn.getAttribute('data-wm')));
+  });
+})();
+
 // UI: reveal on scroll
 function setupReveal(){
   const obs = new IntersectionObserver((entries)=>{
