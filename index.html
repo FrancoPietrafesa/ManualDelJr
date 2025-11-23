@@ -1,198 +1,181 @@
-<!DOCTYPE html>
-<html lang="es">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Manual del Junior — Cursos</title>
-  <link rel="stylesheet" href="styles.css">
-  <!-- Lottie player (web component) -->
-  <script src="https://unpkg.com/@lottiefiles/lottie-player@1.5.7/dist/lottie-player.js"></script>
-</head>
-
-<body>
-  <a class="skip-link" href="#main">Saltar al contenido</a>
-  <div class="page-watermark" aria-hidden="true"></div>
-  <header class="topbar">
-    <div class="container">
-      <a class="brand" href="index.html">
-        <img src="assets/logo.svg" alt="Manual del Junior" class="logo">
-        <span>Manual del Junior</span>
-      </a>
-      <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-          stroke-linecap="round" stroke-linejoin="round">
-          <line x1="3" y1="12" x2="21" y2="12"></line>
-          <line x1="3" y1="6" x2="21" y2="6"></line>
-          <line x1="3" y1="18" x2="21" y2="18"></line>
-        </svg>
-      </button>
-      <!-- main nav replaced by centered .topnav below -->
-      <nav class="topnav" id="mainNav" aria-label="Main navigation">
-        <a href="#cursos" data-i18n="nav.cursos">Cursos</a>
-        <a href="#metodo" data-i18n="nav.metodo">Método</a>
-        <a href="#testimonios" data-i18n="nav.testimonios">Testimonios</a>
-        <a href="#contacto" data-i18n="nav.contacto">Contacto</a>
-      </nav>
-      <div class="top-actions">
-        <button id="langToggle" class="btn ghost" type="button">EN</button>
-      </div>
-    </div>
-  </header>
-
-  <main id="main">
-    <section class="hero">
-      <div class="container hero-inner">
-        <div class="hero-copy reveal">
-          <h1>Domina tu primera ruta en tecnología</h1>
-          <p class="lead">Rutas de aprendizaje, tips profesionales y preparación para entrevistas. Cursos pensados para
-            quienes empiezan y quieren profesionalizarse en QA, herramientas IT y más.</p>
-          <div class="cta-row">
-            <a class="btn primary" href="#cursos">Ver cursos</a>
-            <a class="btn ghost" href="#metodo">Cómo funciona</a>
-          </div>
-          <p id="hero-info" class="muted-note">Comienza con un plan claro y demuestra impacto desde tu primer proyecto.
-          </p>
-        </div>
-        <!-- simple floating card removed; replaced with structured course-card below -->
-        <div class="hero-visual">
-          <aside class="card floating reveal course-card" data-tilt aria-label="Curso destacado">
-            <header class="card-head">
-              <h3 data-i18n="hero.featuredTitle">Curso destacado</h3>
-              <div class="tag">Popular</div>
-            </header>
-            <div class="card-body">
-              <p data-i18n="hero.featuredDesc">QA desde cero — Aprende a testear, automatizar y comunicarte con equipos.
-              </p>
-              <ul class="card-features">
-                <li data-i18n="hero.f1">Ejercicios reales</li>
-                <li data-i18n="hero.f2">Plantillas prácticas</li>
-                <li data-i18n="hero.f3">Preparación de entrevistas</li>
-              </ul>
-            </div>
-            <footer class="card-foot">
-              <div class="price">USD 19.99</div>
-              <div class="card-ctas">
-                <a class="btn primary" href="qa.html" data-i18n="hero.enterCourse">Entrar al curso</a>
-              </div>
-            </footer>
-          </aside>
-        </div>
-        <div class="hero-decor" aria-hidden="true">
-          <!-- Transient 'bug search' visual: clickable, links to the short intro text below -->
-          <div id="transientBug" class="transient" role="button" tabindex="0"
-            aria-label="Buscar bug — ir a la introducción">
-            <div class="bug-scanner">
-              <div class="scanner-glass">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                  stroke-linejoin="round">
-                  <circle cx="11" cy="11" r="8"></circle>
-                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                </svg>
-              </div>
-              <div class="bug-icon">
-                <svg viewBox="0 0 24 24" fill="currentColor">
-                  <path
-                    d="M12 2C13.1 2 14 2.9 14 4V5H10V4C10 2.9 10.9 2 12 2M19 13C19.7 13 20.3 13.4 20.7 13.9L22 15.2L20.6 16.6L19.3 15.3C19.1 15.1 18.9 15 18.6 15H18.4L19.6 18.6C19.8 19.3 19.4 20 18.7 20.2C18 20.4 17.3 20 17.1 19.3L15.6 15H14V18H16V20H14V22H10V20H8V18H10V15H8.4L6.9 19.3C6.7 20 6 20.4 5.3 20.2C4.6 20 4.2 19.3 4.4 18.6L5.6 15H5.4C5.1 15 4.9 15.1 4.7 15.3L3.4 16.6L2 15.2L3.3 13.9C3.7 13.4 4.3 13 5 13H19M17 11H15V7H17V11M12 7H9V11H12V7Z" />
-                </svg>
-              </div>
-              <div class="scan-line"></div>
-            </div>
-            <div class="transient-text">Buscando bug...</div>
-          </div>
-          <!-- Fallback hero illustration (kept for larger screens) -->
-          <picture class="hero-fallback">
-            <source srcset="assets/hero-illustration.webp" type="image/webp">
-            <source srcset="assets/hero-illustration.png" type="image/png">
-            <img src="assets/hero-illustration.svg" class="hero-illustration fallback" alt="Ilustración hero">
-          </picture>
-        </div>
-        <div class="hero-bg-anim" aria-hidden="true"></div>
-      </div>
-    </section>
-
-    <section id="cursos" class="section container">
-      <h2>Explora nuestros cursos</h2>
-      <div class="grid">
-        <article class="card">
-          <h3>QA Profesional</h3>
-          <p>Del tester novato al profesional que entrega calidad constante. Rutas, prácticas y plantillas reales.</p>
-          <a class="btn" href="qa.html">Ver curso</a>
-        </article>
-
-        <article class="card">
-          <h3>Herramientas de IT</h3>
-          <p>Domina las herramientas más usadas: Git, Docker, CI/CD, y servicios en la nube.</p>
-          <a class="btn" href="herramientas.html">Ver curso</a>
-        </article>
-
-        <article class="card">
-          <h3>Entrevistas y CV</h3>
-          <p>Prepárate para entrevistas técnicas y de comportamiento. Simulacros, feedback y scripts de respuestas.</p>
-          <a class="btn" href="entrevistas.html">Ver curso</a>
-        </article>
-
-        <article class="card">
-          <h3>Profesionalización</h3>
-          <p>Transición a roles profesionales, negociación salarial y crecimiento dentro de equipos tech.</p>
-          <a class="btn" href="profesionalizacion.html">Ver curso</a>
-        </article>
-      </div>
-    </section>
-
-    <section id="metodo" class="section alt">
-      <div class="container">
-        <h2>Nuestro método</h2>
-        <p>Rutas claras, ejercicios prácticos y acceso a recursos reales. Motivación y acompañamiento paso a paso.</p>
-        <ul class="features">
-          <li>Rutas por niveles</li>
-          <li>Proyectos reales</li>
-          <li>Soporte y comunidad</li>
-        </ul>
-      </div>
-    </section>
-
-    <section id="testimonios" class="section container" aria-label="Testimonios">
-      <h2 data-i18n="testimonials.title">Testimonios</h2>
-      <div class="testimonials" aria-live="polite">
-        <div class="testimonial active">
-          <p>“Gracias a Manual del Junior conseguí mi primer trabajo como QA.”</p>
-          <cite>— Ana</cite>
-        </div>
-        <div class="testimonial">
-          <p>“Las rutas son claras y muy prácticas.”</p>
-          <cite>— Diego</cite>
-        </div>
-        <div class="testimonial">
-          <p>“Recibí feedback muy útil para mis entrevistas.”</p>
-          <cite>— Laura</cite>
-        </div>
-        <div class="test-indicators" role="tablist" aria-label="Navegación de testimonios">
-          <!-- indicators (puntos) generated by JS -->
-        </div>
-        <div class="test-controls" aria-hidden="false">
-          <button class="test-prev btn ghost" aria-label="Anterior testimonio" title="Anterior" type="button">‹</button>
-          <button class="test-next btn ghost" aria-label="Siguiente testimonio" title="Siguiente"
-            type="button">›</button>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <div>© <strong>Manual del Junior</strong> — Aprende y profesionalízate</div>
-      <div class="socials">Contacto: hola@manualdeljunior.example</div>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
-  <div class="watermark-switcher" aria-hidden="false">
-    <span class="label">Watermark</span>
-    <button data-wm="assets/watermark.svg" type="button">Default</button>
-    <button data-wm="assets/watermark-variant1.svg" type="button">Soft</button>
-    <button data-wm="assets/watermark-variant2.svg" type="button">Strong</button>
+<div class="container">
+  <a class="brand" href="index.html">
+    <img src="assets/logo.svg" alt="Manual del Junior" class="logo">
+    <span>Manual del Junior</span>
+  </a>
+  <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </button>
+  <!-- main nav replaced by centered .topnav below -->
+  <nav class="topnav" id="mainNav" aria-label="Main navigation">
+    <a href="#cursos" data-i18n="nav.cursos">Cursos</a>
+    <a href="#metodo" data-i18n="nav.metodo">Método</a>
+    <a href="#testimonios" data-i18n="nav.testimonios">Testimonios</a>
+    <a href="#contacto" data-i18n="nav.contacto">Contacto</a>
+  </nav>
+  <div class="top-actions">
+    <button id="langToggle" class="btn ghost" type="button">EN</button>
   </div>
+</div>
+</header>
+
+<main id="main">
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-copy reveal">
+        <h1>Domina tu primera ruta en tecnología</h1>
+        <p class="lead">Rutas de aprendizaje, tips profesionales y preparación para entrevistas. Cursos pensados para
+          quienes empiezan y quieren profesionalizarse en QA, herramientas IT y más.</p>
+        <div class="cta-row">
+          <a class="btn primary" href="#cursos">Ver cursos</a>
+          <a class="btn ghost" href="#metodo">Cómo funciona</a>
+        </div>
+        <p id="hero-info" class="muted-note">Comienza con un plan claro y demuestra impacto desde tu primer proyecto.
+        </p>
+      </div>
+      <!-- simple floating card removed; replaced with structured course-card below -->
+      <div class="hero-visual">
+        <aside class="card floating reveal course-card" data-tilt aria-label="Curso destacado">
+          <header class="card-head">
+            <h3 data-i18n="hero.featuredTitle">Curso destacado</h3>
+            <div class="tag">Popular</div>
+          </header>
+          <div class="card-body">
+            <p data-i18n="hero.featuredDesc">QA desde cero — Aprende a testear, automatizar y comunicarte con equipos.
+            </p>
+            <ul class="card-features">
+              <li data-i18n="hero.f1">Ejercicios reales</li>
+              <li data-i18n="hero.f2">Plantillas prácticas</li>
+              <li data-i18n="hero.f3">Preparación de entrevistas</li>
+            </ul>
+          </div>
+          <footer class="card-foot">
+            <div class="price">USD 19.99</div>
+            <div class="card-ctas">
+              <a class="btn primary" href="qa.html" data-i18n="hero.enterCourse">Entrar al curso</a>
+            </div>
+          </footer>
+        </aside>
+      </div>
+      <div class="hero-decor" aria-hidden="true">
+        <!-- Transient 'bug search' visual: clickable, links to the short intro text below -->
+        <div id="transientBug" class="transient" role="button" tabindex="0"
+          aria-label="Buscar bug — ir a la introducción">
+          <div class="bug-scanner">
+            <div class="scanner-glass">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </div>
+            <div class="bug-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2C13.1 2 14 2.9 14 4V5H10V4C10 2.9 10.9 2 12 2M19 13C19.7 13 20.3 13.4 20.7 13.9L22 15.2L20.6 16.6L19.3 15.3C19.1 15.1 18.9 15 18.6 15H18.4L19.6 18.6C19.8 19.3 19.4 20 18.7 20.2C18 20.4 17.3 20 17.1 19.3L15.6 15H14V18H16V20H14V22H10V20H8V18H10V15H8.4L6.9 19.3C6.7 20 6 20.4 5.3 20.2C4.6 20 4.2 19.3 4.4 18.6L5.6 15H5.4C5.1 15 4.9 15.1 4.7 15.3L3.4 16.6L2 15.2L3.3 13.9C3.7 13.4 4.3 13 5 13H19M17 11H15V7H17V11M12 7H9V11H12V7Z" />
+              </svg>
+            </div>
+            <div class="scan-line"></div>
+          </div>
+          <div class="transient-text">Buscando bug...</div>
+        </div>
+        <!-- Fallback hero illustration (kept for larger screens) -->
+        <picture class="hero-fallback">
+          <source srcset="assets/hero-illustration.webp" type="image/webp">
+          <source srcset="assets/hero-illustration.png" type="image/png">
+          <img src="assets/hero-illustration.svg" class="hero-illustration fallback" alt="Ilustración hero">
+        </picture>
+      </div>
+      <div class="hero-bg-anim" aria-hidden="true"></div>
+    </div>
+  </section>
+
+  <section id="cursos" class="section container">
+    <h2>Explora nuestros cursos</h2>
+    <div class="grid">
+      <article class="card">
+        <h3>QA Profesional</h3>
+        <p>Del tester novato al profesional que entrega calidad constante. Rutas, prácticas y plantillas reales.</p>
+        <a class="btn" href="qa.html">Ver curso</a>
+      </article>
+
+      <article class="card">
+        <h3>Herramientas de IT</h3>
+        <p>Domina las herramientas más usadas: Git, Docker, CI/CD, y servicios en la nube.</p>
+        <a class="btn" href="herramientas.html">Ver curso</a>
+      </article>
+
+      <article class="card">
+        <h3>Entrevistas y CV</h3>
+        <p>Prepárate para entrevistas técnicas y de comportamiento. Simulacros, feedback y scripts de respuestas.</p>
+        <a class="btn" href="entrevistas.html">Ver curso</a>
+      </article>
+
+      <article class="card">
+        <h3>Profesionalización</h3>
+        <p>Transición a roles profesionales, negociación salarial y crecimiento dentro de equipos tech.</p>
+        <a class="btn" href="profesionalizacion.html">Ver curso</a>
+      </article>
+    </div>
+  </section>
+
+  <section id="metodo" class="section alt">
+    <div class="container">
+      <h2>Nuestro método</h2>
+      <p>Rutas claras, ejercicios prácticos y acceso a recursos reales. Motivación y acompañamiento paso a paso.</p>
+      <ul class="features">
+        <li>Rutas por niveles</li>
+        <li>Proyectos reales</li>
+        <li>Soporte y comunidad</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="testimonios" class="section container" aria-label="Testimonios">
+    <h2 data-i18n="testimonials.title">Testimonios</h2>
+    <div class="testimonials" aria-live="polite">
+      <div class="testimonial active">
+        <p>“Gracias a Manual del Junior conseguí mi primer trabajo como QA.”</p>
+        <cite>— Ana</cite>
+      </div>
+      <div class="testimonial">
+        <p>“Las rutas son claras y muy prácticas.”</p>
+        <cite>— Diego</cite>
+      </div>
+      <div class="testimonial">
+        <p>“Recibí feedback muy útil para mis entrevistas.”</p>
+        <cite>— Laura</cite>
+      </div>
+      <div class="test-indicators" role="tablist" aria-label="Navegación de testimonios">
+        <!-- indicators (puntos) generated by JS -->
+      </div>
+      <div class="test-controls" aria-hidden="false">
+        <button class="test-prev btn ghost" aria-label="Anterior testimonio" title="Anterior" type="button">‹</button>
+        <button class="test-next btn ghost" aria-label="Siguiente testimonio" title="Siguiente" type="button">›</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div>© <strong>Manual del Junior</strong> — Aprende y profesionalízate</div>
+    <div class="socials">Contacto: hola@manualdeljunior.example</div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<div class="watermark-switcher" aria-hidden="false">
+  <span class="label">Watermark</span>
+  <button data-wm="assets/watermark.svg" type="button">Default</button>
+  <button data-wm="assets/watermark-variant1.svg" type="button">Soft</button>
+  <button data-wm="assets/watermark-variant2.svg" type="button">Strong</button>
+</div>
 </body>
 
 </html>
