@@ -305,3 +305,51 @@ document.addEventListener('DOMContentLoaded', ()=>{
   setupHeroParallax();
 });
 
+// --- Button ripple effect (adds subtle wave on click) ---
+function setupButtonRipples(){
+  document.querySelectorAll('.btn').forEach(btn=>{
+    btn.addEventListener('pointerdown', (e)=>{
+      const rect = btn.getBoundingClientRect();
+      const r = document.createElement('span');
+      r.className = 'ripple';
+      const size = Math.max(rect.width, rect.height) * 1.2;
+      r.style.position = 'absolute'; r.style.left = (e.clientX - rect.left - size/2) + 'px'; r.style.top = (e.clientY - rect.top - size/2) + 'px';
+      r.style.width = r.style.height = size + 'px';
+      r.style.borderRadius = '50%';
+      r.style.background = 'rgba(255,255,255,0.18)';
+      r.style.transform = 'scale(0)'; r.style.opacity = '0.8'; r.style.pointerEvents = 'none'; r.style.transition = 'transform .45s cubic-bezier(.2,.8,.2), opacity .6s ease';
+      btn.appendChild(r);
+      requestAnimationFrame(()=>{ r.style.transform = 'scale(1)'; r.style.opacity = '0'; });
+      setTimeout(()=>{ r.remove(); }, 650);
+    });
+  });
+}
+
+// --- Transient 'bug search' clickable behavior ---
+function setupTransientBug(){
+  const t = document.getElementById('transientBug');
+  const target = document.getElementById('hero-info');
+  if(!t || !target) return;
+  function go(){ target.scrollIntoView({behavior:'smooth',block:'start'}); t.classList.add('hide'); }
+  t.addEventListener('click', ()=> go());
+  t.addEventListener('keydown', (e)=>{ if(e.key==='Enter' || e.key===' ') { e.preventDefault(); go(); } });
+  // auto-hide after short delay so it is 'transitorio'
+  setTimeout(()=> t.classList.add('hide'), 3800);
+}
+
+// Update reveal to also animate .section with visible class
+function setupReveal(){
+  const obs = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting) e.target.classList.add('visible');
+    });
+  },{threshold:0.12});
+  document.querySelectorAll('.reveal, .section').forEach(el=>obs.observe(el));
+}
+
+// Initialize additional UI behaviors after DOM loaded
+document.addEventListener('DOMContentLoaded', ()=>{
+  setupButtonRipples();
+  setupTransientBug();
+});
+

@@ -40,7 +40,7 @@
             <a class="btn primary" href="#cursos">Ver cursos</a>
             <a class="btn ghost" href="#metodo">Cómo funciona</a>
           </div>
-          <p class="muted-note">Comienza con un plan claro y demuestra impacto desde tu primer proyecto.</p>
+          <p id="hero-info" class="muted-note">Comienza con un plan claro y demuestra impacto desde tu primer proyecto.</p>
         </div>
         <!-- simple floating card removed; replaced with structured course-card below -->
           <div class="hero-visual">
@@ -65,8 +65,21 @@
               </footer>
             </aside>
           </div>
-        <div class="hero-decor" aria-hidden="true">
-          <!-- Replaced Lottie with static fallback illustration; watermark used as page background -->
+          <div class="hero-decor" aria-hidden="true">
+          <!-- Transient 'bug search' visual: clickable, links to the short intro text below -->
+          <div id="transientBug" class="transient" role="button" tabindex="0" aria-label="Buscar bug — ir a la introducción">
+            <div class="transient-inner" aria-hidden="true">
+              <svg width="160" height="96" viewBox="0 0 320 192" fill="none" xmlns="http://www.w3.org/2000/svg" class="transient-svg" role="img" aria-hidden="true">
+                <rect width="320" height="192" rx="16" fill="#fff" opacity="0.95"/>
+                <g transform="translate(28,28)" fill="#111">
+                  <circle cx="36" cy="36" r="22" fill="#f6a400" opacity="0.15"></circle>
+                  <path d="M8 56c8-20 26-34 48-34" stroke="#111" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                  <text x="90" y="50" font-size="20" fill="#333">Buscando bug...</text>
+                </g>
+              </svg>
+            </div>
+          </div>
+          <!-- Fallback hero illustration (kept for larger screens) -->
           <picture class="hero-fallback">
             <source srcset="assets/hero-illustration.webp" type="image/webp">
             <source srcset="assets/hero-illustration.png" type="image/png">

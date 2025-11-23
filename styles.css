@@ -1,18 +1,21 @@
 :root{
-  --bg:#0b0f14;
-  --panel:#0f1720;
-  --muted:#9aa6b2;
-  --accent:#6b9cff;
-  --accent-2:#7ef9b6;
-  --glass: rgba(255,255,255,0.03);
-  --glass-2: rgba(255,255,255,0.02);
-  --hero-grad-1: rgba(107,156,255,0.12);
-  --hero-grad-2: rgba(126,249,182,0.06);
+  /* Cream/light theme variables requested by user */
+  --bg: #FBF7EF; /* fondo clarito estilo cremita */
+  --panel: #FFFFFF; /* panels sobre fondo claro */
+  --surface: #FBF7EF;
+  --text: #102a43; /* texto oscuro legible */
+  --muted: #6b7280; /* apoyo grisado */
+  --accent: #b76300; /* cálido, contrastante para botones */
+  --accent-2: #c28f4b;
+  --glass: rgba(16,42,67,0.04);
+  --glass-2: rgba(16,42,67,0.02);
+  --hero-grad-1: rgba(183,99,0,0.06);
+  --hero-grad-2: rgba(194,143,75,0.03);
 }
 *{box-sizing:border-box}
 html,body{height:100%}
 .container{max-width:var(--container-max);margin:0 auto;padding:24px}
-.topbar{backdrop-filter: blur(6px);background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);border-bottom:1px solid rgba(255,255,255,0.03)}
+.topbar{backdrop-filter: blur(6px);background:linear-gradient(180deg, rgba(16,42,67,0.02), transparent);border-bottom:1px solid rgba(16,42,67,0.04)}
 .topbar .container{display:flex;align-items:center;justify-content:space-between}
 .brand{display:flex;gap:12px;align-items:center;color:var(--accent)}
 .logo{width:42px;height:42px}
@@ -21,12 +24,12 @@ nav a:hover{color:var(--accent);background:rgba(255,255,255,0.02)}
 
 body{
   margin:0; font-family:Inter,ui-sans-serif,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;
-  background: radial-gradient(1200px 600px at 10% 10%, rgba(110,130,255,0.04), transparent), var(--bg);
+  background: var(--bg);
   color:var(--text); -webkit-font-smoothing:antialiased;
 }
 /* Accessible skip link (hidden until focused) */
 .skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
-.skip-link:focus{position:static;left:0;top:0;width:auto;height:auto;padding:10px 14px;background:var(--accent);color:var(--accent-contrast-text);z-index:9999;border-radius:6px}
+.skip-link:focus{position:static;left:0;top:0;width:auto;height:auto;padding:10px 14px;background:var(--accent);color:#fff;z-index:9999;border-radius:6px}
 
 .hero{padding:60px 0}
 .hero-inner{display:flex;gap:32px;align-items:center;position:relative}
@@ -46,30 +49,49 @@ body{
 .muted-note{margin-top:14px;color:var(--muted)}
 
 /* Interactive card hover */
-.card{background:var(--panel);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);transition:transform .28s cubic-bezier(.2,.9,.2,1), box-shadow .28s}
-.card:hover{transform:translateY(-8px) rotateX(4deg);box-shadow:0 18px 40px rgba(2,6,23,0.6)}
+.card{background:var(--panel);padding:18px;border-radius:12px;border:1px solid rgba(16,42,67,0.05);transition:transform .28s cubic-bezier(.2,.9,.2,1), box-shadow .28s}
+.card:hover{transform:translateY(-6px);box-shadow:0 12px 28px rgba(16,42,67,0.08)}
 
 /* Animated entrance */
 :root{
-  /* Lighter dark theme for better readability */
-  --bg: #0f1728;
-  --panel: #0b1624;
-  --surface: #0e1a26;
-  --text: #e6eef6;
-  --muted: #9fb0c2;
-  /* Accent colors chosen for contrast */
-  --accent: #643dff;
-  --accent-2: #5ce0d4;
-  --accent-contrast-text: #081024;
-  --glass: rgba(255,255,255,0.045);
-  --btn-strong: #0b1220;
-  --focus: #ffd966;
   --container-max: 1200px;
   --space-xs: 8px;
   --space-sm: 12px;
   --space-md: 20px;
   --space-lg: 32px;
+  --accent-contrast-text: #fff;
+  --btn-strong: #fff;
+  --focus: #f5a623; /* color de foco cálido */
 }
+.section{opacity:0;transform:translateY(18px);transition:opacity .5s ease, transform .5s ease}
+.section.visible{opacity:1;transform:none}
+
+/* Modern button styles with hover/active + subtle ripple handled by JS */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:10px;border:none;cursor:pointer;font-weight:600;transition:transform .12s ease, box-shadow .12s ease, opacity .12s ease;position:relative;overflow:hidden}
+.btn:focus{outline:none}
+.btn::after{content:'';position:absolute;border-radius:50%;transform:scale(0);opacity:0;pointer-events:none}
+.btn.primary{background:var(--accent);color:var(--accent-contrast-text;)}
+.btn.ghost{background:transparent;border:1px solid rgba(16,42,67,0.06);color:var(--text)}
+.btn.pay{background:linear-gradient(90deg, var(--accent), var(--accent-2));color:var(--accent-contrast-text)}
+.btn:hover{transform:translateY(-3px);box-shadow:0 10px 18px rgba(16,42,67,0.06)}
+.btn:active{transform:translateY(-1px) scale(.995);opacity:0.98}
+
+/* Ripple effect helper (visible for clicks) */
+.btn.ripple::after{transition:transform .45s cubic-bezier(.2,.8,.2), opacity .6s ease}
+
+/* Testimonials: center content */
+.testimonial{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:22px 28px}
+.testimonial p{font-size:1.05rem;margin:0 0 10px;color:var(--text)}
+.testimonial cite{color:var(--muted);font-style:normal}
+
+/* Transient visual (bug search) styles */
+.transient{display:flex;align-items:center;justify-content:center;cursor:pointer;margin-bottom:10px;border-radius:14px;box-shadow:0 6px 22px rgba(16,42,67,0.06);transition:transform .18s ease, opacity .18s ease}
+.transient-inner{padding:6px}
+.transient-svg{width:220px;max-width:90%;height:auto}
+.transient.hide{opacity:0;transform:translateY(-8px) scale(.98);pointer-events:none}
+
+/* make sure hero layout keeps good spacing on cream bg */
+.hero{padding:64px 0}
 .reveal{opacity:0;transform:translateY(10px);transition:opacity .6s ease, transform .6s ease}
 .reveal.visible{opacity:1;transform:none}
 
