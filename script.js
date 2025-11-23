@@ -145,44 +145,51 @@ if(testimonialsRoot){
     });
   }
 
-  // rotation controller
+  // rotation controller + auto-resume
   let intervalId = null;
+  let resumeTimer = null;
   const ROTATE_MS = 5000;
+  const AUTO_RESUME_MS = 8000; // reanudar 8s después de la última interacción
 
   function startRotation(){
-    stopRotation();
+    if(intervalId) return; // already running
     intervalId = setInterval(()=>{
       idx = (idx+1) % items.length;
       showTestimonial(idx);
     }, ROTATE_MS);
     testimonialsRoot.classList.remove('paused');
+    if(resumeTimer){ clearTimeout(resumeTimer); resumeTimer = null; }
   }
   function stopRotation(){
     if(intervalId) clearInterval(intervalId);
     intervalId = null;
     testimonialsRoot.classList.add('paused');
   }
+  function scheduleAutoResume(ms = AUTO_RESUME_MS){
+    if(resumeTimer) clearTimeout(resumeTimer);
+    resumeTimer = setTimeout(()=>{ startRotation(); resumeTimer = null; }, ms);
+  }
 
   showTestimonial(idx);
   startRotation();
 
-  // Pause on hover/focus, resume on leave/blur
-  testimonialsRoot.addEventListener('mouseenter', stopRotation);
-  testimonialsRoot.addEventListener('mouseleave', startRotation);
-  testimonialsRoot.addEventListener('focusin', stopRotation);
-  testimonialsRoot.addEventListener('focusout', startRotation);
+  // Pause on hover/focus; schedule resume after leave/blur
+  testimonialsRoot.addEventListener('mouseenter', ()=>{ stopRotation(); });
+  testimonialsRoot.addEventListener('mouseleave', ()=>{ scheduleAutoResume(); });
+  testimonialsRoot.addEventListener('focusin', ()=>{ stopRotation(); });
+  testimonialsRoot.addEventListener('focusout', ()=>{ scheduleAutoResume(); });
 
-  // Prev/Next handlers
+  // Prev/Next handlers (manual interaction pauses and schedules resume)
   function prev(){ idx = (idx - 1 + items.length) % items.length; showTestimonial(idx); }
   function next(){ idx = (idx + 1) % items.length; showTestimonial(idx); }
 
   if(prevBtn){
-    prevBtn.addEventListener('click', ()=>{ prev(); stopRotation(); });
-    prevBtn.addEventListener('keydown', (e)=>{ if(e.key === 'Enter' || e.key === ' ') { e.preventDefault(); prev(); stopRotation(); } });
+    prevBtn.addEventListener('click', ()=>{ prev(); stopRotation(); scheduleAutoResume(); });
+    prevBtn.addEventListener('keydown', (e)=>{ if(e.key === 'Enter' || e.key === ' ') { e.preventDefault(); prev(); stopRotation(); scheduleAutoResume(); } });
   }
   if(nextBtn){
-    nextBtn.addEventListener('click', ()=>{ next(); stopRotation(); });
-    nextBtn.addEventListener('keydown', (e)=>{ if(e.key === 'Enter' || e.key === ' ') { e.preventDefault(); next(); stopRotation(); } });
+    nextBtn.addEventListener('click', ()=>{ next(); stopRotation(); scheduleAutoResume(); });
+    nextBtn.addEventListener('keydown', (e)=>{ if(e.key === 'Enter' || e.key === ' ') { e.preventDefault(); next(); stopRotation(); scheduleAutoResume(); } });
   }
 }
 
