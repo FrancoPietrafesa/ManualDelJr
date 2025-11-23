@@ -45,6 +45,7 @@ html {
 
 body {
   margin: 0;
+  padding-top: var(--header-height);
   font-family: var(--font-body);
   background-color: var(--bg);
   color: var(--text-main);
@@ -223,7 +224,7 @@ img {
 
 /* Hero Section */
 .hero {
-  padding: 160px 0 100px;
+  padding: 80px 0 100px;
   position: relative;
   overflow: hidden;
 }
@@ -264,6 +265,7 @@ img {
   line-height: 1.1;
   margin-bottom: 24px;
   background: linear-gradient(to right, var(--text-main), #4a5568);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -459,6 +461,7 @@ img {
 .section {
   padding: 100px 0;
   position: relative;
+  scroll-margin-top: calc(var(--header-height) + 20px);
 }
 
 .section.alt {
