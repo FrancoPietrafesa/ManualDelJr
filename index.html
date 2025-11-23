@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -8,6 +9,7 @@
   <!-- Lottie player (web component) -->
   <script src="https://unpkg.com/@lottiefiles/lottie-player@1.5.7/dist/lottie-player.js"></script>
 </head>
+
 <body>
   <a class="skip-link" href="#main">Saltar al contenido</a>
   <div class="page-watermark" aria-hidden="true"></div>
@@ -17,16 +19,24 @@
         <img src="assets/logo.svg" alt="Manual del Junior" class="logo">
         <span>Manual del Junior</span>
       </a>
+      <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
       <!-- main nav replaced by centered .topnav below -->
-        <nav class="topnav" aria-label="Main navigation">
-          <a href="#cursos" data-i18n="nav.cursos">Cursos</a>
-          <a href="#metodo" data-i18n="nav.metodo">Método</a>
-          <a href="#testimonios" data-i18n="nav.testimonios">Testimonios</a>
-          <a href="#contacto" data-i18n="nav.contacto">Contacto</a>
-        </nav>
-        <div class="top-actions">
-          <button id="langToggle" class="btn ghost" type="button">EN</button>
-        </div>
+      <nav class="topnav" id="mainNav" aria-label="Main navigation">
+        <a href="#cursos" data-i18n="nav.cursos">Cursos</a>
+        <a href="#metodo" data-i18n="nav.metodo">Método</a>
+        <a href="#testimonios" data-i18n="nav.testimonios">Testimonios</a>
+        <a href="#contacto" data-i18n="nav.contacto">Contacto</a>
+      </nav>
+      <div class="top-actions">
+        <button id="langToggle" class="btn ghost" type="button">EN</button>
+      </div>
     </div>
   </header>
 
@@ -35,50 +45,60 @@
       <div class="container hero-inner">
         <div class="hero-copy reveal">
           <h1>Domina tu primera ruta en tecnología</h1>
-          <p class="lead">Rutas de aprendizaje, tips profesionales y preparación para entrevistas. Cursos pensados para quienes empiezan y quieren profesionalizarse en QA, herramientas IT y más.</p>
+          <p class="lead">Rutas de aprendizaje, tips profesionales y preparación para entrevistas. Cursos pensados para
+            quienes empiezan y quieren profesionalizarse en QA, herramientas IT y más.</p>
           <div class="cta-row">
             <a class="btn primary" href="#cursos">Ver cursos</a>
             <a class="btn ghost" href="#metodo">Cómo funciona</a>
           </div>
-          <p id="hero-info" class="muted-note">Comienza con un plan claro y demuestra impacto desde tu primer proyecto.</p>
+          <p id="hero-info" class="muted-note">Comienza con un plan claro y demuestra impacto desde tu primer proyecto.
+          </p>
         </div>
-        <!-- simple floating card removed; replaced with structured course-card below -->
-          <div class="hero-visual">
-            <aside class="card floating reveal course-card" data-tilt aria-label="Curso destacado">
-              <header class="card-head">
-                <h3 data-i18n="hero.featuredTitle">Curso destacado</h3>
-                <div class="tag">Popular</div>
-              </header>
-              <div class="card-body">
-                <p data-i18n="hero.featuredDesc">QA desde cero — Aprende a testear, automatizar y comunicarte con equipos.</p>
-                <ul class="card-features">
-                  <li data-i18n="hero.f1">Ejercicios reales</li>
-                  <li data-i18n="hero.f2">Plantillas prácticas</li>
-                  <li data-i18n="hero.f3">Preparación de entrevistas</li>
-                </ul>
+
+        <div class="hero-visual">
+          <aside class="card floating reveal course-card" data-tilt aria-label="Curso destacado">
+            <header class="card-head">
+              <h3 data-i18n="hero.featuredTitle">Curso destacado</h3>
+              <div class="tag">Popular</div>
+            </header>
+            <div class="card-body">
+              <p data-i18n="hero.featuredDesc">QA desde cero — Aprende a testear, automatizar y comunicarte con equipos.
+              </p>
+              <ul class="card-features">
+                <li data-i18n="hero.f1">Ejercicios reales</li>
+                <li data-i18n="hero.f2">Plantillas prácticas</li>
+                <li data-i18n="hero.f3">Preparación de entrevistas</li>
+              </ul>
+            </div>
+            <footer class="card-foot">
+              <div class="price">USD 19.99</div>
+              <div class="card-ctas">
+                <a class="btn primary" href="qa.html" data-i18n="hero.enterCourse">Entrar al curso</a>
               </div>
-              <footer class="card-foot">
-                <div class="price">USD 19.99</div>
-                <div class="card-ctas">
-                  <a class="btn primary" href="qa.html" data-i18n="hero.enterCourse">Entrar al curso</a>
-                </div>
-              </footer>
-            </aside>
-          </div>
+            </footer>
+          </aside>
+
           <div class="hero-decor" aria-hidden="true">
-          <!-- Transient 'bug search' visual: clickable, links to the short intro text below -->
-          <div id="transientBug" class="transient" role="button" tabindex="0" aria-label="Buscar bug — ir a la introducción">
-            <div class="transient-inner" aria-hidden="true">
-              <svg width="160" height="96" viewBox="0 0 320 192" fill="none" xmlns="http://www.w3.org/2000/svg" class="transient-svg" role="img" aria-hidden="true">
-                <rect width="320" height="192" rx="16" fill="#fff" opacity="0.95"/>
-                <g transform="translate(28,28)" fill="#111">
-                  <circle cx="36" cy="36" r="22" fill="#f6a400" opacity="0.15"></circle>
-                  <path d="M8 56c8-20 26-34 48-34" stroke="#111" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-                  <text x="90" y="50" font-size="20" fill="#333">Buscando bug...</text>
-                </g>
-              </svg>
+            <!-- Transient 'bug search' visual: clickable, links to the short intro text below -->
+            <div id="transientBug" class="transient" role="button" tabindex="0"
+              aria-label="Buscar bug — ir a la introducción">
+              <div class="transient-inner" aria-hidden="true">
+                <svg width="160" height="96" viewBox="0 0 320 192" fill="none" xmlns="http://www.w3.org/2000/svg"
+                  class="transient-svg" role="img" aria-hidden="true">
+                  <rect width="320" height="192" rx="16" fill="#fff" opacity="0.95" />
+                  <g transform="translate(28,28)" fill="#111">
+                    <g class="search-icon">
+                      <circle cx="36" cy="36" r="22" fill="#f6a400" opacity="0.15"></circle>
+                      <path d="M8 56c8-20 26-34 48-34" stroke="#111" stroke-width="6" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </g>
+                    <text x="90" y="50" font-size="20" fill="#333">Buscando bug...</text>
+                  </g>
+                </svg>
+              </div>
             </div>
           </div>
+
           <!-- Fallback hero illustration (kept for larger screens) -->
           <picture class="hero-fallback">
             <source srcset="assets/hero-illustration.webp" type="image/webp">
@@ -151,7 +171,8 @@
         </div>
         <div class="test-controls" aria-hidden="false">
           <button class="test-prev btn ghost" aria-label="Anterior testimonio" title="Anterior" type="button">‹</button>
-          <button class="test-next btn ghost" aria-label="Siguiente testimonio" title="Siguiente" type="button">›</button>
+          <button class="test-next btn ghost" aria-label="Siguiente testimonio" title="Siguiente"
+            type="button">›</button>
         </div>
       </div>
     </section>
@@ -172,4 +193,5 @@
     <button data-wm="assets/watermark-variant2.svg" type="button">Strong</button>
   </div>
 </body>
+
 </html>
