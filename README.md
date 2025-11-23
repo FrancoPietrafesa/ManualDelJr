@@ -26,6 +26,40 @@ Local Lottie (offline) y fallback optimizado
 
 Si prefieres usar otra animación Lottie, reemplaza `assets/hero-animation.json` por el JSON que quieras (sin subir claves privadas). Si necesitas, puedo añadir una animación más elaborada.
 
+Despliegue en Vercel (Opción B - serverless)
+------------------------------------------------
+Si quieres desplegar todo en Vercel como funciones serverless (frontend + API juntos), ya convertí las rutas principales a endpoints en la carpeta `api/`:
+
+- `api/auth/register` (POST)
+- `api/auth/login` (POST)
+- `api/auth/profile` (GET)
+- `api/paypal/create-order` (POST)
+- `api/paypal/capture` (POST)
+- `api/mercadopago/create-preference` (POST)
+
+Pasos para desplegar en Vercel desde aquí:
+
+1. Instala dependencias en la raíz (Vercel las instalará de todos modos en deploy, pero es útil localmente):
+
+```bash
+cd "C:/Users/admin_ntwks/Desktop/Proyectos/ManualDelJr"
+npm install
+```
+
+2. Variables de entorno en Vercel: añade en Project > Settings > Environment Variables:
+
+- `JWT_SECRET` — secreto JWT
+- `PAYPAL_CLIENT_ID` y `PAYPAL_CLIENT_SECRET` — credenciales PayPal (sandbox)
+- `MP_ACCESS_TOKEN` — MercadoPago access token (sandbox)
+- `CLIENT_URL` — URL del frontend (p. ej. https://tu-proyecto.vercel.app)
+
+3. Deploy: `vercel` o conectar el repositorio y permitir deploy automático por push a `main`.
+
+Notas importantes:
+- El almacenamiento de usuarios en `data/users.json` es un demo que funciona en desarrollo. En Vercel serverless el filesystem es efímero: NO es apropiado para producción. Reemplaza el almacenamiento por una base de datos (Postgres, MongoDB, etc.) antes de un uso real.
+- Webhooks y confirmaciones deben implementarse y verificarse según la documentación de PayPal/MercadoPago cuando pases a producción.
+
+
 Cómo usar el optimizador (local):
 1. Instala dependencias en la raíz del proyecto:
 
