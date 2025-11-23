@@ -139,7 +139,7 @@ body{
 
 /* watermark switcher control (dev-only, small UI) */
 .watermark-switcher{
-  position:fixed;left:12px;bottom:12px;z-index:9999;display:flex;gap:8px;background:rgba(0,0,0,0.32);padding:6px;border-radius:10px;backdrop-filter: blur(6px);
+  position:fixed;left:12px;bottom:12px;z-index:9999;display:none;gap:8px;background:rgba(0,0,0,0.32);padding:6px;border-radius:10px;backdrop-filter: blur(6px);
 }
 .watermark-switcher button{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--text);padding:6px 8px;border-radius:6px;cursor:pointer}
 .watermark-switcher button.active{border-color:var(--accent);box-shadow:0 6px 18px rgba(0,0,0,0.45)}

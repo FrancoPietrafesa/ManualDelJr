@@ -232,6 +232,18 @@ if(testimonialsRoot){
   const wm = document.querySelector('.page-watermark');
   const switcher = document.querySelector('.watermark-switcher');
   if(!wm || !switcher) return;
+
+  // Only enable the switcher in local/dev environments
+  const hostname = (window.location && window.location.hostname) || '';
+  const isLocal = hostname === 'localhost' || hostname === '127.0.0.1' || hostname === '::1' || window.location.protocol === 'file:' || hostname === '';
+  if(!isLocal){
+    // keep it hidden in production
+    switcher.style.display = 'none';
+    return;
+  }
+
+  // show switcher (was hidden by default in CSS)
+  switcher.style.display = 'flex';
   const buttons = Array.from(switcher.querySelectorAll('button'));
   function setWatermark(url){
     wm.style.backgroundImage = `url('${url}')`;
