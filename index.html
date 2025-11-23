@@ -10,6 +10,7 @@
 </head>
 <body>
   <a class="skip-link" href="#main">Saltar al contenido</a>
+  <div class="page-watermark" aria-hidden="true"></div>
   <header class="topbar">
     <div class="container">
       <a class="brand" href="index.html">
@@ -65,8 +66,7 @@
             </aside>
           </div>
         <div class="hero-decor" aria-hidden="true">
-          <!-- Lottie animation; falls back to SVG when JS is disabled or player fails -->
-          <lottie-player id="heroLottie" src="assets/hero-animation.json" background="transparent" speed="1" class="hero-lottie" loop autoplay></lottie-player>
+          <!-- Replaced Lottie with static fallback illustration; watermark used as page background -->
           <picture class="hero-fallback">
             <source srcset="assets/hero-illustration.webp" type="image/webp">
             <source srcset="assets/hero-illustration.png" type="image/png">

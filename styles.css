@@ -119,6 +119,24 @@ body{
 /* subtle background animation */
 .hero-bg-anim{position:absolute;inset:0;z-index:-1;opacity:0.14;background:radial-gradient(600px 300px at 10% 10%, rgba(110,130,255,0.08), transparent), radial-gradient(500px 240px at 90% 60%, rgba(126,249,182,0.03), transparent);transition:opacity .4s}
 
+/* Page watermark: subtle background blob (decorative) */
+.page-watermark{
+  position:fixed;
+  inset:0;
+  z-index:-2;
+  pointer-events:none;
+  background-image: url('assets/watermark.svg');
+  background-repeat:no-repeat;
+  background-position: center top;
+  background-size: cover;
+  opacity:0.06;
+  mix-blend-mode: screen;
+}
+
+@media (max-width:900px){
+  .page-watermark{background-position: center -40px; background-size: 140%; opacity:0.045}
+}
+
 .btn.primary{ background:var(--accent); color: var(--accent-contrast-text); font-weight:700; }
 .btn.ghost{ background:transparent; border:1px solid rgba(255,255,255,0.06); }
 
