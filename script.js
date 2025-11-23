@@ -68,6 +68,86 @@ function logout(){
   window.location.reload();
 }
 
+// --- Simple i18n toggle (ES/EN) ---
+const i18n = {
+  en: {
+    'hero.title': 'Manual del Junior',
+    'hero.subtitle': 'From zero to hired — QA, tools, interviews',
+    'cta.start': 'Start Learning',
+    'testimonials.title': 'Testimonials',
+    'hero.featuredTitle': 'Featured Course',
+    'hero.featuredDesc': 'QA from zero — Learn testing, automation and teamwork.',
+    'hero.f1': 'Hands-on exercises',
+    'hero.f2': 'Practical templates',
+    'hero.f3': 'Interview prep',
+    'hero.enterCourse': 'Enter course',
+    'nav.cursos': 'Courses',
+    'nav.metodo': 'Method',
+    'nav.testimonios': 'Testimonials',
+    'nav.contacto': 'Contact'
+  },
+  es: {
+    'hero.title': 'Manual del Junior',
+    'hero.subtitle': 'De cero a junior — QA, herramientas, entrevistas',
+    'cta.start': 'Comenzar ahora',
+    'testimonials.title': 'Testimonios',
+    'hero.featuredTitle': 'Curso destacado',
+    'hero.featuredDesc': 'QA desde cero — Aprende a testear, automatizar y comunicarte con equipos.',
+    'hero.f1': 'Ejercicios reales',
+    'hero.f2': 'Plantillas prácticas',
+    'hero.f3': 'Preparación de entrevistas',
+    'hero.enterCourse': 'Entrar al curso',
+    'nav.cursos': 'Cursos',
+    'nav.metodo': 'Método',
+    'nav.testimonios': 'Testimonios',
+    'nav.contacto': 'Contacto'
+  }
+};
+
+function applyLocale(locale){
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const key = el.getAttribute('data-i18n');
+    if(i18n[locale] && i18n[locale][key]) el.textContent = i18n[locale][key];
+  });
+}
+
+const langToggle = document.getElementById('langToggle');
+if(langToggle){
+  langToggle.setAttribute('role','button');
+  const saved = localStorage.getItem('site_lang') || 'es';
+  applyLocale(saved);
+  langToggle.textContent = saved === 'es' ? 'EN' : 'ES';
+  langToggle.setAttribute('aria-pressed', saved === 'en' ? 'true' : 'false');
+  langToggle.setAttribute('aria-label', saved === 'es' ? 'Cambiar a Inglés' : 'Switch to Spanish');
+  langToggle.addEventListener('click', ()=>{
+    const current = localStorage.getItem('site_lang') || 'es';
+    const next = current === 'es' ? 'en' : 'es';
+    localStorage.setItem('site_lang', next);
+    applyLocale(next);
+    langToggle.textContent = next === 'es' ? 'EN' : 'ES';
+    langToggle.setAttribute('aria-pressed', next === 'en' ? 'true' : 'false');
+    langToggle.setAttribute('aria-label', next === 'es' ? 'Cambiar a Inglés' : 'Switch to Spanish');
+  });
+}
+
+// --- Testimonials carousel auto-rotate ---
+const testimonialsRoot = document.querySelector('.testimonials');
+if(testimonialsRoot){
+  const items = Array.from(testimonialsRoot.querySelectorAll('.testimonial'));
+  let idx = items.findIndex(it=>it.classList.contains('active'));
+  if(idx < 0) idx = 0;
+  function showTestimonial(i){
+    items.forEach((it, j)=>{
+      it.classList.toggle('active', j===i);
+    });
+  }
+  showTestimonial(idx);
+  setInterval(()=>{
+    idx = (idx+1) % items.length;
+    showTestimonial(idx);
+  }, 5000);
+}
+
 // UI: reveal on scroll
 function setupReveal(){
   const obs = new IntersectionObserver((entries)=>{

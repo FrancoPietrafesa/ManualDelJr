@@ -9,22 +9,27 @@
   <script src="https://unpkg.com/@lottiefiles/lottie-player@1.5.7/dist/lottie-player.js"></script>
 </head>
 <body>
+  <a class="skip-link" href="#main">Saltar al contenido</a>
   <header class="topbar">
     <div class="container">
       <a class="brand" href="index.html">
         <img src="assets/logo.svg" alt="Manual del Junior" class="logo" />
         <span>Manual del Junior</span>
       </a>
-      <nav>
-        <a href="#cursos">Cursos</a>
-        <a href="#metodo">Método</a>
-        <a href="#testimonios">Testimonios</a>
-        <a href="#contacto">Contacto</a>
-      </nav>
+      <!-- main nav replaced by centered .topnav below -->
+        <nav class="topnav" role="navigation" aria-label="Main navigation">
+          <a href="#cursos" data-i18n="nav.cursos">Cursos</a>
+          <a href="#metodo" data-i18n="nav.metodo">Método</a>
+          <a href="#testimonios" data-i18n="nav.testimonios">Testimonios</a>
+          <a href="#contacto" data-i18n="nav.contacto">Contacto</a>
+        </nav>
+        <div class="top-actions">
+          <button id="langToggle" class="btn ghost">EN</button>
+        </div>
     </div>
   </header>
 
-  <main>
+  <main id="main" role="main">
     <section class="hero">
       <div class="container hero-inner">
         <div class="hero-copy reveal">
@@ -36,13 +41,29 @@
           </div>
           <p style="margin-top:14px;color:var(--muted)">Comienza con un plan claro y demuestra impacto desde tu primer proyecto.</p>
         </div>
-        <div class="hero-visual">
-          <div class="card floating reveal" data-tilt>
-            <h3>Curso destacado</h3>
-            <p>QA desde cero — Aprende a testear, automatizar y comunicarte con equipos.</p>
-            <a class="btn small" href="qa.html">Entrar al curso</a>
+        <!-- simple floating card removed; replaced with structured course-card below -->
+          <div class="hero-visual">
+            <aside class="card floating reveal course-card" data-tilt aria-label="Curso destacado">
+              <header class="card-head">
+                <h3 data-i18n="hero.featuredTitle">Curso destacado</h3>
+                <div class="tag">Popular</div>
+              </header>
+              <div class="card-body">
+                <p data-i18n="hero.featuredDesc">QA desde cero — Aprende a testear, automatizar y comunicarte con equipos.</p>
+                <ul class="card-features">
+                  <li data-i18n="hero.f1">Ejercicios reales</li>
+                  <li data-i18n="hero.f2">Plantillas prácticas</li>
+                  <li data-i18n="hero.f3">Preparación de entrevistas</li>
+                </ul>
+              </div>
+              <footer class="card-foot">
+                <div class="price">USD 19.99</div>
+                <div class="card-ctas">
+                  <a class="btn primary" href="qa.html" data-i18n="hero.enterCourse">Entrar al curso</a>
+                </div>
+              </footer>
+            </aside>
           </div>
-        </div>
         <div class="hero-decor" aria-hidden="true">
           <!-- Lottie animation; falls back to SVG when JS is disabled or player fails -->
           <lottie-player id="heroLottie" src="assets/hero-animation.json"  background="transparent"  speed="1"  style="width:100%;max-width:420px;"  loop  autoplay></lottie-player>
@@ -97,11 +118,21 @@
       </div>
     </section>
 
-    <section id="testimonios" class="section container">
-      <h2>Testimonios</h2>
-      <div class="grid">
-        <div class="card small">“Gracias a Manual del Junior conseguí mi primer trabajo como QA.” — Ana</div>
-        <div class="card small">“Las rutas son claras y muy prácticas.” — Diego</div>
+    <section id="testimonios" class="section container" role="region" aria-label="Testimonios">
+      <h2 data-i18n="testimonials.title">Testimonios</h2>
+      <div class="testimonials" aria-live="polite">
+        <div class="testimonial active">
+          <p>“Gracias a Manual del Junior conseguí mi primer trabajo como QA.”</p>
+          <cite>— Ana</cite>
+        </div>
+        <div class="testimonial">
+          <p>“Las rutas son claras y muy prácticas.”</p>
+          <cite>— Diego</cite>
+        </div>
+        <div class="testimonial">
+          <p>“Recibí feedback muy útil para mis entrevistas.”</p>
+          <cite>— Laura</cite>
+        </div>
       </div>
     </section>
   </main>

@@ -11,23 +11,27 @@
 }
 *{box-sizing:border-box}
 html,body{height:100%}
-body{
-  margin:0; font-family:Inter,ui-sans-serif,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;
-  background: radial-gradient(1200px 600px at 10% 10%, rgba(110,130,255,0.04), transparent), var(--bg);
-  color:#e6eef6; -webkit-font-smoothing:antialiased;
-}
-.container{max-width:1100px;margin:0 auto;padding:24px}
+.container{max-width:var(--container-max);margin:0 auto;padding:24px}
 .topbar{backdrop-filter: blur(6px);background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);border-bottom:1px solid rgba(255,255,255,0.03)}
 .topbar .container{display:flex;align-items:center;justify-content:space-between}
 .brand{display:flex;gap:12px;align-items:center;color:var(--accent)}
 .logo{width:42px;height:42px}
-nav a{color:var(--muted);margin-left:18px;text-decoration:none}
-nav a:hover{color:var(--accent)}
+nav a{color:var(--text);margin-left:18px;text-decoration:none;padding:6px 8px;border-radius:6px;display:inline-block}
+nav a:hover{color:var(--accent);background:rgba(255,255,255,0.02)}
+
+body{
+  margin:0; font-family:Inter,ui-sans-serif,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;
+  background: radial-gradient(1200px 600px at 10% 10%, rgba(110,130,255,0.04), transparent), var(--bg);
+  color:var(--text); -webkit-font-smoothing:antialiased;
+}
+/* Accessible skip link (hidden until focused) */
+.skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+.skip-link:focus{position:static;left:0;top:0;width:auto;height:auto;padding:10px 14px;background:var(--accent);color:var(--accent-contrast-text);z-index:9999;border-radius:6px}
 
 .hero{padding:60px 0}
 .hero-inner{display:flex;gap:32px;align-items:center;position:relative}
 .hero-copy{flex:1}
-.hero h1{font-size:36px;margin:0 0 12px;line-height:1.05}
+.hero h1{font-size:clamp(1.6rem, 3.2vw, 2.4rem);margin:0 0 12px;line-height:1.08}
 .lead{color:var(--muted);margin-bottom:18px}
 .cta-row{display:flex;gap:12px}
 .hero-visual{width:320px}
@@ -42,12 +46,46 @@ nav a:hover{color:var(--accent)}
 .card:hover{transform:translateY(-8px) rotateX(4deg);box-shadow:0 18px 40px rgba(2,6,23,0.6)}
 
 /* Animated entrance */
+:root{
+  /* Lighter dark theme for better readability */
+  --bg: #0f1728;
+  --panel: #0b1624;
+  --surface: #0e1a26;
+  --text: #e6eef6;
+  --muted: #9fb0c2;
+  /* Accent colors chosen for contrast */
+  --accent: #7c5cff;
+  --accent-2: #5ce0d4;
+  --accent-contrast-text: #081024;
+  --glass: rgba(255,255,255,0.045);
+  --btn-strong: #0b1220;
+  --focus: #ffd966;
+  --container-max: 1200px;
+  --space-xs: 8px;
+  --space-sm: 12px;
+  --space-md: 20px;
+  --space-lg: 32px;
+}
 .reveal{opacity:0;transform:translateY(10px);transition:opacity .6s ease, transform .6s ease}
 .reveal.visible{opacity:1;transform:none}
 
 .section{padding:48px 0}
 .section.alt{background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent)}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+
+/* Centered navigation */
+.topnav{
+  display:flex;
+  gap:18px;
+  align-items:center;
+  justify-content:center;
+  flex:1;
+}
+.top-actions{
+  display:flex;
+  gap:12px;
+  align-items:center;
+}
 .card{background:var(--panel);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
 .card.small{padding:12px}
 .card h3{margin-top:0}
@@ -57,16 +95,19 @@ nav a:hover{color:var(--accent)}
 
 .site-footer{padding:22px 0;color:var(--muted);border-top:1px solid rgba(255,255,255,0.02)}
 
-.btn{display:inline-block;padding:10px 14px;border-radius:10px;text-decoration:none;color:var(--muted);background:transparent;border:1px solid rgba(255,255,255,0.03);transition:transform .18s, box-shadow .18s, background .18s;}
-.btn:hover{transform:translateY(-3px)}
-.btn.primary{background:linear-gradient(90deg,var(--accent),#4ed0ff);color:#021026;border:none;box-shadow:0 6px 30px rgba(107,156,255,0.08)}
-.btn.primary:active{transform:translateY(-1px) scale(.995)}
-.btn.ghost{border:1px solid rgba(255,255,255,0.06);background:transparent;color:var(--muted)}
-.btn.small{padding:6px 10px;font-size:14px}
-
-/* Button neon glow on hover */
-.btn.primary:hover{box-shadow:0 8px 30px rgba(107,156,255,0.2),0 0 30px rgba(126,249,182,0.04)}
-
+.course-card{
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  padding:20px;
+  border-radius:14px;
+  box-shadow: 0 18px 40px rgba(2,6,23,0.65);
+  transform: translateY(-24px);
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  max-width:360px;
+}
+.course-card h3{ margin:0 0 6px 0; }
+.course-card p{ margin:0 0 12px 0; color:var(--muted); }
 /* Animations */
 @keyframes floaty{0%{transform:translateY(0)}50%{transform:translateY(-8px)}100%{transform:translateY(0)}}
 .floating{animation:floaty 4s ease-in-out infinite}
@@ -74,12 +115,33 @@ nav a:hover{color:var(--accent)}
 /* subtle background animation */
 .hero-bg-anim{position:absolute;inset:0;z-index:-1;opacity:0.14;background:radial-gradient(600px 300px at 10% 10%, rgba(110,130,255,0.08), transparent), radial-gradient(500px 240px at 90% 60%, rgba(126,249,182,0.03), transparent);transition:opacity .4s}
 
-/* Responsive */
+.btn.primary{ background:var(--accent); color: var(--accent-contrast-text); font-weight:700; }
+.btn.ghost{ background:transparent; border:1px solid rgba(255,255,255,0.06); }
+
+/* Focus styles for keyboard users */
+a:focus, .btn:focus{ outline:3px solid var(--focus); outline-offset:3px }
+@supports(selector(:focus-visible)){
+  a:focus, .btn:focus{ outline:none }
+  a:focus-visible, .btn:focus-visible{ outline:3px solid var(--focus); outline-offset:3px }
+}
+
+/* Screen reader utility */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
 @media (max-width:1100px){
   .hero-decor{right:12px;top:6px;max-width:320px}
 }
 
-@media (max-width:880px){
+.testimonial{
+  position:absolute;
+  inset:0;
+  padding:22px;
+  border-radius:12px;
+  background:var(--panel);
+  opacity:0;
+  transform:translateY(8px);
+  transition: opacity 480ms ease, transform 480ms ease;
+}
+.testimonial.active{ opacity:1; transform:translateY(0); }
   .hero-inner{flex-direction:column-reverse;padding:28px 12px}
   nav{display:none}
   .hero h1{font-size:28px}
