@@ -131,17 +131,27 @@ a:focus, .btn:focus{ outline:3px solid var(--focus); outline-offset:3px }
   .hero-decor{right:12px;top:6px;max-width:320px}
 }
 
+/* Testimonials container: ensure positioned parent and limit height */
+.testimonials{
+  position:relative;
+  min-height:140px;
+  max-height:220px;
+  overflow:hidden;
+}
+
 .testimonial{
   position:absolute;
-  inset:0;
-  padding:22px;
+  inset:0 0 0 0;
+  padding:18px 22px;
   border-radius:12px;
   background:var(--panel);
   opacity:0;
   transform:translateY(8px);
   transition: opacity 480ms ease, transform 480ms ease;
+  pointer-events:none;
 }
 .testimonial.active{ opacity:1; transform:translateY(0); }
+ .testimonial.active{ pointer-events:auto }
   .hero-inner{flex-direction:column-reverse;padding:28px 12px}
   nav{display:none}
   .hero h1{font-size:28px}
