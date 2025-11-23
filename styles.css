@@ -152,6 +152,20 @@ a:focus, .btn:focus{ outline:3px solid var(--focus); outline-offset:3px }
 }
 .testimonial.active{ opacity:1; transform:translateY(0); }
  .testimonial.active{ pointer-events:auto }
+
+/* Controls for testimonials */
+.test-controls{position:absolute;right:12px;bottom:12px;display:flex;gap:8px;z-index:5}
+.test-controls .btn{padding:6px 10px;font-size:1.1rem;border-radius:8px}
+
+@media (max-width:600px){
+  /* Lower the testimonial height on small screens and move controls centered */
+  .testimonials{max-height:160px}
+  .test-controls{left:50%;right:auto;transform:translateX(-50%);bottom:8px}
+  .test-controls .btn{padding:6px 10px}
+}
+
+/* Pause indicator (optional): when paused we may slightly dim controls */
+.test-controls.paused .btn{opacity:0.9}
   .hero-inner{flex-direction:column-reverse;padding:28px 12px}
   nav{display:none}
   .hero h1{font-size:28px}

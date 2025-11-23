@@ -134,18 +134,56 @@ if(langToggle){
 const testimonialsRoot = document.querySelector('.testimonials');
 if(testimonialsRoot){
   const items = Array.from(testimonialsRoot.querySelectorAll('.testimonial'));
+  const prevBtn = testimonialsRoot.querySelector('.test-prev');
+  const nextBtn = testimonialsRoot.querySelector('.test-next');
   let idx = items.findIndex(it=>it.classList.contains('active'));
   if(idx < 0) idx = 0;
+
   function showTestimonial(i){
     items.forEach((it, j)=>{
       it.classList.toggle('active', j===i);
     });
   }
+
+  // rotation controller
+  let intervalId = null;
+  const ROTATE_MS = 5000;
+
+  function startRotation(){
+    stopRotation();
+    intervalId = setInterval(()=>{
+      idx = (idx+1) % items.length;
+      showTestimonial(idx);
+    }, ROTATE_MS);
+    testimonialsRoot.classList.remove('paused');
+  }
+  function stopRotation(){
+    if(intervalId) clearInterval(intervalId);
+    intervalId = null;
+    testimonialsRoot.classList.add('paused');
+  }
+
   showTestimonial(idx);
-  setInterval(()=>{
-    idx = (idx+1) % items.length;
-    showTestimonial(idx);
-  }, 5000);
+  startRotation();
+
+  // Pause on hover/focus, resume on leave/blur
+  testimonialsRoot.addEventListener('mouseenter', stopRotation);
+  testimonialsRoot.addEventListener('mouseleave', startRotation);
+  testimonialsRoot.addEventListener('focusin', stopRotation);
+  testimonialsRoot.addEventListener('focusout', startRotation);
+
+  // Prev/Next handlers
+  function prev(){ idx = (idx - 1 + items.length) % items.length; showTestimonial(idx); }
+  function next(){ idx = (idx + 1) % items.length; showTestimonial(idx); }
+
+  if(prevBtn){
+    prevBtn.addEventListener('click', ()=>{ prev(); stopRotation(); });
+    prevBtn.addEventListener('keydown', (e)=>{ if(e.key === 'Enter' || e.key === ' ') { e.preventDefault(); prev(); stopRotation(); } });
+  }
+  if(nextBtn){
+    nextBtn.addEventListener('click', ()=>{ next(); stopRotation(); });
+    nextBtn.addEventListener('keydown', (e)=>{ if(e.key === 'Enter' || e.key === ' ') { e.preventDefault(); next(); stopRotation(); } });
+  }
 }
 
 // UI: reveal on scroll
