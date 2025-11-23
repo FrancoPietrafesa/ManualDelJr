@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="g1" x1="0" x2="1">
+      <stop offset="0" stop-color="#6b9cff" />
+      <stop offset="1" stop-color="#7ef9b6" />
+    </linearGradient>
+  </defs>
+  <rect width="100%" height="100%" rx="28" fill="none" />
+  <g transform="translate(60,40)">
+    <rect x="0" y="0" width="420" height="320" rx="18" fill="#07101a" opacity="0.9" />
+    <g transform="translate(28,22)">
+      <rect x="0" y="0" width="240" height="160" rx="10" fill="url(#g1)" opacity="0.18"/>
+      <rect x="260" y="0" width="120" height="120" rx="10" fill="#0f1720" stroke="#123"/>
+      <circle cx="80" cy="220" r="28" fill="#7ef9b6" opacity="0.14"/>
+      <g transform="translate(0,40)" fill="#bfe6ff" font-size="14">
+        <text x="0" y="0">Curso: QA Profesional</text>
+        <text x="0" y="22">Rutas, ejercicios y entrevistas</text>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,11 @@
+{
+  "name": "manualdeljr-site",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "optimize-assets": "node scripts/optimize-assets.js"
+  },
+  "devDependencies": {
+    "sharp": "^0.32.4"
+  }
+}
