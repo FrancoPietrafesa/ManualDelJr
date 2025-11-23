@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Acceso — Manual del Junior</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar"><div class="container"><a class="brand" href="index.html"><img src="assets/logo.svg" class="logo"/> Manual del Junior</a></div></header>
+  <main class="container">
+    <section class="card">
+      <h2>Iniciar sesión</h2>
+      <form id="loginForm">
+        <label>Email</label>
+        <input id="loginEmail" type="email" required />
+        <label>Contraseña</label>
+        <input id="loginPass" type="password" required />
+        <div style="margin-top:12px">
+          <button class="btn primary" type="submit">Entrar</button>
+          <a class="btn" href="#register" id="showRegister">Registrarse</a>
+        </div>
+      </form>
+    </section>
+
+    <section class="card" id="register" style="margin-top:18px">
+      <h2>Registrarse</h2>
+      <form id="regForm">
+        <label>Nombre</label>
+        <input id="regName" type="text" />
+        <label>Email</label>
+        <input id="regEmail" type="email" required />
+        <label>Contraseña</label>
+        <input id="regPass" type="password" required />
+        <div style="margin-top:12px">
+          <button class="btn primary" type="submit">Crear cuenta</button>
+        </div>
+      </form>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="container">© Manual del Junior</div></footer>
+  <script src="script.js"></script>
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', async (e)=>{
+      e.preventDefault();
+      const email = document.getElementById('loginEmail').value;
+      const pass = document.getElementById('loginPass').value;
+      const data = await loginUser(email,pass);
+      if(data.token){
+        localStorage.setItem('token', data.token);
+        localStorage.setItem('user', JSON.stringify(data.user));
+        window.location.href = 'index.html';
+      } else {
+        alert(data.error || 'Error al iniciar sesión');
+      }
+    });
+
+    document.getElementById('regForm').addEventListener('submit', async (e)=>{
+      e.preventDefault();
+      const name = document.getElementById('regName').value;
+      const email = document.getElementById('regEmail').value;
+      const pass = document.getElementById('regPass').value;
+      const data = await registerUser(email,pass,name);
+      if(data.token){
+        localStorage.setItem('token', data.token);
+        localStorage.setItem('user', JSON.stringify(data.user));
+        window.location.href = 'index.html';
+      } else {
+        alert(data.error || 'Error al registrarse');
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pago MercadoPago — Manual del Junior</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar"><div class="container"><a class="brand" href="index.html"><img src="assets/logo.svg" class="logo"/> Manual del Junior</a></div></header>
+  <main class="container">
+    <section class="card">
+      <h2>Pago MercadoPago</h2>
+      <p id="mpstatus">Si esto fue exitoso, tu pago quedará registrado y recibirás acceso.</p>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="container">© Manual del Junior</div></footer>
+  <script src="script.js"></script>
+  <script>
+    // MercadoPago redirects with query params, you can check status param "status=approved"
+    const params = new URLSearchParams(location.search);
+    const status = params.get('status');
+    if(status==='approved'){
+      document.getElementById('mpstatus').innerText='Pago aprobado. Verifica tu perfil para acceder al curso.';
+    } else if(status){
+      document.getElementById('mpstatus').innerText='Estado: '+status;
+    }
+  </script>
+</body>
+</html>

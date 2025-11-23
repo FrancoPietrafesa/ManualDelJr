@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pago PayPal — Manual del Junior</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar"><div class="container"><a class="brand" href="index.html"><img src="assets/logo.svg" class="logo"/> Manual del Junior</a></div></header>
+  <main class="container">
+    <section class="card">
+      <h2>Procesando pago...</h2>
+      <p id="status">Por favor espera mientras verificamos tu pago.</p>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="container">© Manual del Junior</div></footer>
+  <script src="script.js"></script>
+  <script>
+    // PayPal redirect includes token query param like ?token=ORDERID
+    const params = new URLSearchParams(location.search);
+    const orderId = params.get('token');
+    (async ()=>{
+      const token = localStorage.getItem('token');
+      if(!token){document.getElementById('status').innerText='Debes iniciar sesión para completar la compra.'; return}
+      if(!orderId){document.getElementById('status').innerText='Orden no encontrada'; return}
+      // Capture order via server
+      const resp = await fetch((window.location.origin.includes('5500')? 'http://localhost:4000':'')+'/api/paypal/capture',{method:'POST',headers:{'Content-Type':'application/json', Authorization:'Bearer '+token},body:JSON.stringify({orderID:orderId, course: 'Curso'})});
+      const data = await resp.json();
+      if(resp.ok){
+        document.getElementById('status').innerText='Pago completado. ¡Gracias! Accede al curso desde tu perfil.';
+      } else {
+        document.getElementById('status').innerText='Error procesando pago';
+        console.error(data);
+      }
+    })();
+  </script>
+</body>
+</html>
