@@ -16,6 +16,34 @@ Siguientes pasos recomendados:
 - Añadir formulario de registro/usuario y acceso a contenido pagando.
 - Personalizar contenido y estilos según tu branding.
 
+Animación Lottie y optimización de assets:
+- He añadido un player Lottie en el hero (`index.html`) y mantuve una ilustración SVG como fallback para entornos sin JS.
+- Para optimizar imágenes en `assets/`, hay un script de ejemplo `scripts/optimize-assets.js` que usa `sharp` para generar versiones `webp` y `png`.
+
+Local Lottie (offline) y fallback optimizado
+- Ahora el proyecto incluye `assets/hero-animation.json` — una animación Lottie local para el hero. El `lottie-player` usa este archivo por defecto.
+- Además el fallback utiliza un `picture` que carga `hero-illustration.webp` (si el navegador soporta WebP), luego `hero-illustration.png`, y finalmente `hero-illustration.svg`.
+
+Si prefieres usar otra animación Lottie, reemplaza `assets/hero-animation.json` por el JSON que quieras (sin subir claves privadas). Si necesitas, puedo añadir una animación más elaborada.
+
+Cómo usar el optimizador (local):
+1. Instala dependencias en la raíz del proyecto:
+
+```bash
+cd "C:/Users/admin_ntwks/Desktop/Proyectos/ManualDelJr"
+npm install
+```
+
+2. Ejecuta el optimizador:
+
+```bash
+npm run optimize-assets
+```
+
+Esto genera archivos `.webp` y `.png` en la carpeta `assets/` para cada SVG/PNG/JPG presente.
+
+Nota: `sharp` tiene binarios nativos; en Windows puede pedir herramientas adicionales. Si prefieres, puedo generar las versiones optimizadas por ti y añadirlas al repo.
+
 Si quieres, puedo:
 - Generar integración de ejemplo con PayPal (cliente/servidor) o con MercadoPago.
 - Mejorar el diseño visual, animaciones o preparar assets para redes.

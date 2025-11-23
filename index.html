@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Manual del Junior — Cursos</title>
   <link rel="stylesheet" href="styles.css" />
+  <!-- Lottie player (web component) -->
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@1.5.7/dist/lottie-player.js"></script>
 </head>
 <body>
   <header class="topbar">
@@ -25,21 +27,32 @@
   <main>
     <section class="hero">
       <div class="container hero-inner">
-        <div class="hero-copy">
+        <div class="hero-copy reveal">
           <h1>Domina tu primera ruta en tecnología</h1>
           <p class="lead">Rutas de aprendizaje, tips profesionales y preparación para entrevistas. Cursos pensados para quienes empiezan y quieren profesionalizarse en QA, herramientas IT y más.</p>
           <div class="cta-row">
             <a class="btn primary" href="#cursos">Ver cursos</a>
             <a class="btn ghost" href="#metodo">Cómo funciona</a>
           </div>
+          <p style="margin-top:14px;color:var(--muted)">Comienza con un plan claro y demuestra impacto desde tu primer proyecto.</p>
         </div>
         <div class="hero-visual">
-          <div class="card floating">
+          <div class="card floating reveal" data-tilt>
             <h3>Curso destacado</h3>
             <p>QA desde cero — Aprende a testear, automatizar y comunicarte con equipos.</p>
             <a class="btn small" href="qa.html">Entrar al curso</a>
           </div>
         </div>
+        <div class="hero-decor" aria-hidden="true">
+          <!-- Lottie animation; falls back to SVG when JS is disabled or player fails -->
+          <lottie-player id="heroLottie" src="assets/hero-animation.json"  background="transparent"  speed="1"  style="width:100%;max-width:420px;"  loop  autoplay></lottie-player>
+          <picture class="hero-fallback">
+            <source srcset="assets/hero-illustration.webp" type="image/webp">
+            <source srcset="assets/hero-illustration.png" type="image/png">
+            <img src="assets/hero-illustration.svg" class="hero-illustration fallback" alt="Ilustración hero" />
+          </picture>
+        </div>
+        <div class="hero-bg-anim" aria-hidden="true"></div>
       </div>
     </section>
 
