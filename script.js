@@ -191,6 +191,40 @@ if(testimonialsRoot){
     nextBtn.addEventListener('click', ()=>{ next(); stopRotation(); scheduleAutoResume(); });
     nextBtn.addEventListener('keydown', (e)=>{ if(e.key === 'Enter' || e.key === ' ') { e.preventDefault(); next(); stopRotation(); scheduleAutoResume(); } });
   }
+
+  // --- Indicators (dots) generation and behavior ---
+  const indicatorsRoot = testimonialsRoot.querySelector('.test-indicators');
+  if(indicatorsRoot){
+    // generate a button for each testimonial
+    items.forEach((it, i) =>{
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.setAttribute('role','tab');
+      btn.setAttribute('aria-selected', i===idx ? 'true' : 'false');
+      btn.setAttribute('aria-controls', 'testimonial-'+i);
+      btn.className = i===idx ? 'active' : '';
+      btn.title = `Ir al testimonio ${i+1}`;
+      btn.addEventListener('click', ()=>{ idx = i; showTestimonial(idx); stopRotation(); scheduleAutoResume(); updateIndicators(); });
+      btn.addEventListener('keydown', (e)=>{ if(e.key==='Enter' || e.key===' '){ e.preventDefault(); idx = i; showTestimonial(idx); stopRotation(); scheduleAutoResume(); updateIndicators(); } });
+      indicatorsRoot.appendChild(btn);
+      // mark the testimonial ID for aria-controls
+      it.id = it.id || ('testimonial-'+i);
+    });
+
+    function updateIndicators(){
+      const btns = Array.from(indicatorsRoot.querySelectorAll('button'));
+      btns.forEach((b, j)=>{
+        b.classList.toggle('active', j===idx);
+        b.setAttribute('aria-selected', j===idx ? 'true' : 'false');
+        b.tabIndex = j===idx ? 0 : -1;
+      });
+    }
+
+    // ensure indicators state updates on show
+    const originalShow = showTestimonial;
+    showTestimonial = function(i){ originalShow(i); updateIndicators(); };
+    updateIndicators();
+  }
 }
 
 // UI: reveal on scroll
