@@ -1,10 +1,10 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Manual del Junior — Cursos</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css">
   <!-- Lottie player (web component) -->
   <script src="https://unpkg.com/@lottiefiles/lottie-player@1.5.7/dist/lottie-player.js"></script>
 </head>
@@ -13,23 +13,23 @@
   <header class="topbar">
     <div class="container">
       <a class="brand" href="index.html">
-        <img src="assets/logo.svg" alt="Manual del Junior" class="logo" />
+        <img src="assets/logo.svg" alt="Manual del Junior" class="logo">
         <span>Manual del Junior</span>
       </a>
       <!-- main nav replaced by centered .topnav below -->
-        <nav class="topnav" role="navigation" aria-label="Main navigation">
+        <nav class="topnav" aria-label="Main navigation">
           <a href="#cursos" data-i18n="nav.cursos">Cursos</a>
           <a href="#metodo" data-i18n="nav.metodo">Método</a>
           <a href="#testimonios" data-i18n="nav.testimonios">Testimonios</a>
           <a href="#contacto" data-i18n="nav.contacto">Contacto</a>
         </nav>
         <div class="top-actions">
-          <button id="langToggle" class="btn ghost">EN</button>
+          <button id="langToggle" class="btn ghost" type="button">EN</button>
         </div>
     </div>
   </header>
 
-  <main id="main" role="main">
+  <main id="main">
     <section class="hero">
       <div class="container hero-inner">
         <div class="hero-copy reveal">
@@ -39,7 +39,7 @@
             <a class="btn primary" href="#cursos">Ver cursos</a>
             <a class="btn ghost" href="#metodo">Cómo funciona</a>
           </div>
-          <p style="margin-top:14px;color:var(--muted)">Comienza con un plan claro y demuestra impacto desde tu primer proyecto.</p>
+          <p class="muted-note">Comienza con un plan claro y demuestra impacto desde tu primer proyecto.</p>
         </div>
         <!-- simple floating card removed; replaced with structured course-card below -->
           <div class="hero-visual">
@@ -66,11 +66,11 @@
           </div>
         <div class="hero-decor" aria-hidden="true">
           <!-- Lottie animation; falls back to SVG when JS is disabled or player fails -->
-          <lottie-player id="heroLottie" src="assets/hero-animation.json"  background="transparent"  speed="1"  style="width:100%;max-width:420px;"  loop  autoplay></lottie-player>
+          <lottie-player id="heroLottie" src="assets/hero-animation.json" background="transparent" speed="1" class="hero-lottie" loop autoplay></lottie-player>
           <picture class="hero-fallback">
             <source srcset="assets/hero-illustration.webp" type="image/webp">
             <source srcset="assets/hero-illustration.png" type="image/png">
-            <img src="assets/hero-illustration.svg" class="hero-illustration fallback" alt="Ilustración hero" />
+            <img src="assets/hero-illustration.svg" class="hero-illustration fallback" alt="Ilustración hero">
           </picture>
         </div>
         <div class="hero-bg-anim" aria-hidden="true"></div>
@@ -118,7 +118,7 @@
       </div>
     </section>
 
-    <section id="testimonios" class="section container" role="region" aria-label="Testimonios">
+    <section id="testimonios" class="section container" aria-label="Testimonios">
       <h2 data-i18n="testimonials.title">Testimonios</h2>
       <div class="testimonials" aria-live="polite">
         <div class="testimonial active">
