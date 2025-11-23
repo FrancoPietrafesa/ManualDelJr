@@ -39,6 +39,231 @@ body {
 }
 
 .container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 24px
+}
+
+/* Topbar & Nav */
+.topbar {
+  backdrop-filter: blur(6px);
+  background: linear-gradient(180deg, rgba(16, 42, 67, 0.02), transparent);
+  border-bottom: 1px solid rgba(16, 42, 67, 0.04);
+  position: relative;
+  z-index: 100;
+}
+
+.topbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between
+}
+
+.brand {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.logo {
+  width: 42px;
+  height: 42px
+}
+
+/* Navigation */
+.topnav {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+.topnav a {
+  color: var(--text);
+  margin-left: 18px;
+  text-decoration: none;
+  padding: 6px 8px;
+  border-radius: 6px;
+  display: inline-block;
+  transition: all 0.2s;
+}
+
+.topnav a:hover {
+  color: var(--accent);
+  background: rgba(255, 255, 255, 0.02)
+}
+
+.menu-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  color: var(--text);
+  cursor: pointer;
+  padding: 8px;
+}
+
+.top-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+/* Skip link */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden
+}
+
+.skip-link:focus {
+  position: static;
+  left: 0;
+  top: 0;
+  width: auto;
+  height: auto;
+  padding: 10px 14px;
+  background: var(--accent);
+  color: #fff;
+  z-index: 9999;
+  border-radius: 6px
+}
+
+/* Hero */
+.hero {
+  padding: 60px 0
+}
+
+.hero-inner {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  position: relative
+}
+
+.hero-copy {
+  flex: 1
+}
+
+.hero h1 {
+  font-size: clamp(1.6rem, 3.2vw, 2.4rem);
+  margin: 0 0 12px;
+  line-height: 1.08
+}
+
+.lead {
+  color: var(--muted);
+  margin-bottom: 18px
+}
+
+.cta-row {
+  display: flex;
+  gap: 12px
+}
+
+.hero-visual {
+  width: 320px
+}
+
+.floating {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+  padding: 18px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  box-shadow: 0 8px 30px rgba(2, 6, 23, 0.6)
+}
+
+.hero-decor {
+  position: absolute;
+  right: 28px;
+  top: 8px;
+  width: 420px;
+  height: 300px;
+  pointer-events: none;
+  overflow: visible;
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+
+.hero-illustration {
+  width: 100%;
+  height: auto;
+  max-width: 420px;
+  border-radius: 14px;
+  box-shadow: 0 24px 60px rgba(2, 6, 23, 0.5);
+  transform: translateZ(0);
+  transition: transform .22s ease
+}
+
+.hero-lottie {
+  width: 100%;
+  max-width: 420px;
+  display: block
+}
+
+.muted-note {
+  margin-top: 14px;
+  color: var(--muted)
+}
+
+.hero-bg-anim {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: 0.14;
+  background: radial-gradient(600px 300px at 10% 10%, rgba(110, 130, 255, 0.08), transparent), radial-gradient(500px 240px at 90% 60%, rgba(126, 249, 182, 0.03), transparent);
+  transition: opacity .4s
+}
+
+/* Cards */
+.card {
+  background: var(--panel);
+  padding: 18px;
+  border-radius: 12px;
+  border: 1px solid rgba(16, 42, 67, 0.05);
+  transition: transform .28s cubic-bezier(.2, .9, .2, 1), box-shadow .28s
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(16, 42, 67, 0.08)
+}
+
+.card.small {
+  padding: 12px
+}
+
+.card h3 {
+  margin-top: 0
+}
+
+/* Sections & Animations */
+.section {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity .5s ease, transform .5s ease;
+  padding: 48px 0;
+}
+
+.section.visible {
+  opacity: 1;
+  transform: none
+}
+
+.section.alt {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.01), transparent)
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(10px);
   transition: opacity .6s ease, transform .6s ease
 }
 

@@ -299,10 +299,14 @@ function setupHeroParallax() {
 }
 
 // init UI effects
+// Initialize additional UI behaviors after DOM loaded
 document.addEventListener('DOMContentLoaded', () => {
   setupReveal();
   setupTilt();
   setupHeroParallax();
+  setupButtonRipples();
+  setupTransientBug();
+  setupMobileMenu();
 });
 
 // --- Button ripple effect (adds subtle wave on click) ---
@@ -347,23 +351,6 @@ function setupReveal() {
   document.querySelectorAll('.reveal, .section').forEach(el => obs.observe(el));
 }
 
-// Initialize additional UI behaviors after DOM loaded
-// Initialize additional UI behaviors after DOM loaded
-document.addEventListener('DOMContentLoaded', () => {
-  setupButtonRipples();
-  setupTransientBug();
-  setupMobileMenu();
-
-  // Scroll effect for topbar
-  const topbar = document.querySelector('.topbar');
-  if (topbar) {
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 20) topbar.classList.add('scrolled');
-      else topbar.classList.remove('scrolled');
-    });
-  }
-});
-
 function setupMobileMenu() {
   const toggle = document.querySelector('.menu-toggle');
   const nav = document.querySelector('.topnav');
@@ -383,4 +370,3 @@ function setupMobileMenu() {
     });
   });
 }
-
