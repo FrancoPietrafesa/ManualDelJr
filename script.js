@@ -348,10 +348,20 @@ function setupReveal() {
 }
 
 // Initialize additional UI behaviors after DOM loaded
+// Initialize additional UI behaviors after DOM loaded
 document.addEventListener('DOMContentLoaded', () => {
   setupButtonRipples();
   setupTransientBug();
   setupMobileMenu();
+
+  // Scroll effect for topbar
+  const topbar = document.querySelector('.topbar');
+  if (topbar) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 20) topbar.classList.add('scrolled');
+      else topbar.classList.remove('scrolled');
+    });
+  }
 });
 
 function setupMobileMenu() {
