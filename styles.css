@@ -1,6 +1,6 @@
 :root {
   /* Premium Color Palette */
-  --bg: #FDFCF8;
+  --bg: #F5E6D3;
   --surface: #FFFFFF;
   --surface-translucent: rgba(255, 255, 255, 0.8);
   --text-main: #1A202C;
@@ -107,14 +107,14 @@ img {
   height: var(--header-height);
   z-index: 1000;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  background: rgba(253, 252, 248, 0.85);
+  background: rgba(42, 35, 28, 0.95);
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .topbar.scrolled {
-  background: rgba(255, 255, 255, 0.95);
-  border-bottom: 1px solid var(--border-light);
+  background: rgba(245, 230, 211, 0.7);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   box-shadow: var(--shadow-sm);
 }
 
@@ -132,7 +132,7 @@ img {
   font-family: var(--font-heading);
   font-weight: 700;
   font-size: 1.25rem;
-  color: var(--text-main);
+  color: #FFFFFF;
 }
 
 .brand .logo {
@@ -149,13 +149,13 @@ img {
 .topnav a {
   font-weight: 500;
   font-size: 0.95rem;
-  color: var(--text-muted);
+  color: rgba(255, 255, 255, 0.9);
   position: relative;
 }
 
 .topnav a:hover,
 .topnav a.active {
-  color: var(--primary);
+  color: #FFFFFF;
 }
 
 .topnav a::after {
@@ -165,7 +165,7 @@ img {
   left: 0;
   right: 0;
   height: 2px;
-  background: var(--primary);
+  background: #FFFFFF;
   transform: scaleX(0);
   transform-origin: right;
   transition: transform 0.3s ease;
@@ -214,7 +214,7 @@ img {
 .btn.ghost {
   background: transparent;
   color: var(--text-main);
-  border: 1px solid var(--border-light);
+  border: 2px solid var(--primary);
 }
 
 .btn.ghost:hover {
@@ -708,9 +708,21 @@ img {
     text-align: center;
   }
 }
+
 /* Hide dark background gradient */
-.hero-bg-anim { display: none; }
+.hero-bg-anim {
+  display: none;
+}
 
 /* Position bug animation over course card */
-.hero-visual { position: relative; }
-#transientBug { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 100; }
+.hero-visual {
+  position: relative;
+}
+
+#transientBug {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+}
