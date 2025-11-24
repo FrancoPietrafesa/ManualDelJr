@@ -710,3 +710,7 @@ img {
 }
 /* Hide dark background gradient */
 .hero-bg-anim { display: none; }
+
+/* Position bug animation over course card */
+.hero-visual { position: relative; }
+#transientBug { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 100; }
