@@ -241,6 +241,27 @@ img {
   animation: pulseGradient 10s infinite alternate;
 }
 
+/* Responsive para Hero Background Animation */
+@media (max-width: 900px) {
+  .hero-bg-anim {
+    width: 600px;
+    height: 600px;
+    right: -5%;
+    top: -10%;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-bg-anim {
+    width: 400px;
+    height: 400px;
+    right: -20%;
+    top: -5%;
+    animation: none; /* Desactivar animación en móvil para performance */
+    opacity: 0.6;
+  }
+}
+
 @keyframes pulseGradient {
   0% {
     transform: scale(1);
@@ -1071,6 +1092,14 @@ img {
   z-index: 100;
 }
 
+/* Optimizaciones para móviles */
+@media (max-width: 600px) {
+  #transientBug {
+    /* Mantener centrado pero evitar superposiciones en pantallas pequeñas */
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+}
+
 /* Course Page Styles */
 .course-page {
   padding-top: 40px;
@@ -1434,6 +1463,33 @@ img {
   animation: float 3s ease-in-out infinite;
 }
 
+/* Responsive para Course Preview Card */
+@media (max-width: 900px) {
+  .course-preview-card {
+    position: relative;
+    top: auto;
+    right: auto;
+    margin-top: 20px;
+    max-width: 100%;
+    animation: none; /* Desactivar animación en móvil */
+  }
+}
+
+@media (max-width: 600px) {
+  .course-preview-card {
+    padding: 12px;
+    border-radius: 12px;
+  }
+  
+  .preview-title {
+    font-size: 0.85rem;
+  }
+  
+  .preview-duration {
+    font-size: 0.75rem;
+  }
+}
+
 .preview-header {
   display: flex;
   align-items: center;
@@ -1756,6 +1812,30 @@ img {
   transform: rotate(12deg);
   box-shadow: 0 6px 20px rgba(239, 68, 68, 0.5);
   animation: pulse-badge 2s infinite;
+}
+
+/* Responsive para Bundle Badge */
+@media (max-width: 900px) {
+  .bundle-badge {
+    right: 16px;
+    padding: 10px 20px;
+    font-size: 0.85rem;
+    top: -8px;
+  }
+}
+
+@media (max-width: 600px) {
+  .bundle-badge {
+    position: relative;
+    top: auto;
+    right: auto;
+    margin: 16px auto;
+    display: block;
+    transform: rotate(0deg);
+    width: fit-content;
+    animation: none;
+    padding: 8px 16px;
+  }
 }
 
 @keyframes pulse-badge {
