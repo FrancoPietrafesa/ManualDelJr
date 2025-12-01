@@ -4,87 +4,193 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Método — Manual del Junior</title>
+    <title>Nuestro Método — Manual del Junior</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-
-    <header class="mobile-header">
-        <a class="brand" href="index.html">Manual del Junior</a>
-        <button class="menu-toggle">☰</button>
+    <div class="page-watermark" aria-hidden="true"></div>
+    <header class="topbar">
+        <div class="container">
+            <a class="brand" href="index.html">
+                <img src="assets/logo.svg" alt="Manual del Junior" class="logo">
+                <span>Manual del Junior</span>
+            </a>
+            <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+            <nav class="topnav" id="mainNav">
+                <a href="index.html">Inicio</a>
+                <a href="cursos.html">Cursos</a>
+                <a href="metodo.html" class="active">Método</a>
+                <a href="testimonios.html">Testimonios</a>
+                <a href="contacto.html">Contacto</a>
+            </nav>
+            <div class="top-actions">
+                <button id="langToggle" class="btn ghost" type="button">EN</button>
+            </div>
+        </div>
     </header>
 
-    <div class="app-layout">
-        <aside class="sidebar">
-            <div class="sidebar-header">
-                <a class="brand" href="index.html">
-                    <img src="assets/logo.svg" alt="Logo">
-                    <span>Manual del Junior</span>
-                </a>
+    <main id="main">
+        <section class="section container">
+            <div class="section-header">
+                <h2>Nuestro Método de Enseñanza</h2>
+                <p class="section-subtitle">Un sistema probado de 4 pasos que ha ayudado a más de 1,400 estudiantes a
+                    transformar sus carreras</p>
             </div>
-            <nav class="sidebar-nav">
-                <div class="nav-group">
-                    <div class="nav-group-title">General</div>
-                    <a href="index.html" class="nav-link">Inicio</a>
-                    <a href="sobre-nosotros.html" class="nav-link">Sobre Nosotros</a>
-                </div>
-                <div class="nav-group">
-                    <div class="nav-group-title">Aprendizaje</div>
-                    <a href="cursos.html" class="nav-link">Cursos</a>
-                    <a href="metodo.html" class="nav-link active">Nuestro Método</a>
-                </div>
-                <div class="nav-group">
-                    <div class="nav-group-title">Comunidad</div>
-                    <a href="testimonios.html" class="nav-link">Testimonios</a>
-                    <a href="contacto.html" class="nav-link">Contacto</a>
-                </div>
-            </nav>
-        </aside>
 
-        <main class="main-content">
-            <div class="page-container">
-                <div class="breadcrumbs">
-                    <span>Manual del Junior</span>
-                    <span>Aprendizaje</span>
-                    <span>Método</span>
-                </div>
-
-                <h1>Nuestro Método de Enseñanza</h1>
-                <p>Hemos perfeccionado un sistema de 4 pasos que ha ayudado a más de 1,400 estudiantes a transformar sus
-                    carreras.</p>
-
-                <div class="card-grid" style="grid-template-columns: 1fr;">
-                    <div class="card">
-                        <h3>1. Evaluación Inicial</h3>
-                        <p>No creemos en "talle único". Comenzamos evaluando tu nivel actual y tus objetivos específicos
-                            para trazar un plan de estudio personalizado que maximice tu tiempo.</p>
+            <div class="courses-grid" style="grid-template-columns: 1fr;">
+                <article class="card">
+                    <div class="course-header">
+                        <h3>01. Evaluación Inicial</h3>
                     </div>
-
-                    <div class="card">
-                        <h3>2. Aprendizaje Práctico (Hands-on)</h3>
-                        <p>La teoría es importante, pero la práctica es vital. Nuestros cursos están compuestos por un
-                            70% de práctica en entornos simulados que replican el día a día de una empresa de
-                            tecnología.</p>
+                    <p class="course-description">
+                        No creemos en "talle único". Comenzamos evaluando tu nivel actual y tus objetivos específicos
+                        para trazar un plan de estudio personalizado que maximice tu tiempo y esfuerzo.
+                    </p>
+                    <div class="course-features">
+                        <h4>Incluye:</h4>
+                        <ul class="features-list">
+                            <li>✓ Test de nivel técnico</li>
+                            <li>✓ Entrevista de objetivos profesionales</li>
+                            <li>✓ Plan de estudio personalizado</li>
+                            <li>✓ Roadmap de aprendizaje adaptado</li>
+                        </ul>
                     </div>
+                </article>
 
-                    <div class="card">
-                        <h3>3. Preparación para el Mercado</h3>
-                        <p>Saber la técnica no es suficiente. Te preparamos para las entrevistas, optimizamos tu CV y
-                            LinkedIn, y te enseñamos a negociar tu salario.</p>
+                <article class="card">
+                    <div class="course-header">
+                        <h3>02. Aprendizaje Práctico</h3>
                     </div>
+                    <p class="course-description">
+                        La teoría es importante, pero la práctica es vital. Nuestros cursos están compuestos por un 70%
+                        de práctica en entornos simulados que replican el día a día de una empresa de tecnología.
+                    </p>
+                    <div class="course-features">
+                        <h4>Incluye:</h4>
+                        <ul class="features-list">
+                            <li>✓ Ejercicios basados en casos reales</li>
+                            <li>✓ Proyectos de portfolio</li>
+                            <li>✓ Simulación de entornos empresariales</li>
+                            <li>✓ Feedback continuo de instructores</li>
+                        </ul>
+                    </div>
+                </article>
 
-                    <div class="card">
-                        <h3>4. Seguimiento y Comunidad</h3>
-                        <p>Tu aprendizaje no termina al finalizar el curso. Accedes a una comunidad de por vida y
-                            recibes soporte continuo hasta que consigas tu primer empleo.</p>
+                <article class="card">
+                    <div class="course-header">
+                        <h3>03. Preparación para el Mercado</h3>
+                    </div>
+                    <p class="course-description">
+                        Saber la técnica no es suficiente. Te preparamos para las entrevistas, optimizamos tu CV y
+                        LinkedIn, y te enseñamos a negociar tu salario para que consigas el mejor trabajo posible.
+                    </p>
+                    <div class="course-features">
+                        <h4>Incluye:</h4>
+                        <ul class="features-list">
+                            <li>✓ Optimización de CV y LinkedIn</li>
+                            <li>✓ Simulacros de entrevistas técnicas</li>
+                            <li>✓ Preparación de respuestas STAR</li>
+                            <li>✓ Estrategias de negociación salarial</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="course-header">
+                        <h3>04. Seguimiento y Comunidad</h3>
+                    </div>
+                    <p class="course-description">
+                        Tu aprendizaje no termina al finalizar el curso. Accedes a una comunidad de por vida y recibes
+                        soporte continuo hasta que consigas tu primer empleo y más allá.
+                    </p>
+                    <div class="course-features">
+                        <h4>Incluye:</h4>
+                        <ul class="features-list">
+                            <li>✓ Comunidad Discord activa 24/7</li>
+                            <li>✓ Sesiones de Q&A semanales</li>
+                            <li>✓ Networking con otros estudiantes</li>
+                            <li>✓ Actualizaciones de contenido gratuitas</li>
+                        </ul>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Stats Section -->
+            <div class="trust-stats" style="margin-top: 80px;">
+                <div class="trust-stat">
+                    <div class="trust-number">95%</div>
+                    <div class="trust-label">Tasa de empleabilidad</div>
+                </div>
+                <div class="trust-stat">
+                    <div class="trust-number">4.8/5</div>
+                    <div class="trust-label">Satisfacción del estudiante</div>
+                </div>
+                <div class="trust-stat">
+                    <div class="trust-number">6 semanas</div>
+                    <div class="trust-label">Tiempo promedio de empleo</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Cursos</h3>
+                    <ul>
+                        <li><a href="qa.html">QA Profesional</a></li>
+                        <li><a href="herramientas.html">Herramientas de IT</a></li>
+                        <li><a href="entrevistas.html">Entrevistas y CV</a></li>
+                        <li><a href="profesionalizacion.html">Profesionalización</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Manual Del Junior</h3>
+                    <ul>
+                        <li><a href="sobre-nosotros.html">Sobre nosotros</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Community</h3>
+                    <ul>
+                        <li><a href="#">Discord</a></li>
+                        <li><a href="#">Twitter</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section newsletter">
+                    <h3>Newsletter</h3>
+                    <p>Recibe actualizaciones sobre nuevos cursos.</p>
+                    <div class="newsletter-form">
+                        <input type="email" placeholder="Email" class="newsletter-input">
+                        <button class="btn primary newsletter-btn">Join</button>
                     </div>
                 </div>
             </div>
-        </main>
-    </div>
+            <div class="footer-bottom">
+                <div class="footer-brand">
+                    <span>Manual del Junior</span>
+                </div>
+                <div class="footer-copyright">
+                    <span>© 2024 Manual del Junior Inc.</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
     <script src="script.js"></script>
 </body>
 

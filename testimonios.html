@@ -6,149 +6,325 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Testimonios — Manual del Junior</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Marquee Testimonials */
+        .testimonial-marquee {
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+            padding: 40px 0;
+            background: var(--surface);
+            border-top: 2px solid var(--border-strong);
+            border-bottom: 2px solid var(--border-strong);
+        }
+
+        .testimonial-track {
+            display: flex;
+            gap: 32px;
+            animation: scroll 40s linear infinite;
+        }
+
+        .testimonial-track:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .testimonial-item {
+            min-width: 400px;
+            background: var(--bg);
+            border: 2px solid var(--border-strong);
+            padding: 32px;
+            flex-shrink: 0;
+        }
+
+        .testimonial-rating {
+            font-size: 1.2rem;
+            margin-bottom: 16px;
+            filter: grayscale(100%);
+        }
+
+        .testimonial-text {
+            font-size: 1.1rem;
+            font-style: italic;
+            color: var(--text-main);
+            margin-bottom: 24px;
+            line-height: 1.6;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding-top: 16px;
+            border-top: 1px solid var(--border-light);
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            background: var(--border-light);
+            border: 2px solid var(--border-strong);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            filter: grayscale(100%);
+        }
+
+        .author-name {
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        .author-role {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 900px) {
+            .testimonial-item {
+                min-width: 300px;
+            }
+        }
+    </style>
 </head>
 
 <body>
-
-    <header class="mobile-header">
-        <a class="brand" href="index.html">Manual del Junior</a>
-        <button class="menu-toggle">☰</button>
+    <div class="page-watermark" aria-hidden="true"></div>
+    <header class="topbar">
+        <div class="container">
+            <a class="brand" href="index.html">
+                <img src="assets/logo.svg" alt="Manual del Junior" class="logo">
+                <span>Manual del Junior</span>
+            </a>
+            <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+            <nav class="topnav" id="mainNav">
+                <a href="index.html">Inicio</a>
+                <a href="cursos.html">Cursos</a>
+                <a href="metodo.html">Método</a>
+                <a href="testimonios.html" class="active">Testimonios</a>
+                <a href="contacto.html">Contacto</a>
+            </nav>
+            <div class="top-actions">
+                <button id="langToggle" class="btn ghost" type="button">EN</button>
+            </div>
+        </div>
     </header>
 
-    <div class="app-layout">
-        <aside class="sidebar">
-            <div class="sidebar-header">
-                <a class="brand" href="index.html">
-                    <img src="assets/logo.svg" alt="Logo">
-                    <span>Manual del Junior</span>
-                </a>
+    <main id="main">
+        <section class="section container">
+            <div class="section-header">
+                <h2>Historias de Éxito</h2>
+                <p class="section-subtitle">Conoce a las personas que han transformado su vida profesional con nosotros
+                </p>
             </div>
-            <nav class="sidebar-nav">
-                <div class="nav-group">
-                    <div class="nav-group-title">General</div>
-                    <a href="index.html" class="nav-link">Inicio</a>
-                    <a href="sobre-nosotros.html" class="nav-link">Sobre Nosotros</a>
-                </div>
-                <div class="nav-group">
-                    <div class="nav-group-title">Aprendizaje</div>
-                    <a href="cursos.html" class="nav-link">Cursos</a>
-                    <a href="metodo.html" class="nav-link">Nuestro Método</a>
-                </div>
-                <div class="nav-group">
-                    <div class="nav-group-title">Comunidad</div>
-                    <a href="testimonios.html" class="nav-link active">Testimonios</a>
-                    <a href="contacto.html" class="nav-link">Contacto</a>
-                </div>
-            </nav>
-        </aside>
+        </section>
 
-        <main class="main-content">
-            <div class="page-container">
-                <div class="breadcrumbs">
-                    <span>Manual del Junior</span>
-                    <span>Comunidad</span>
-                    <span>Testimonios</span>
-                </div>
-
-                <h1>Historias de Éxito</h1>
-                <p>Conoce a las personas que han transformado su vida profesional con nosotros.</p>
-
-                <!-- Marquee Testimonials -->
-                <div class="testimonial-marquee-container">
-                    <div class="testimonial-track">
-                        <!-- Item 1 -->
-                        <div class="card" style="min-width: 300px;">
-                            <div style="display:flex; gap:10px; margin-bottom:10px;">
-                                <span style="color:#fbbf24;">★★★★★</span>
-                            </div>
-                            <p>"Gracias a Manual del Junior conseguí mi primer trabajo como QA en una startup."</p>
-                            <div style="margin-top:20px; border-top:1px solid var(--border-color); padding-top:10px;">
-                                <strong>Ana Martínez</strong><br>
-                                <span style="font-size:0.85rem; color:var(--text-muted);">QA Analyst</span>
-                            </div>
-                        </div>
-                        <!-- Item 2 -->
-                        <div class="card" style="min-width: 300px;">
-                            <div style="display:flex; gap:10px; margin-bottom:10px;">
-                                <span style="color:#fbbf24;">★★★★★</span>
-                            </div>
-                            <p>"En 2 meses pasé de no saber nada de testing a automatizar procesos."</p>
-                            <div style="margin-top:20px; border-top:1px solid var(--border-color); padding-top:10px;">
-                                <strong>Diego López</strong><br>
-                                <span style="font-size:0.85rem; color:var(--text-muted);">Automation QA</span>
-                            </div>
-                        </div>
-                        <!-- Item 3 -->
-                        <div class="card" style="min-width: 300px;">
-                            <div style="display:flex; gap:10px; margin-bottom:10px;">
-                                <span style="color:#fbbf24;">★★★★★</span>
-                            </div>
-                            <p>"El curso de entrevistas fue clave. Logré negociar un salario 30% mayor."</p>
-                            <div style="margin-top:20px; border-top:1px solid var(--border-color); padding-top:10px;">
-                                <strong>Laura García</strong><br>
-                                <span style="font-size:0.85rem; color:var(--text-muted);">QA Engineer</span>
-                            </div>
-                        </div>
-                        <!-- Item 4 -->
-                        <div class="card" style="min-width: 300px;">
-                            <div style="display:flex; gap:10px; margin-bottom:10px;">
-                                <span style="color:#fbbf24;">★★★★★</span>
-                            </div>
-                            <p>"La mejor inversión que he hecho en mi carrera. La comunidad es increíble."</p>
-                            <div style="margin-top:20px; border-top:1px solid var(--border-color); padding-top:10px;">
-                                <strong>Carlos Ruiz</strong><br>
-                                <span style="font-size:0.85rem; color:var(--text-muted);">Full Stack Dev</span>
-                            </div>
-                        </div>
-                        <!-- Duplicate for loop effect -->
-                        <div class="card" style="min-width: 300px;">
-                            <div style="display:flex; gap:10px; margin-bottom:10px;">
-                                <span style="color:#fbbf24;">★★★★★</span>
-                            </div>
-                            <p>"Gracias a Manual del Junior conseguí mi primer trabajo como QA en una startup."</p>
-                            <div style="margin-top:20px; border-top:1px solid var(--border-color); padding-top:10px;">
-                                <strong>Ana Martínez</strong><br>
-                                <span style="font-size:0.85rem; color:var(--text-muted);">QA Analyst</span>
-                            </div>
-                        </div>
-                        <div class="card" style="min-width: 300px;">
-                            <div style="display:flex; gap:10px; margin-bottom:10px;">
-                                <span style="color:#fbbf24;">★★★★★</span>
-                            </div>
-                            <p>"En 2 meses pasé de no saber nada de testing a automatizar procesos."</p>
-                            <div style="margin-top:20px; border-top:1px solid var(--border-color); padding-top:10px;">
-                                <strong>Diego López</strong><br>
-                                <span style="font-size:0.85rem; color:var(--text-muted);">Automation QA</span>
-                            </div>
-                        </div>
-                        <div class="card" style="min-width: 300px;">
-                            <div style="display:flex; gap:10px; margin-bottom:10px;">
-                                <span style="color:#fbbf24;">★★★★★</span>
-                            </div>
-                            <p>"El curso de entrevistas fue clave. Logré negociar un salario 30% mayor."</p>
-                            <div style="margin-top:20px; border-top:1px solid var(--border-color); padding-top:10px;">
-                                <strong>Laura García</strong><br>
-                                <span style="font-size:0.85rem; color:var(--text-muted);">QA Engineer</span>
-                            </div>
-                        </div>
-                        <div class="card" style="min-width: 300px;">
-                            <div style="display:flex; gap:10px; margin-bottom:10px;">
-                                <span style="color:#fbbf24;">★★★★★</span>
-                            </div>
-                            <p>"La mejor inversión que he hecho en mi carrera. La comunidad es increíble."</p>
-                            <div style="margin-top:20px; border-top:1px solid var(--border-color); padding-top:10px;">
-                                <strong>Carlos Ruiz</strong><br>
-                                <span style="font-size:0.85rem; color:var(--text-muted);">Full Stack Dev</span>
-                            </div>
+        <!-- Marquee Testimonials -->
+        <div class="testimonial-marquee">
+            <div class="testimonial-track">
+                <!-- Original testimonials -->
+                <div class="testimonial-item">
+                    <div class="testimonial-rating">★★★★★</div>
+                    <p class="testimonial-text">"Gracias a Manual del Junior conseguí mi primer trabajo como QA en una
+                        startup. El curso de QA me dio todas las herramientas necesarias y el soporte fue excepcional."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">👩‍💼</div>
+                        <div>
+                            <div class="author-name">Ana Martínez</div>
+                            <div class="author-role">QA Analyst en TechStart</div>
                         </div>
                     </div>
                 </div>
 
+                <div class="testimonial-item">
+                    <div class="testimonial-rating">★★★★★</div>
+                    <p class="testimonial-text">"Las rutas son claras y muy prácticas. En 2 meses pasé de no saber nada
+                        de testing a automatizar procesos en mi empresa actual."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">👨‍💻</div>
+                        <div>
+                            <div class="author-name">Diego López</div>
+                            <div class="author-role">Automation QA en CorporaTech</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-item">
+                    <div class="testimonial-rating">★★★★★</div>
+                    <p class="testimonial-text">"El curso de entrevistas me cambió la vida. Me preparó perfectamente
+                        para cualquier pregunta y conseguí 3 ofertas laborales."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">👩‍🎓</div>
+                        <div>
+                            <div class="author-name">Laura García</div>
+                            <div class="author-role">QA Engineer en InnovaDev</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-item">
+                    <div class="testimonial-rating">★★★★★</div>
+                    <p class="testimonial-text">"La mejor inversión que he hecho en mi carrera. La comunidad es
+                        increíble y el contenido está siempre actualizado."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">👨‍🔬</div>
+                        <div>
+                            <div class="author-name">Carlos Ruiz</div>
+                            <div class="author-role">Senior QA en GlobalTech</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Duplicated for seamless loop -->
+                <div class="testimonial-item">
+                    <div class="testimonial-rating">★★★★★</div>
+                    <p class="testimonial-text">"Gracias a Manual del Junior conseguí mi primer trabajo como QA en una
+                        startup. El curso de QA me dio todas las herramientas necesarias y el soporte fue excepcional."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">👩‍💼</div>
+                        <div>
+                            <div class="author-name">Ana Martínez</div>
+                            <div class="author-role">QA Analyst en TechStart</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-item">
+                    <div class="testimonial-rating">★★★★★</div>
+                    <p class="testimonial-text">"Las rutas son claras y muy prácticas. En 2 meses pasé de no saber nada
+                        de testing a automatizar procesos en mi empresa actual."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">👨‍💻</div>
+                        <div>
+                            <div class="author-name">Diego López</div>
+                            <div class="author-role">Automation QA en CorporaTech</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-item">
+                    <div class="testimonial-rating">★★★★★</div>
+                    <p class="testimonial-text">"El curso de entrevistas me cambió la vida. Me preparó perfectamente
+                        para cualquier pregunta y conseguí 3 ofertas laborales."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">👩‍🎓</div>
+                        <div>
+                            <div class="author-name">Laura García</div>
+                            <div class="author-role">QA Engineer en InnovaDev</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-item">
+                    <div class="testimonial-rating">★★★★★</div>
+                    <p class="testimonial-text">"La mejor inversión que he hecho en mi carrera. La comunidad es
+                        increíble y el contenido está siempre actualizado."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">👨‍🔬</div>
+                        <div>
+                            <div class="author-name">Carlos Ruiz</div>
+                            <div class="author-role">Senior QA en GlobalTech</div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </main>
-    </div>
+        </div>
+
+        <section class="section container">
+            <div class="section-header">
+                <h2>Casos de éxito destacados</h2>
+            </div>
+
+            <div class="success-grid">
+                <div class="success-item">
+                    <div class="success-icon">🚀</div>
+                    <div class="success-stat">María, 28 años</div>
+                    <div class="success-desc">De administrativa a QA Lead en 6 meses</div>
+                </div>
+                <div class="success-item">
+                    <div class="success-icon">💪</div>
+                    <div class="success-stat">Carlos, 35 años</div>
+                    <div class="success-desc">Cambio de carrera completo con éxito</div>
+                </div>
+                <div class="success-item">
+                    <div class="success-icon">⭐</div>
+                    <div class="success-stat">Sofia, 24 años</div>
+                    <div class="success-desc">Primer trabajo en tech después del curso</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Cursos</h3>
+                    <ul>
+                        <li><a href="qa.html">QA Profesional</a></li>
+                        <li><a href="herramientas.html">Herramientas de IT</a></li>
+                        <li><a href="entrevistas.html">Entrevistas y CV</a></li>
+                        <li><a href="profesionalizacion.html">Profesionalización</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Manual Del Junior</h3>
+                    <ul>
+                        <li><a href="sobre-nosotros.html">Sobre nosotros</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Community</h3>
+                    <ul>
+                        <li><a href="#">Discord</a></li>
+                        <li><a href="#">Twitter</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section newsletter">
+                    <h3>Newsletter</h3>
+                    <p>Recibe actualizaciones sobre nuevos cursos.</p>
+                    <div class="newsletter-form">
+                        <input type="email" placeholder="Email" class="newsletter-input">
+                        <button class="btn primary newsletter-btn">Join</button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-brand">
+                    <span>Manual del Junior</span>
+                </div>
+                <div class="footer-copyright">
+                    <span>© 2024 Manual del Junior Inc.</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
     <script src="script.js"></script>
 </body>
 

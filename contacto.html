@@ -6,81 +6,166 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Contacto — Manual del Junior</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;700&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-
-  <header class="mobile-header">
-    <a class="brand" href="index.html">Manual del Junior</a>
-    <button class="menu-toggle">☰</button>
+  <div class="page-watermark" aria-hidden="true"></div>
+  <header class="topbar">
+    <div class="container">
+      <a class="brand" href="index.html">
+        <img src="assets/logo.svg" alt="Manual del Junior" class="logo">
+        <span>Manual del Junior</span>
+      </a>
+      <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+      <nav class="topnav" id="mainNav">
+        <a href="index.html">Inicio</a>
+        <a href="cursos.html">Cursos</a>
+        <a href="metodo.html">Método</a>
+        <a href="testimonios.html">Testimonios</a>
+        <a href="contacto.html" class="active">Contacto</a>
+      </nav>
+      <div class="top-actions">
+        <button id="langToggle" class="btn ghost" type="button">EN</button>
+      </div>
+    </div>
   </header>
 
-  <div class="app-layout">
-    <aside class="sidebar">
-      <div class="sidebar-header">
-        <a class="brand" href="index.html">
-          <img src="assets/logo.svg" alt="Logo">
-          <span>Manual del Junior</span>
-        </a>
+  <main id="main">
+    <section class="section container">
+      <div class="section-header">
+        <h2>Contacto</h2>
+        <p class="section-subtitle">¿Tienes preguntas sobre nuestros cursos? ¿Necesitas ayuda? Estamos aquí para
+          apoyarte.</p>
       </div>
-      <nav class="sidebar-nav">
-        <div class="nav-group">
-          <div class="nav-group-title">General</div>
-          <a href="index.html" class="nav-link">Inicio</a>
-          <a href="sobre-nosotros.html" class="nav-link">Sobre Nosotros</a>
-        </div>
-        <div class="nav-group">
-          <div class="nav-group-title">Aprendizaje</div>
-          <a href="cursos.html" class="nav-link">Cursos</a>
-          <a href="metodo.html" class="nav-link">Nuestro Método</a>
-        </div>
-        <div class="nav-group">
-          <div class="nav-group-title">Comunidad</div>
-          <a href="testimonios.html" class="nav-link">Testimonios</a>
-          <a href="contacto.html" class="nav-link active">Contacto</a>
-        </div>
-      </nav>
-    </aside>
 
-    <main class="main-content">
-      <div class="page-container">
-        <div class="breadcrumbs">
-          <span>Manual del Junior</span>
-          <span>Comunidad</span>
-          <span>Contacto</span>
-        </div>
-
-        <h1>Contacto</h1>
-        <p>¿Tienes preguntas sobre nuestros cursos? ¿Necesitas ayuda? Estamos aquí para apoyarte.</p>
-
-        <div class="card-grid">
-          <div class="card">
+      <div class="courses-grid">
+        <article class="card">
+          <div class="course-header">
             <h3>Email</h3>
-            <p>Para consultas generales, soporte técnico o colaboraciones.</p>
-            <a href="mailto:hola@manualdeljunior.com" class="btn ghost">hola@manualdeljunior.com</a>
           </div>
+          <p class="course-description">
+            Para consultas generales, soporte técnico o colaboraciones.
+          </p>
+          <div class="course-actions">
+            <a href="mailto:hola@manualdeljunior.com" class="btn primary">hola@manualdeljunior.com</a>
+          </div>
+        </article>
 
-          <div class="card">
+        <article class="card">
+          <div class="course-header">
             <h3>Discord</h3>
-            <p>Únete a nuestra comunidad para hacer preguntas y compartir experiencias.</p>
-            <a href="#" class="btn ghost">Unirse al Discord</a>
           </div>
+          <p class="course-description">
+            Únete a nuestra comunidad para hacer preguntas, compartir experiencias y conectar con otros estudiantes.
+          </p>
+          <div class="course-actions">
+            <a href="#" class="btn primary">Unirse al Discord</a>
+          </div>
+        </article>
 
-          <div class="card">
+        <article class="card">
+          <div class="course-header">
             <h3>Twitter</h3>
-            <p>Síguenos para recibir tips y actualizaciones sobre el mundo IT.</p>
-            <a href="#" class="btn ghost">@ManualDelJunior</a>
+          </div>
+          <p class="course-description">
+            Síguenos para recibir tips, actualizaciones y contenido exclusivo sobre el mundo IT.
+          </p>
+          <div class="course-actions">
+            <a href="#" class="btn primary">@ManualDelJunior</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="course-header">
+            <h3>WhatsApp</h3>
+          </div>
+          <p class="course-description">
+            ¿Necesitas ayuda inmediata? Contáctanos por WhatsApp para soporte rápido.
+          </p>
+          <div class="course-actions">
+            <a href="https://wa.me/1234567890" class="btn primary" target="_blank">Enviar mensaje</a>
+          </div>
+        </article>
+      </div>
+
+      <!-- Info Section -->
+      <div class="card" style="margin-top: 60px; max-width: 800px; margin-left: auto; margin-right: auto;">
+        <div class="course-header">
+          <h3>Horarios de Atención</h3>
+        </div>
+        <p class="course-description">
+          Respondemos emails y mensajes de lunes a viernes de 9:00 AM a 6:00 PM (GMT-3). En Discord y redes sociales,
+          nuestra comunidad está activa las 24 horas.
+        </p>
+
+        <div class="course-header" style="margin-top: 32px;">
+          <h3>Preguntas Frecuentes</h3>
+        </div>
+        <p class="course-description">
+          Antes de contactarnos, revisa nuestra <a href="index.html#faq" style="text-decoration: underline;">sección de
+            FAQ</a> donde respondemos las preguntas más comunes sobre nuestros cursos y plataforma.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Cursos</h3>
+          <ul>
+            <li><a href="qa.html">QA Profesional</a></li>
+            <li><a href="herramientas.html">Herramientas de IT</a></li>
+            <li><a href="entrevistas.html">Entrevistas y CV</a></li>
+            <li><a href="profesionalizacion.html">Profesionalización</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Manual Del Junior</h3>
+          <ul>
+            <li><a href="sobre-nosotros.html">Sobre nosotros</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Community</h3>
+          <ul>
+            <li><a href="#">Discord</a></li>
+            <li><a href="#">Twitter</a></li>
+          </ul>
+        </div>
+        <div class="footer-section newsletter">
+          <h3>Newsletter</h3>
+          <p>Recibe actualizaciones sobre nuevos cursos.</p>
+          <div class="newsletter-form">
+            <input type="email" placeholder="Email" class="newsletter-input">
+            <button class="btn primary newsletter-btn">Join</button>
           </div>
         </div>
-
-        <h2>Horarios de Atención</h2>
-        <p>Respondemos emails y mensajes de lunes a viernes de 9:00 AM a 6:00 PM (GMT-3). En Discord y redes sociales,
-          nuestra comunidad está activa las 24 horas.</p>
       </div>
-    </main>
-  </div>
+      <div class="footer-bottom">
+        <div class="footer-brand">
+          <span>Manual del Junior</span>
+        </div>
+        <div class="footer-copyright">
+          <span>© 2024 Manual del Junior Inc.</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
   <script src="script.js"></script>
 </body>
 
