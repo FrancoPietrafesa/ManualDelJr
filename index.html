@@ -4,731 +4,112 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Manual del Junior — Cursos</title>
+  <title>Manual del Junior — Inicio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;700&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <!-- Lottie player (web component) -->
-  <script src="https://unpkg.com/@lottiefiles/lottie-player@1.5.7/dist/lottie-player.js"></script>
 </head>
 
 <body>
-  <div class="page-watermark" aria-hidden="true"></div>
-  <header class="topbar">
-    <div class="container">
-      <a class="brand" href="index.html">
-        <img src="assets/logo.svg" alt="Manual del Junior" class="logo">
-        <span>Manual del Junior</span>
-      </a>
-      <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-          stroke-linecap="round" stroke-linejoin="round">
-          <line x1="3" y1="12" x2="21" y2="12"></line>
-          <line x1="3" y1="6" x2="21" y2="6"></line>
-          <line x1="3" y1="18" x2="21" y2="18"></line>
-        </svg>
-      </button>
-      <!-- main nav replaced by centered .topnav below -->
-      <nav class="topnav" id="mainNav" aria-label="Main navigation">
-        <a href="#cursos" data-i18n="nav.cursos">Cursos</a>
-        <a href="#metodo" data-i18n="nav.metodo">Método</a>
-        <a href="#testimonios" data-i18n="nav.testimonios">Testimonios</a>
-        <a href="#contacto" data-i18n="nav.contacto">Contacto</a>
-      </nav>
-      <div class="top-actions">
-        <button id="langToggle" class="btn ghost" type="button">EN</button>
-      </div>
-    </div>
+
+  <!-- Mobile Header -->
+  <header class="mobile-header">
+    <a class="brand" href="index.html">
+      <span>Manual del Junior</span>
+    </a>
+    <button class="menu-toggle" aria-label="Menu">☰</button>
   </header>
 
-  <main id="main">
-    <section class="hero">
-      <div class="container hero-inner">
-        <div class="hero-copy reveal">
-          <div class="hero-badge">
-            <span class="badge">🎯 +500 estudiantes matriculados</span>
-            <span class="badge badge-success">✅ Garantía de 30 días</span>
-          </div>
-          <h1>Conviértete en <span class="highlight">QA Profesional</span><br>desde cero en 4 semanas</h1>
-          <p class="lead">Aprende testing, automatización y comunicación con equipos. Domina las herramientas más demandadas del mercado con ejercicios reales y casos prácticos.</p>
-          
-          <div class="hero-stats">
-            <div class="stat">
-              <span class="stat-number">500+</span>
-              <span class="stat-label">Estudiantes graduados</span>
-            </div>
-            <div class="stat">
-              <span class="stat-number">4.8★</span>
-              <span class="stat-label">Calificación promedio</span>
-            </div>
-            <div class="stat">
-              <span class="stat-number">95%</span>
-              <span class="stat-label">Conseguieron trabajo</span>
-            </div>
-          </div>
-
-          <div class="cta-row">
-            <a class="btn primary btn-large" href="#cursos">Ver todos los cursos</a>
-            <a class="btn ghost" href="qa.html">Ver curso destacado</a>
-          </div>
-          
-          <div class="hero-benefits">
-            <div class="benefit">
-              <span class="benefit-icon">🚀</span>
-              <span>Acceso de por vida</span>
-            </div>
-            <div class="benefit">
-              <span class="benefit-icon">👥</span>
-              <span>Soporte en comunidad Discord</span>
-            </div>
-            <div class="benefit">
-              <span class="benefit-icon">📜</span>
-              <span>Certificado incluido</span>
-            </div>
-            <div class="benefit">
-              <span class="benefit-icon">💰</span>
-              <span>Garantía de satisfacción</span>
-            </div>
-          </div>
-        </div>
-        
-        <div class="hero-visual">
-          <div class="hero-image">
-            <img src="assets/hero-illustration-modern.svg" alt="QA Professional Learning Path - Tu camino hacia el éxito" />
-          </div>
-          
-          <!-- Floating course preview card -->
-          <div class="course-preview-card">
-            <div class="preview-header">
-              <div class="play-button">▶</div>
-              <div class="preview-info">
-                <span class="preview-title">Vista previa del curso</span>
-                <span class="preview-duration">2:30 min</span>
-              </div>
-            </div>
-            <div class="preview-content">
-              <h4>"Cómo conseguí mi primer trabajo como QA"</h4>
-              <p>Testimonio real de Ana, quien completó nuestro curso</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="cursos" class="section container">
-      <div class="section-header">
-        <h2>Explora nuestros cursos</h2>
-        <p class="section-subtitle">Cursos diseñados para llevarte de principiante a profesional en tecnología</p>
-      </div>
-      
-      <div class="courses-grid">
-        <!-- QA Profesional - Curso destacado -->
-        <article class="card course-card featured">
-          <div class="course-badges">
-            <span class="badge badge-popular">🔥 Más Popular</span>
-            <span class="badge badge-beginner">Principiante</span>
-          </div>
-          
-          <div class="course-header">
-            <h3>QA Profesional</h3>
-            <div class="course-meta">
-              <span class="meta-item">
-                <span class="meta-icon">⏱️</span>
-                4 semanas
-              </span>
-              <span class="meta-item">
-                <span class="meta-icon">🎯</span>
-                Nivel: Principiante
-              </span>
-            </div>
-          </div>
-          
-          <p class="course-description">Del tester novato al profesional que entrega calidad constante. Domina testing manual, automatización y comunicación con equipos de desarrollo.</p>
-          
-          <div class="course-features">
-            <h4>Incluye:</h4>
-            <ul class="features-list">
-              <li>✅ 20+ ejercicios prácticos reales</li>
-              <li>✅ Plantillas de casos de prueba</li>
-              <li>✅ Preparación completa para entrevistas</li>
-              <li>✅ Certificado digital verificable</li>
-              <li>✅ Acceso de por vida</li>
-              <li>✅ Soporte en Discord</li>
-            </ul>
-          </div>
-          
-          <div class="course-stats">
-            <div class="stat">
-              <span class="stat-value">500+</span>
-              <span class="stat-label">estudiantes</span>
-            </div>
-            <div class="stat">
-              <span class="stat-value">4.8★</span>
-              <span class="stat-label">rating</span>
-            </div>
-            <div class="stat">
-              <span class="stat-value">95%</span>
-              <span class="stat-label">empleo</span>
-            </div>
-          </div>
-          
-          <div class="course-pricing">
-            <div class="price-container">
-              <span class="original-price">$39.99</span>
-              <span class="current-price">$19.99</span>
-              <span class="discount-badge">50% OFF</span>
-            </div>
-            <div class="pricing-note">Oferta por tiempo limitado</div>
-          </div>
-          
-          <div class="course-actions">
-            <a class="btn primary btn-large" href="qa.html">Ver curso completo</a>
-            <button class="btn btn-outline add-to-cart" data-course="qa">Agregar al carrito</button>
-          </div>
-        </article>
-
-        <!-- Herramientas de IT -->
-        <article class="card course-card">
-          <div class="course-badges">
-            <span class="badge badge-intermediate">Intermedio</span>
-          </div>
-          
-          <div class="course-header">
-            <h3>Herramientas de IT</h3>
-            <div class="course-meta">
-              <span class="meta-item">
-                <span class="meta-icon">⏱️</span>
-                6 semanas
-              </span>
-              <span class="meta-item">
-                <span class="meta-icon">🎯</span>
-                Nivel: Intermedio
-              </span>
-            </div>
-          </div>
-          
-          <p class="course-description">Domina las herramientas más demandadas: Git, Docker, CI/CD, servicios cloud y automatización de procesos DevOps.</p>
-          
-          <div class="course-features">
-            <h4>Incluye:</h4>
-            <ul class="features-list">
-              <li>✅ Fundamentos de Git y GitHub</li>
-              <li>✅ Docker y contenedores</li>
-              <li>✅ Pipelines de CI/CD</li>
-              <li>✅ AWS y servicios cloud</li>
-              <li>✅ Scripts de automatización</li>
-              <li>✅ Proyectos prácticos</li>
-            </ul>
-          </div>
-          
-          <div class="course-stats">
-            <div class="stat">
-              <span class="stat-value">300+</span>
-              <span class="stat-label">estudiantes</span>
-            </div>
-            <div class="stat">
-              <span class="stat-value">4.7★</span>
-              <span class="stat-label">rating</span>
-            </div>
-            <div class="stat">
-              <span class="stat-value">88%</span>
-              <span class="stat-label">empleo</span>
-            </div>
-          </div>
-          
-          <div class="course-pricing">
-            <div class="price-container">
-              <span class="current-price">$29.99</span>
-            </div>
-            <div class="pricing-note">Acceso completo incluido</div>
-          </div>
-          
-          <div class="course-actions">
-            <a class="btn primary" href="herramientas.html">Ver curso</a>
-            <button class="btn btn-outline add-to-cart" data-course="herramientas">Agregar al carrito</button>
-          </div>
-        </article>
-
-        <!-- Entrevistas y CV -->
-        <article class="card course-card">
-          <div class="course-badges">
-            <span class="badge badge-beginner">Principiante</span>
-            <span class="badge badge-quick">Rápido</span>
-          </div>
-          
-          <div class="course-header">
-            <h3>Entrevistas y CV</h3>
-            <div class="course-meta">
-              <span class="meta-item">
-                <span class="meta-icon">⏱️</span>
-                2 semanas
-              </span>
-              <span class="meta-item">
-                <span class="meta-icon">🎯</span>
-                Nivel: Principiante
-              </span>
-            </div>
-          </div>
-          
-          <p class="course-description">Prepárate para entrevistas técnicas y de comportamiento. Simulacros reales, feedback personalizado y scripts de respuestas.</p>
-          
-          <div class="course-features">
-            <h4>Incluye:</h4>
-            <ul class="features-list">
-              <li>✅ CV optimizado para ATS</li>
-              <li>✅ 10+ simulacros de entrevistas</li>
-              <li>✅ Respuestas a preguntas frecuentes</li>
-              <li>✅ Feedback personalizado</li>
-              <li>✅ LinkedIn optimization</li>
-              <li>✅ Negociación salarial</li>
-            </ul>
-          </div>
-          
-          <div class="course-stats">
-            <div class="stat">
-              <span class="stat-value">400+</span>
-              <span class="stat-label">estudiantes</span>
-            </div>
-            <div class="stat">
-              <span class="stat-value">4.9★</span>
-              <span class="stat-label">rating</span>
-            </div>
-            <div class="stat">
-              <span class="stat-value">92%</span>
-              <span class="stat-label">éxito</span>
-            </div>
-          </div>
-          
-          <div class="course-pricing">
-            <div class="price-container">
-              <span class="original-price">$24.99</span>
-              <span class="current-price">$14.99</span>
-              <span class="discount-badge">40% OFF</span>
-            </div>
-            <div class="pricing-note">Por tiempo limitado</div>
-          </div>
-          
-          <div class="course-actions">
-            <a class="btn primary" href="entrevistas.html">Ver curso</a>
-            <button class="btn btn-outline add-to-cart" data-course="entrevistas">Agregar al carrito</button>
-          </div>
-        </article>
-
-        <!-- Profesionalización -->
-        <article class="card course-card">
-          <div class="course-badges">
-            <span class="badge badge-advanced">Avanzado</span>
-          </div>
-          
-          <div class="course-header">
-            <h3>Profesionalización</h3>
-            <div class="course-meta">
-              <span class="meta-item">
-                <span class="meta-icon">⏱️</span>
-                3 semanas
-              </span>
-              <span class="meta-item">
-                <span class="meta-icon">🎯</span>
-                Nivel: Avanzado
-              </span>
-            </div>
-          </div>
-          
-          <p class="course-description">Transición a roles senior, liderazgo técnico, negociación salarial y crecimiento estratégico dentro de equipos tech.</p>
-          
-          <div class="course-features">
-            <h4>Incluye:</h4>
-            <ul class="features-list">
-              <li>✅ Estrategia de carrera</li>
-              <li>✅ Liderazgo técnico</li>
-              <li>✅ Negociación salarial avanzada</li>
-              <li>✅ Networking efectivo</li>
-              <li>✅ Personal branding</li>
-              <li>✅ Mentoring y coaching</li>
-            </ul>
-          </div>
-          
-          <div class="course-stats">
-            <div class="stat">
-              <span class="stat-value">200+</span>
-              <span class="stat-label">profesionales</span>
-            </div>
-            <div class="stat">
-              <span class="stat-value">4.8★</span>
-              <span class="stat-label">rating</span>
-            </div>
-            <div class="stat">
-              <span class="stat-value">85%</span>
-              <span class="stat-label">promoción</span>
-            </div>
-          </div>
-          
-          <div class="course-pricing">
-            <div class="price-container">
-              <span class="current-price">$34.99</span>
-            </div>
-            <div class="pricing-note">Para profesionales</div>
-          </div>
-          
-          <div class="course-actions">
-            <a class="btn primary" href="profesionalizacion.html">Ver curso</a>
-            <button class="btn btn-outline add-to-cart" data-course="profesionalizacion">Agregar al carrito</button>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- Bundle Offer - Carta especial mejorada -->
-    <section class="section bundle-section">
-      <div class="container">
-        <div class="bundle-offer">
-          <div class="bundle-card">
-            <div class="bundle-badge">🔥 OFERTA ESPECIAL</div>
-            <h3>Paquete Completo: Todos los cursos</h3>
-            <p>Accede a todos nuestros cursos con un solo pago. Ahorra más del 60%</p>
-            
-            <div class="bundle-pricing">
-              <div class="bundle-savings">
-                <span class="bundle-old-price">$129.96</span>
-                <span class="bundle-current-price">$49.99</span>
-                <span class="bundle-save-amount">Ahorras $79.97</span>
-              </div>
-            </div>
-            
-            <div class="bundle-features">
-              <div class="bundle-feature">✅ Acceso de por vida a todos los cursos</div>
-              <div class="bundle-feature">✅ Actualizaciones gratuitas</div>
-              <div class="bundle-feature">✅ Comunidad Discord premium</div>
-              <div class="bundle-feature">✅ 1 sesión de mentoring personalizada</div>
-            </div>
-            
-            <button class="btn btn-large bundle-btn">Comprar paquete completo</button>
-            
-            <div class="bundle-note">⏰ Oferta por tiempo limitado - Solo quedan 48 horas</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Social Proof Section -->
-    <section class="section trust-indicators">
-      <div class="container">
-        <div class="trust-stats">
-          <div class="trust-stat">
-            <div class="trust-number">1,400+</div>
-            <div class="trust-label">Estudiantes graduados</div>
-          </div>
-          <div class="trust-stat">
-            <div class="trust-number">4.8★</div>
-            <div class="trust-label">Calificación promedio</div>
-          </div>
-          <div class="trust-stat">
-            <div class="trust-number">92%</div>
-            <div class="trust-label">Conseguieron empleo</div>
-          </div>
-          <div class="trust-stat">
-            <div class="trust-number">24/7</div>
-            <div class="trust-label">Soporte disponible</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section id="faq" class="section faq-section">
-      <div class="container">
-        <div class="section-header">
-          <h2>Preguntas Frecuentes</h2>
-          <p class="section-subtitle">Resuelve tus dudas antes de empezar</p>
-        </div>
-        
-        <div class="faq-container">
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span>¿Cómo accedo a los cursos después de comprar?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>Una vez completado el pago, recibirás un email con las credenciales de acceso a nuestra plataforma donde podrás ver todos los contenidos del curso inmediatamente. También tendrás acceso desde cualquier dispositivo.</p>
-            </div>
-          </div>
-          
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span>¿Los cursos tienen certificado?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>Sí, al completar cada curso recibes un certificado digital verificable que puedes agregar a tu LinkedIn y CV para demostrar tus nuevas habilidades. Los certificados incluyen código QR para verificación.</p>
-            </div>
-          </div>
-          
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span>¿Hay soporte durante el curso?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>Absolutamente. Tenemos una comunidad activa en Discord donde puedes hacer preguntas y recibir ayuda tanto de instructores como de otros estudiantes. También ofrecemos sesiones de Q&A semanales en vivo.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span>¿Qué pasa si no estoy satisfecho con el curso?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>Ofrecemos una garantía de satisfacción de 30 días. Si no estás completamente satisfecho, te devolvemos el 100% de tu dinero sin preguntas.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span>¿Los cursos se actualizan?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>Sí, todos nuestros cursos se actualizan regularmente para incluir las últimas herramientas y tendencias del mercado. Como estudiante, recibes estas actualizaciones de forma gratuita de por vida.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span>¿Necesito experiencia previa en tecnología?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <p>No es necesario. Nuestros cursos están diseñados para principiantes y incluyen toda la base teórica necesaria. Empezamos desde cero y avanzamos gradualmente.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Testimonios mejorados -->
-    <section id="testimonios" class="section testimonials-section" aria-label="Testimonios">
-      <div class="container">
-        <div class="section-header">
-          <h2>Lo que dicen nuestros estudiantes</h2>
-          <p class="section-subtitle">Historias reales de éxito de quienes transformaron su carrera</p>
-        </div>
-        
-        <div class="testimonials-grid">
-          <div class="testimonial-card featured">
-            <div class="testimonial-rating">★★★★★</div>
-            <p class="testimonial-text">"Gracias a Manual del Junior conseguí mi primer trabajo como QA en una startup. El curso de QA me dio todas las herramientas necesarias y el soporte fue excepcional."</p>
-            <div class="testimonial-author">
-              <div class="author-avatar">👩‍💼</div>
-              <div class="author-info">
-                <div class="author-name">Ana Martínez</div>
-                <div class="author-role">QA Analyst en TechStart</div>
-                <div class="author-achievement">🎯 Conseguio empleo en 3 semanas</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="testimonial-card">
-            <div class="testimonial-rating">★★★★★</div>
-            <p class="testimonial-text">"Las rutas son claras y muy prácticas. En 2 meses pasé de no saber nada de testing a automatizar procesos en mi empresa actual."</p>
-            <div class="testimonial-author">
-              <div class="author-avatar">👨‍💻</div>
-              <div class="author-info">
-                <div class="author-name">Diego López</div>
-                <div class="author-role">Automation QA en CorporaTech</div>
-                <div class="author-achievement">💰 Aumento de salario del 40%</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="testimonial-card">
-            <div class="testimonial-rating">★★★★★</div>
-            <p class="testimonial-text">"El curso de entrevistas me cambió la vida. Me preparó perfectamente para cualquier pregunta y conseguí 3 ofertas laborales."</p>
-            <div class="testimonial-author">
-              <div class="author-avatar">👩‍🎓</div>
-              <div class="author-info">
-                <div class="author-name">Laura García</div>
-                <div class="author-role">QA Engineer en InnovaDev</div>
-                <div class="author-achievement">📈 Crecimiento profesional acelerado</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="success-stories">
-          <h3>Casos de éxito destacados</h3>
-          <div class="success-grid">
-            <div class="success-item">
-              <div class="success-icon">🚀</div>
-              <div class="success-stat">María, 28 años</div>
-              <div class="success-desc">De administrativa a QA Lead en 6 meses</div>
-            </div>
-            <div class="success-item">
-              <div class="success-icon">💪</div>
-              <div class="success-stat">Carlos, 35 años</div>
-              <div class="success-desc">Cambio de carrera completo con éxito</div>
-            </div>
-            <div class="success-item">
-              <div class="success-icon">⭐</div>
-              <div class="success-stat">Sofia, 24 años</div>
-              <div class="success-desc">Primer trabajo en tech después del curso</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Method Section -->
-    <section id="metodo" class="section method-section alt">
-      <div class="container">
-        <div class="section-header">
-          <h2>Nuestro Método Probado</h2>
-          <p class="section-subtitle">Más de 1,400 estudiantes han transformado su carrera con nuestro sistema</p>
-        </div>
-        
-        <div class="method-grid">
-          <div class="method-step">
-            <div class="step-number">1</div>
-            <div class="step-content">
-              <h3>Evaluación inicial</h3>
-              <p>Definimos tu nivel actual y objetivos profesionales para crear un plan personalizado.</p>
-            </div>
-          </div>
-          
-          <div class="method-step">
-            <div class="step-number">2</div>
-            <div class="step-content">
-              <h3>Aprendizaje práctico</h3>
-              <p>Ejercicios reales con casos de uso del mundo laboral y herramientas actuales.</p>
-            </div>
-          </div>
-          
-          <div class="method-step">
-            <div class="step-number">3</div>
-            <div class="step-content">
-              <h3>Preparación para entrevistas</h3>
-              <p>Simulacros de entrevistas reales y optimización de CV para destacar en el mercado.</p>
-            </div>
-          </div>
-          
-          <div class="method-step">
-            <div class="step-number">4</div>
-            <div class="step-content">
-              <h3>Seguimiento post-graduación</h3>
-              <p>Soporte continuo y oportunidades de networking para asegurar tu éxito profesional.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="method-stats">
-          <div class="method-stat">
-            <div class="method-stat-number">95%</div>
-            <div class="method-stat-label">Tasa de empleabilidad</div>
-          </div>
-          <div class="method-stat">
-            <div class="method-stat-number">4.8/5</div>
-            <div class="method-stat-label">Satisfacción del estudiante</div>
-          </div>
-          <div class="method-stat">
-            <div class="method-stat-number">6 semanas</div>
-            <div class="method-stat-label">Tiempo promedio de empleo</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Urgency Section -->
-    <section class="section urgency-section">
-      <div class="container">
-        <div class="urgency-card">
-          <div class="urgency-badge">🔥 OFERTA POR TIEMPO LIMITADO</div>
-          <h2>No pierdas esta oportunidad</h2>
-          <p>Solo quedan <span class="urgency-time">48 horas</span> para acceder a los cursos con hasta <span class="urgency-discount">50% de descuento</span></p>
-          
-          <div class="urgency-countdown">
-            <div class="countdown-item">
-              <div class="countdown-number">01</div>
-              <div class="countdown-label">Días</div>
-            </div>
-            <div class="countdown-item">
-              <div class="countdown-number">23</div>
-              <div class="countdown-label">Horas</div>
-            </div>
-            <div class="countdown-item">
-              <div class="countdown-number">45</div>
-              <div class="countdown-label">Min</div>
-            </div>
-            <div class="countdown-item">
-              <div class="countdown-number">30</div>
-              <div class="countdown-label">Seg</div>
-            </div>
-          </div>
-          
-          <div class="urgency-actions">
-            <button class="btn btn-large urgency-btn">Aprovechar oferta ahora</button>
-            <p class="urgency-note">✓ Acceso inmediato ✓ Garantía 30 días ✓ Soporte incluido</p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-section">
-          <h3>Cursos</h3>
-          <ul>
-            <li><a href="qa.html">QA Profesional</a></li>
-            <li><a href="herramientas.html">Herramientas de IT</a></li>
-            <li><a href="entrevistas.html">Entrevistas y CV</a></li>
-            <li><a href="profesionalizacion.html">Profesionalización</a></li>
-          </ul>
-        </div>
-        <div class="footer-section">
-          <h3>Manual Del Junior</h3>
-          <ul>
-            <li><a href="sobre-nosotros.html">Sobre nosotros</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
-          </ul>
-        </div>
-        <div class="footer-section">
-          <h3>Community</h3>
-          <ul>
-            <li><a href="#">Discord</a></li>
-            <li><a href="#">Twitter</a></li>
-          </ul>
-        </div>
-        <div class="footer-section newsletter">
-          <h3>Sumate a nuestro News Letter</h3>
-          <p>Recibe actualizaciones sobre nuevos cursos y contenido.</p>
-          <div class="newsletter-form">
-            <input type="email" placeholder="Email" class="newsletter-input">
-            <button class="btn primary newsletter-btn">Join</button>
-          </div>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <div class="footer-brand">
+  <div class="app-layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <a class="brand" href="index.html">
+          <img src="assets/logo.svg" alt="Logo"> <!-- Ensure logo exists or use text -->
           <span>Manual del Junior</span>
-        </div>
-        <div class="footer-copyright">
-          <span>© 2024 Manual del Junior Inc.</span>
-        </div>
+        </a>
       </div>
-    </div>
-  </footer>
+
+      <nav class="sidebar-nav">
+        <div class="nav-group">
+          <div class="nav-group-title">General</div>
+          <a href="index.html" class="nav-link active">Inicio</a>
+          <a href="sobre-nosotros.html" class="nav-link">Sobre Nosotros</a>
+        </div>
+
+        <div class="nav-group">
+          <div class="nav-group-title">Aprendizaje</div>
+          <a href="cursos.html" class="nav-link">Cursos</a>
+          <a href="metodo.html" class="nav-link">Nuestro Método</a>
+        </div>
+
+        <div class="nav-group">
+          <div class="nav-group-title">Comunidad</div>
+          <a href="testimonios.html" class="nav-link">Testimonios</a>
+          <a href="contacto.html" class="nav-link">Contacto</a>
+        </div>
+      </nav>
+
+      <div class="sidebar-footer">
+        <p style="font-size: 0.8rem; margin: 0; color: var(--text-muted);">v2.0.0 (IDE Theme)</p>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="page-container">
+        <div class="breadcrumbs">
+          <span>Manual del Junior</span>
+          <span>Inicio</span>
+        </div>
+
+        <h1>Bienvenido al Manual del Junior</h1>
+
+        <p class="lead">Tu guía definitiva para convertirte en un profesional de QA y Tecnología. Documentación, cursos
+          y recursos para acelerar tu carrera.</p>
+
+        <div class="card-grid">
+          <div class="card">
+            <h3>🚀 Comienza Aquí</h3>
+            <p>Descubre nuestra ruta de aprendizaje diseñada para llevarte desde cero hasta tu primer empleo.</p>
+            <a href="cursos.html" class="btn primary">Ver Cursos</a>
+          </div>
+
+          <div class="card">
+            <h3>📚 Documentación</h3>
+            <p>Accede a recursos gratuitos, guías de entrevista y plantillas de CV.</p>
+            <a href="#" class="btn ghost">Leer Guías</a>
+          </div>
+        </div>
+
+        <h2>¿Por qué elegirnos?</h2>
+        <p>En Manual del Junior, no solo enseñamos teoría. Nos enfocamos en la práctica real, simulando entornos de
+          trabajo que encontrarás en la industria.</p>
+
+        <div class="card-grid">
+          <div class="card">
+            <span class="badge">Práctico</span>
+            <h3>Ejercicios Reales</h3>
+            <p>Trabaja con casos de uso extraídos de proyectos reales de empresas tech.</p>
+          </div>
+          <div class="card">
+            <span class="badge">Comunidad</span>
+            <h3>Soporte 24/7</h3>
+            <p>Únete a nuestro Discord y nunca te quedes trabado en un problema.</p>
+          </div>
+          <div class="card">
+            <span class="badge">Certificado</span>
+            <h3>Validación</h3>
+            <p>Obtén certificados verificables al completar tus rutas de aprendizaje.</p>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
 
   <script src="script.js"></script>
-  <div class="watermark-switcher" aria-hidden="false">
-    <span class="label">Watermark</span>
-    <button data-wm="assets/watermark.svg" type="button">Default</button>
-    <button data-wm="assets/watermark-variant1.svg" type="button">Soft</button>
-    <button data-wm="assets/watermark-variant2.svg" type="button">Strong</button>
-  </div>
 </body>
 
 </html>

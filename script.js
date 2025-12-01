@@ -86,22 +86,21 @@ function setupScrollEffect() {
 
 function setupMobileMenu() {
   const toggle = document.querySelector('.menu-toggle');
-  const nav = document.querySelector('.topnav');
-  if (!toggle || !nav) return;
+  const sidebar = document.querySelector('.sidebar');
+  if (!toggle || !sidebar) return;
 
   toggle.addEventListener('click', () => {
-    const expanded = toggle.getAttribute('aria-expanded') === 'true';
-    toggle.setAttribute('aria-expanded', !expanded);
-    nav.classList.toggle('open');
-    document.body.style.overflow = !expanded ? 'hidden' : '';
+    sidebar.classList.toggle('open');
   });
 
-  nav.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      nav.classList.remove('open');
-      toggle.setAttribute('aria-expanded', 'false');
-      document.body.style.overflow = '';
-    });
+  // Close sidebar when clicking outside on mobile
+  document.addEventListener('click', (e) => {
+    if (window.innerWidth <= 900 &&
+      sidebar.classList.contains('open') &&
+      !sidebar.contains(e.target) &&
+      !toggle.contains(e.target)) {
+      sidebar.classList.remove('open');
+    }
   });
 }
 

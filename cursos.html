@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Cursos — Manual del Junior</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <header class="mobile-header">
+        <a class="brand" href="index.html">Manual del Junior</a>
+        <button class="menu-toggle">☰</button>
+    </header>
+
+    <div class="app-layout">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <a class="brand" href="index.html">
+                    <img src="assets/logo.svg" alt="Logo">
+                    <span>Manual del Junior</span>
+                </a>
+            </div>
+            <nav class="sidebar-nav">
+                <div class="nav-group">
+                    <div class="nav-group-title">General</div>
+                    <a href="index.html" class="nav-link">Inicio</a>
+                    <a href="sobre-nosotros.html" class="nav-link">Sobre Nosotros</a>
+                </div>
+                <div class="nav-group">
+                    <div class="nav-group-title">Aprendizaje</div>
+                    <a href="cursos.html" class="nav-link active">Cursos</a>
+                    <a href="metodo.html" class="nav-link">Nuestro Método</a>
+                </div>
+                <div class="nav-group">
+                    <div class="nav-group-title">Comunidad</div>
+                    <a href="testimonios.html" class="nav-link">Testimonios</a>
+                    <a href="contacto.html" class="nav-link">Contacto</a>
+                </div>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <div class="page-container">
+                <div class="breadcrumbs">
+                    <span>Manual del Junior</span>
+                    <span>Aprendizaje</span>
+                    <span>Cursos</span>
+                </div>
+
+                <h1>Catálogo de Cursos</h1>
+                <p>Explora nuestra oferta educativa diseñada para cubrir todas las etapas de tu desarrollo profesional.
+                </p>
+
+                <div class="card-grid">
+                    <!-- QA Profesional -->
+                    <div class="card">
+                        <span class="badge">Más Popular</span>
+                        <h3>QA Profesional</h3>
+                        <p>Del tester novato al profesional. Domina testing manual, automatización y comunicación.</p>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">⏱️ 4 semanas • 🎯 Principiante</p>
+                        <div style="margin-top: 16px;">
+                            <a href="qa.html" class="btn primary">Ver Detalles</a>
+                        </div>
+                    </div>
+
+                    <!-- Herramientas IT -->
+                    <div class="card">
+                        <span class="badge">Intermedio</span>
+                        <h3>Herramientas de IT</h3>
+                        <p>Git, Docker, CI/CD y AWS. Las herramientas que todo profesional debe conocer.</p>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">⏱️ 6 semanas • 🎯 Intermedio</p>
+                        <div style="margin-top: 16px;">
+                            <a href="herramientas.html" class="btn primary">Ver Detalles</a>
+                        </div>
+                    </div>
+
+                    <!-- Entrevistas -->
+                    <div class="card">
+                        <span class="badge">Carrera</span>
+                        <h3>Entrevistas y CV</h3>
+                        <p>Prepárate para conseguir el trabajo. Simulacros, optimización de CV y LinkedIn.</p>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">⏱️ 2 semanas • 🎯 Todos los niveles</p>
+                        <div style="margin-top: 16px;">
+                            <a href="entrevistas.html" class="btn primary">Ver Detalles</a>
+                        </div>
+                    </div>
+
+                    <!-- Profesionalización -->
+                    <div class="card">
+                        <span class="badge">Avanzado</span>
+                        <h3>Profesionalización</h3>
+                        <p>Liderazgo técnico, soft skills avanzadas y estrategia de carrera para seniors.</p>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">⏱️ 3 semanas • 🎯 Avanzado</p>
+                        <div style="margin-top: 16px;">
+                            <a href="profesionalizacion.html" class="btn primary">Ver Detalles</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
