@@ -12,8 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Initialize UI
   setupReveal();
-  setupTilt();
-  setupHeroParallax();
+  // setupTilt();
+  // setupHeroParallax();
   setupButtonRipples();
   setupTransientBug();
   setupMobileMenu();
@@ -252,12 +252,12 @@ function setupTestimonials() {
 function setupCourseTabs() {
   const tabBtns = document.querySelectorAll('.tab-btn');
   const tabPanels = document.querySelectorAll('.tab-panel');
-  
+
   tabBtns.forEach((btn, index) => {
     btn.addEventListener('click', () => {
       tabBtns.forEach(b => b.classList.remove('active'));
       tabPanels.forEach(p => p.classList.remove('active'));
-      
+
       btn.classList.add('active');
       if (tabPanels[index]) {
         tabPanels[index].classList.add('active');
@@ -269,15 +269,15 @@ function setupCourseTabs() {
 // --- FAQ ---
 function setupFAQ() {
   const faqItems = document.querySelectorAll('.faq-item');
-  
+
   faqItems.forEach(item => {
     const question = item.querySelector('.faq-question');
     const answer = item.querySelector('.faq-answer');
-    
+
     if (question && answer) {
       question.addEventListener('click', () => {
         const isOpen = question.getAttribute('aria-expanded') === 'true';
-        
+
         // Close all other FAQ items
         faqItems.forEach(otherItem => {
           const otherQuestion = otherItem.querySelector('.faq-question');
@@ -287,7 +287,7 @@ function setupFAQ() {
             otherAnswer.classList.remove('open');
           }
         });
-        
+
         // Toggle current item
         question.setAttribute('aria-expanded', !isOpen);
         answer.classList.toggle('open', !isOpen);
