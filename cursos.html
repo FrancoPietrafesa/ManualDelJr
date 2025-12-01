@@ -4,106 +4,303 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Cursos — Manual del Junior</title>
+    <title>Manual del Junior — Cursos</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-
-    <header class="mobile-header">
-        <a class="brand" href="index.html">Manual del Junior</a>
-        <button class="menu-toggle">☰</button>
+    <div class="page-watermark" aria-hidden="true"></div>
+    <header class="topbar">
+        <div class="container">
+            <a class="brand" href="index.html">
+                <img src="assets/logo.svg" alt="Manual del Junior" class="logo">
+                <span>Manual del Junior</span>
+            </a>
+            <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+            <nav class="topnav" id="mainNav">
+                <a href="index.html">Inicio</a>
+                <a href="cursos.html" class="active">Cursos</a>
+                <a href="metodo.html">Método</a>
+                <a href="testimonios.html">Testimonios</a>
+                <a href="contacto.html">Contacto</a>
+            </nav>
+            <div class="top-actions">
+                <button id="langToggle" class="btn ghost" type="button">EN</button>
+            </div>
+        </div>
     </header>
 
-    <div class="app-layout">
-        <aside class="sidebar">
-            <div class="sidebar-header">
-                <a class="brand" href="index.html">
-                    <img src="assets/logo.svg" alt="Logo">
-                    <span>Manual del Junior</span>
-                </a>
-            </div>
-            <nav class="sidebar-nav">
-                <div class="nav-group">
-                    <div class="nav-group-title">General</div>
-                    <a href="index.html" class="nav-link">Inicio</a>
-                    <a href="sobre-nosotros.html" class="nav-link">Sobre Nosotros</a>
-                </div>
-                <div class="nav-group">
-                    <div class="nav-group-title">Aprendizaje</div>
-                    <a href="cursos.html" class="nav-link active">Cursos</a>
-                    <a href="metodo.html" class="nav-link">Nuestro Método</a>
-                </div>
-                <div class="nav-group">
-                    <div class="nav-group-title">Comunidad</div>
-                    <a href="testimonios.html" class="nav-link">Testimonios</a>
-                    <a href="contacto.html" class="nav-link">Contacto</a>
-                </div>
-            </nav>
-        </aside>
-
-        <main class="main-content">
-            <div class="page-container">
-                <div class="breadcrumbs">
-                    <span>Manual del Junior</span>
-                    <span>Aprendizaje</span>
-                    <span>Cursos</span>
-                </div>
-
-                <h1>Catálogo de Cursos</h1>
-                <p>Explora nuestra oferta educativa diseñada para cubrir todas las etapas de tu desarrollo profesional.
+    <main id="main">
+        <section class="section container">
+            <div class="section-header">
+                <h2>Explora nuestros cursos</h2>
+                <p class="section-subtitle">Cursos diseñados para llevarte de principiante a profesional en tecnología
                 </p>
+            </div>
 
-                <div class="card-grid">
-                    <!-- QA Profesional -->
-                    <div class="card">
-                        <span class="badge">Más Popular</span>
+            <div class="courses-grid">
+                <!-- QA Profesional -->
+                <article class="card course-card featured">
+                    <div class="course-badges">
+                        <span class="badge badge-popular">🔥 Más Popular</span>
+                        <span class="badge badge-beginner">Principiante</span>
+                    </div>
+
+                    <div class="course-header">
                         <h3>QA Profesional</h3>
-                        <p>Del tester novato al profesional. Domina testing manual, automatización y comunicación.</p>
-                        <p style="font-size: 0.9rem; color: var(--text-muted);">⏱️ 4 semanas • 🎯 Principiante</p>
-                        <div style="margin-top: 16px;">
-                            <a href="qa.html" class="btn primary">Ver Detalles</a>
+                        <div class="course-meta">
+                            <span class="meta-item">⏱️ 4 semanas</span>
+                            <span class="meta-item">🎯 Nivel: Principiante</span>
                         </div>
                     </div>
 
-                    <!-- Herramientas IT -->
-                    <div class="card">
-                        <span class="badge">Intermedio</span>
+                    <p class="course-description">Del tester novato al profesional que entrega calidad constante. Domina
+                        testing manual, automatización y comunicación con equipos de desarrollo.</p>
+
+                    <div class="course-features">
+                        <h4>Incluye:</h4>
+                        <ul class="features-list">
+                            <li>✅ 20+ ejercicios prácticos reales</li>
+                            <li>✅ Plantillas de casos de prueba</li>
+                            <li>✅ Preparación completa para entrevistas</li>
+                            <li>✅ Certificado digital verificable</li>
+                        </ul>
+                    </div>
+
+                    <div class="course-stats">
+                        <div class="stat">
+                            <span class="stat-value">500+</span>
+                            <span class="stat-label">estudiantes</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">4.8★</span>
+                            <span class="stat-label">rating</span>
+                        </div>
+                    </div>
+
+                    <div class="course-pricing">
+                        <div class="price-container">
+                            <span class="original-price">$39.99</span>
+                            <span class="current-price">$19.99</span>
+                            <span class="discount-badge">50% OFF</span>
+                        </div>
+                    </div>
+
+                    <div class="course-actions">
+                        <a class="btn primary btn-large" href="qa.html">Ver curso completo</a>
+                    </div>
+                </article>
+
+                <!-- Herramientas IT -->
+                <article class="card course-card">
+                    <div class="course-badges">
+                        <span class="badge badge-intermediate">Intermedio</span>
+                    </div>
+
+                    <div class="course-header">
                         <h3>Herramientas de IT</h3>
-                        <p>Git, Docker, CI/CD y AWS. Las herramientas que todo profesional debe conocer.</p>
-                        <p style="font-size: 0.9rem; color: var(--text-muted);">⏱️ 6 semanas • 🎯 Intermedio</p>
-                        <div style="margin-top: 16px;">
-                            <a href="herramientas.html" class="btn primary">Ver Detalles</a>
+                        <div class="course-meta">
+                            <span class="meta-item">⏱️ 6 semanas</span>
+                            <span class="meta-item">🎯 Nivel: Intermedio</span>
                         </div>
                     </div>
 
-                    <!-- Entrevistas -->
-                    <div class="card">
-                        <span class="badge">Carrera</span>
+                    <p class="course-description">Domina las herramientas más demandadas: Git, Docker, CI/CD, servicios
+                        cloud y automatización de procesos DevOps.</p>
+
+                    <div class="course-features">
+                        <h4>Incluye:</h4>
+                        <ul class="features-list">
+                            <li>✅ Fundamentos de Git y GitHub</li>
+                            <li>✅ Docker y contenedores</li>
+                            <li>✅ Pipelines de CI/CD</li>
+                            <li>✅ AWS y servicios cloud</li>
+                        </ul>
+                    </div>
+
+                    <div class="course-stats">
+                        <div class="stat">
+                            <span class="stat-value">300+</span>
+                            <span class="stat-label">estudiantes</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">4.7★</span>
+                            <span class="stat-label">rating</span>
+                        </div>
+                    </div>
+
+                    <div class="course-pricing">
+                        <div class="price-container">
+                            <span class="current-price">$29.99</span>
+                        </div>
+                    </div>
+
+                    <div class="course-actions">
+                        <a class="btn primary" href="herramientas.html">Ver curso</a>
+                    </div>
+                </article>
+
+                <!-- Entrevistas y CV -->
+                <article class="card course-card">
+                    <div class="course-badges">
+                        <span class="badge badge-beginner">Principiante</span>
+                        <span class="badge badge-quick">Rápido</span>
+                    </div>
+
+                    <div class="course-header">
                         <h3>Entrevistas y CV</h3>
-                        <p>Prepárate para conseguir el trabajo. Simulacros, optimización de CV y LinkedIn.</p>
-                        <p style="font-size: 0.9rem; color: var(--text-muted);">⏱️ 2 semanas • 🎯 Todos los niveles</p>
-                        <div style="margin-top: 16px;">
-                            <a href="entrevistas.html" class="btn primary">Ver Detalles</a>
+                        <div class="course-meta">
+                            <span class="meta-item">⏱️ 2 semanas</span>
+                            <span class="meta-item">🎯 Nivel: Principiante</span>
                         </div>
                     </div>
 
-                    <!-- Profesionalización -->
-                    <div class="card">
-                        <span class="badge">Avanzado</span>
-                        <h3>Profesionalización</h3>
-                        <p>Liderazgo técnico, soft skills avanzadas y estrategia de carrera para seniors.</p>
-                        <p style="font-size: 0.9rem; color: var(--text-muted);">⏱️ 3 semanas • 🎯 Avanzado</p>
-                        <div style="margin-top: 16px;">
-                            <a href="profesionalizacion.html" class="btn primary">Ver Detalles</a>
+                    <p class="course-description">Prepárate para entrevistas técnicas y de comportamiento. Simulacros
+                        reales, feedback personalizado y scripts de respuestas.</p>
+
+                    <div class="course-features">
+                        <h4>Incluye:</h4>
+                        <ul class="features-list">
+                            <li>✅ CV optimizado para ATS</li>
+                            <li>✅ 10+ simulacros de entrevistas</li>
+                            <li>✅ Respuestas a preguntas frecuentes</li>
+                            <li>✅ LinkedIn optimization</li>
+                        </ul>
+                    </div>
+
+                    <div class="course-stats">
+                        <div class="stat">
+                            <span class="stat-value">400+</span>
+                            <span class="stat-label">estudiantes</span>
                         </div>
+                        <div class="stat">
+                            <span class="stat-value">4.9★</span>
+                            <span class="stat-label">rating</span>
+                        </div>
+                    </div>
+
+                    <div class="course-pricing">
+                        <div class="price-container">
+                            <span class="original-price">$24.99</span>
+                            <span class="current-price">$14.99</span>
+                            <span class="discount-badge">40% OFF</span>
+                        </div>
+                    </div>
+
+                    <div class="course-actions">
+                        <a class="btn primary" href="entrevistas.html">Ver curso</a>
+                    </div>
+                </article>
+
+                <!-- Profesionalización -->
+                <article class="card course-card">
+                    <div class="course-badges">
+                        <span class="badge badge-advanced">Avanzado</span>
+                    </div>
+
+                    <div class="course-header">
+                        <h3>Profesionalización</h3>
+                        <div class="course-meta">
+                            <span class="meta-item">⏱️ 3 semanas</span>
+                            <span class="meta-item">🎯 Nivel: Avanzado</span>
+                        </div>
+                    </div>
+
+                    <p class="course-description">Transición a roles senior, liderazgo técnico, negociación salarial y
+                        crecimiento estratégico dentro de equipos tech.</p>
+
+                    <div class="course-features">
+                        <h4>Incluye:</h4>
+                        <ul class="features-list">
+                            <li>✅ Estrategia de carrera</li>
+                            <li>✅ Liderazgo técnico</li>
+                            <li>✅ Negociación salarial avanzada</li>
+                            <li>✅ Personal branding</li>
+                        </ul>
+                    </div>
+
+                    <div class="course-stats">
+                        <div class="stat">
+                            <span class="stat-value">200+</span>
+                            <span class="stat-label">profesionales</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">4.8★</span>
+                            <span class="stat-label">rating</span>
+                        </div>
+                    </div>
+
+                    <div class="course-pricing">
+                        <div class="price-container">
+                            <span class="current-price">$34.99</span>
+                        </div>
+                    </div>
+
+                    <div class="course-actions">
+                        <a class="btn primary" href="profesionalizacion.html">Ver curso</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Cursos</h3>
+                    <ul>
+                        <li><a href="qa.html">QA Profesional</a></li>
+                        <li><a href="herramientas.html">Herramientas de IT</a></li>
+                        <li><a href="entrevistas.html">Entrevistas y CV</a></li>
+                        <li><a href="profesionalizacion.html">Profesionalización</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Manual Del Junior</h3>
+                    <ul>
+                        <li><a href="sobre-nosotros.html">Sobre nosotros</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Community</h3>
+                    <ul>
+                        <li><a href="#">Discord</a></li>
+                        <li><a href="#">Twitter</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section newsletter">
+                    <h3>Newsletter</h3>
+                    <p>Recibe actualizaciones sobre nuevos cursos.</p>
+                    <div class="newsletter-form">
+                        <input type="email" placeholder="Email" class="newsletter-input">
+                        <button class="btn primary newsletter-btn">Join</button>
                     </div>
                 </div>
             </div>
-        </main>
-    </div>
+            <div class="footer-bottom">
+                <div class="footer-brand">
+                    <span>Manual del Junior</span>
+                </div>
+                <div class="footer-copyright">
+                    <span>© 2024 Manual del Junior Inc.</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
     <script src="script.js"></script>
 </body>
 
