@@ -1,139 +1,194 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Profesionalización — Manual del Junior</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
+  <div class="page-watermark" aria-hidden="true"></div>
   <header class="topbar">
     <div class="container">
-      <a class="brand" href="index.html"><img src="assets/logo.svg" class="logo"/> <span>Manual del Junior</span></a>
+      <a class="brand" href="index.html">
+        <img src="assets/logo.svg" alt="Manual del Junior" class="logo">
+        <span>Manual del Junior</span>
+      </a>
+      <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+      <nav class="topnav" id="mainNav">
+        <a href="index.html">Inicio</a>
+        <a href="cursos.html" class="active">Cursos</a>
+        <a href="metodo.html">Método</a>
+        <a href="testimonios.html">Testimonios</a>
+        <a href="contacto.html">Contacto</a>
+      </nav>
+      <div class="top-actions">
+        <button id="langToggle" class="btn ghost" type="button">EN</button>
+      </div>
     </div>
   </header>
-  <main class="course-page">
-    <div class="container">
-      <div class="course-header">
-        <div class="course-content">
-          <h1>Profesionalización</h1>
-          <p class="course-subtitle">Acelera tu crecimiento profesional en IT. Estrategias de carrera, negociación salarial y habilidades de liderazgo para destacar en equipos tecnológicos.</p>
-          
-          <div class="hero-badge">
-            <span class="badge badge-intermediate">Nivel Intermedio</span>
-            <span class="badge badge-beginner">8 semanas</span>
-            <span class="badge badge-success">Trending</span>
-          </div>
-          
-          <div class="instructor-info">
-            <div class="instructor-avatar"></div>
-            <div>
-              <span class="instructor-label">Instructor: <strong>Manual del Junior</strong></span>
-              <span class="instructor-role">Instructor principal</span>
-            </div>
-          </div>
-          
-          <div class="enrollment-card">
-            <button class="btn primary enrollment-btn">Inscríbete Ahora</button>
-            <p class="enrollment-text">Comienza: 24 de nov.</p>
-            <p class="trial-info">Pruébalo gratis: Regístrate para empezar tu prueba gratuita de 7 días con acceso completo.</p>
-            <p class="enrollment-count"><strong>45.123</strong> ya inscrito</p>
-            <p class="platform-info">Incluido con <strong>Manual del Junior PLUS</strong> • <a href="#">Obtener más información</a></p>
-          </div>
-        </div>
-        
-        <div class="course-stats">
-          <div class="stat-card">
-            <h3>5 series de cursos</h3>
-            <p>Adquiere gran conocimiento sobre un tema</p>
-          </div>
-          <div class="stat-card">
-            <div class="rating">
-              <span class="rating-number">4.8</span>
-              <span class="rating-stars">★</span>
-            </div>
-            <p>(2.456 reseñas)</p>
-          </div>
-          <div class="stat-card">
-            <h3>Nivel Intermedio</h3>
-            <p>Experiencia recomendada</p>
-          </div>
-          <div class="stat-card">
-            <h3>8 semanas para completar</h3>
-            <p>en 5 horas a la semana</p>
-          </div>
-          <div class="stat-card">
-            <h3>Cronograma flexible</h3>
-            <p>Aprende a tu propio ritmo</p>
-          </div>
-        </div>
-      </div>
-      
-      <div class="trust-indicators">
-        <div class="trust-stats">
-          <div class="trust-stat">
-            <div class="trust-number">92%</div>
-            <div class="trust-label">Crecimiento</div>
-          </div>
-          <div class="trust-stat">
-            <div class="trust-number">7 días</div>
-            <div class="trust-label">Garantía</div>
-          </div>
-          <div class="trust-stat">
-            <div class="trust-number">24/7</div>
-            <div class="trust-label">Soporte</div>
-          </div>
-        </div>
-      </div>
-      
-      <div class="course-tabs">
-        <nav class="tabs-nav">
-          <button class="tab-btn active">Acerca de</button>
-          <button class="tab-btn">Resultados</button>
-          <button class="tab-btn">Módulos</button>
-          <button class="tab-btn">Testimonios</button>
-          <button class="tab-btn">Certificación</button>
-        </nav>
-        
-        <div class="tab-content">
-          <section class="tab-panel active">
-            <h2>Qué aprenderás</h2>
-            <p><strong>Desarrolla las habilidades de liderazgo y gestión de carrera que necesitas para crecer profesionalmente en IT.</strong> Al final del curso, serás capaz de <strong>liderar proyectos técnicos, negociar aumentos salariales significativos y planificar tu crecimiento profesional a largo plazo</strong>. En esta especialización práctica, aprenderás a comunicarte efectivamente con stakeholders, gestionar equipos de desarrollo, mentorizar a junior developers y posicionarte como un líder técnico reconocido en tu organización.</p>
-            <button class="btn ghost">Ver temario completo</button>
-            
-            <h2>Habilidades que obtendrás</h2>
-            <div class="skills-grid">
-              <span class="skill-tag">Liderazgo técnico</span>
-              <span class="skill-tag">Negociación salarial</span>
-              <span class="skill-tag">Gestión de proyectos</span>
-              <span class="skill-tag">Comunicación efectiva</span>
-              <span class="skill-tag">Mentoría</span>
-              <span class="skill-tag">Planificación de carrera</span>
-              <span class="skill-tag">Trabajo en equipo</span>
-              <span class="skill-tag">Resolución de conflictos</span>
-              <span class="skill-tag">Presentaciones</span>
-              <span class="skill-tag">Networking profesional</span>
-              <button class="btn ghost">Ver todas las habilidades</button>
-            </div>
-          </section>
-        </div>
-      </div>
-    </div>
-  </main>
 
-  <section class="urgency-section">
-    <div class="container">
-      <div class="urgency-card">
-        <span class="urgency-badge">🛡️ Garantía Total</span>
-        <h2>100% Satisfacción Garantizada</h2>
-        <p>Si no aceleras tu crecimiento profesional en los primeros 7 días, te devolvemos todo tu dinero. <strong class="urgency-time">Sin preguntas, sin complicaciones.</strong></p>
-        <div class="urgency-actions">
-          <button class="urgency-btn">Comenzar Ahora - Riesgo Cero</button>
+  <main id="main">
+    <section class="section container">
+      <div class="section-header">
+        <div class="course-badges" style="justify-content: center; margin-bottom: 20px;">
+          <span class="badge">Avanzado</span>
+          <span class="badge">Carrera</span>
         </div>
-        <p class="urgency-note">Únete a más de 45,000 profesionales exitosos</p>
+        <h2>Profesionalización</h2>
+        <p class="section-subtitle">Transición a roles senior, liderazgo técnico, negociación salarial y crecimiento
+          estratégico dentro de equipos tech.</p>
       </div>
-    </div>
-  </section>
+
+      <!-- Course Info Card -->
+      <div class="card" style="max-width: 800px; margin: 0 auto 60px;">
+        <div class="course-header">
+          <h3>Información del Curso</h3>
+        </div>
+
+        <div class="course-meta"
+          style="border-bottom: 1px solid var(--border-light); padding-bottom: 20px; margin-bottom: 20px;">
+          <span>⏱️ 3 semanas</span>
+          <span>🎯 Nivel: Avanzado</span>
+          <span>👨‍🏫 Manual del Junior</span>
+        </div>
+
+        <div class="course-stats" style="justify-content: center; text-align: center;">
+          <div class="stat">
+            <span class="stat-value">200+</span>
+            <span class="stat-label">Profesionales</span>
+          </div>
+          <div class="stat">
+            <span class="stat-value">4.8★</span>
+            <span class="stat-label">Rating</span>
+          </div>
+          <div class="stat">
+            <span class="stat-value">Senior</span>
+            <span class="stat-label">Nivel objetivo</span>
+          </div>
+        </div>
+
+        <div class="course-pricing"
+          style="text-align: center; padding: 32px 0; border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light); margin: 32px 0;">
+          <div class="price-container" style="justify-content: center;">
+            <span class="current-price">$34.99</span>
+          </div>
+        </div>
+
+        <div class="course-actions">
+          <button class="btn primary btn-large">Inscríbete Ahora</button>
+        </div>
+        <p style="text-align: center; margin-top: 16px; color: var(--text-muted); font-size: 0.9rem;">
+          Prueba gratuita de 7 días incluida • Garantía de satisfacción 30 días
+        </p>
+      </div>
+
+      <!-- What You'll Learn -->
+      <div class="section-header">
+        <h2>Qué aprenderás</h2>
+      </div>
+
+      <div class="courses-grid">
+        <article class="card">
+          <div class="course-header">
+            <h3>Liderazgo Técnico</h3>
+          </div>
+          <ul class="features-list">
+            <li>✓ Gestión de equipos técnicos</li>
+            <li>✓ Mentoría efectiva</li>
+            <li>✓ Toma de decisiones arquitectónicas</li>
+            <li>✓ Code review y calidad</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="course-header">
+            <h3>Estrategia de Carrera</h3>
+          </div>
+          <ul class="features-list">
+            <li>✓ Planificación de carrera a largo plazo</li>
+            <li>✓ Personal branding</li>
+            <li>✓ Networking estratégico</li>
+            <li>✓ Transición a roles senior</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="course-header">
+            <h3>Negociación Avanzada</h3>
+          </div>
+          <ul class="features-list">
+            <li>✓ Negociación salarial senior</li>
+            <li>✓ Equity y compensación total</li>
+            <li>✓ Evaluación de ofertas</li>
+            <li>✓ Contraofertas estratégicas</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="course-header">
+            <h3>Soft Skills Avanzadas</h3>
+          </div>
+          <ul class="features-list">
+            <li>✓ Comunicación ejecutiva</li>
+            <li>✓ Presentaciones técnicas</li>
+            <li>✓ Gestión de stakeholders</li>
+            <li>✓ Resolución de conflictos</li>
+          </ul>
+        </article>
+      </div>
+
+      <!-- Curriculum -->
+      <div class="section-header" style="margin-top: 80px;">
+        <h2>Contenido del Curso</h2>
+      </div>
+
+      <div class="card" style="max-width: 800px; margin: 0 auto;">
+        <div class="course-features">
+          <h4>Semana 1: Liderazgo y Mentoría</h4>
+          <ul class="features-list">
+            <li>✓ Principios de liderazgo técnico</li>
+            <li>✓ Mentoría efectiva de juniors</li>
+            <li>✓ Gestión de proyectos técnicos</li>
+            <li>✓ Proyecto práctico: Plan de mentoría</li>
+          </ul>
+        </div>
+
+        <div class="course-features" style="margin-top: 32px;">
+          <h4>Semana 2: Estrategia de Carrera</h4>
+          <ul class="features-list">
+            <li>✓ Roadmap de carrera personalizado</li>
+            <li>✓ Personal branding en tech</li>
+            <li>✓ Networking estratégico</li>
+            <li>✓ Proyecto práctico: Plan de carrera 5 años</li>
+          </ul>
+        </div>
+
+        <div class="course-features" style="margin-top: 32px;">
+          <h4>Semana 3: Negociación y Comunicación</h4>
+          <ul class="features-list">
+            <li>✓ Negociación salarial avanzada</li>
+            <li>✓ Comunicación con stakeholders</li>
+            <li>✓ Presentaciones técnicas impactantes</li>
+            <li>✓ Proyecto final: Simulacro de negociación</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <footer class="site-footer">
     <div class="container">
@@ -162,8 +217,8 @@
           </ul>
         </div>
         <div class="footer-section newsletter">
-          <h3>Sumate a nuestro News Letter</h3>
-          <p>Recibe actualizaciones sobre nuevos cursos y contenido.</p>
+          <h3>Newsletter</h3>
+          <p>Recibe actualizaciones sobre nuevos cursos.</p>
           <div class="newsletter-form">
             <input type="email" placeholder="Email" class="newsletter-input">
             <button class="btn primary newsletter-btn">Join</button>
@@ -180,6 +235,8 @@
       </div>
     </div>
   </footer>
+
   <script src="script.js"></script>
 </body>
+
 </html>

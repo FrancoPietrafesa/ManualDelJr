@@ -1,139 +1,186 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Entrevistas y CV — Manual del Junior</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
+  <div class="page-watermark" aria-hidden="true"></div>
   <header class="topbar">
     <div class="container">
-      <a class="brand" href="index.html"><img src="assets/logo.svg" class="logo"/> <span>Manual del Junior</span></a>
+      <a class="brand" href="index.html">
+        <img src="assets/logo.svg" alt="Manual del Junior" class="logo">
+        <span>Manual del Junior</span>
+      </a>
+      <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+      <nav class="topnav" id="mainNav">
+        <a href="index.html">Inicio</a>
+        <a href="cursos.html" class="active">Cursos</a>
+        <a href="metodo.html">Método</a>
+        <a href="testimonios.html">Testimonios</a>
+        <a href="contacto.html">Contacto</a>
+      </nav>
+      <div class="top-actions">
+        <button id="langToggle" class="btn ghost" type="button">EN</button>
+      </div>
     </div>
   </header>
-  <main class="course-page">
-    <div class="container">
-      <div class="course-header">
-        <div class="course-content">
-          <h1>Entrevistas y CV</h1>
-          <p class="course-subtitle">Prepárate para conseguir tu primer trabajo en IT. Simulacros de entrevistas, revisión de CV y estrategias para destacar frente a reclutadores.</p>
-          
-          <div class="hero-badge">
-            <span class="badge badge-beginner">Nivel Principiante</span>
-            <span class="badge badge-quick">3 semanas</span>
-            <span class="badge badge-popular">Más Popular</span>
-          </div>
-          
-          <div class="instructor-info">
-            <div class="instructor-avatar"></div>
-            <div>
-              <span class="instructor-label">Instructor: <strong>Manual del Junior</strong></span>
-              <span class="instructor-role">Instructor principal</span>
-            </div>
-          </div>
-          
-          <div class="enrollment-card">
-            <button class="btn primary enrollment-btn">Inscríbete Ahora</button>
-            <p class="enrollment-text">Comienza: 24 de nov.</p>
-            <p class="trial-info">Pruébalo gratis: Regístrate para empezar tu prueba gratuita de 7 días con acceso completo.</p>
-            <p class="enrollment-count"><strong>67.542</strong> ya inscrito</p>
-            <p class="platform-info">Incluido con <strong>Manual del Junior PLUS</strong> • <a href="#">Obtener más información</a></p>
-          </div>
-        </div>
-        
-        <div class="course-stats">
-          <div class="stat-card">
-            <h3>2 series de cursos</h3>
-            <p>Adquiere gran conocimiento sobre un tema</p>
-          </div>
-          <div class="stat-card">
-            <div class="rating">
-              <span class="rating-number">4.9</span>
-              <span class="rating-stars">★</span>
-            </div>
-            <p>(1.876 reseñas)</p>
-          </div>
-          <div class="stat-card">
-            <h3>Nivel Principiante</h3>
-            <p>Experiencia recomendada</p>
-          </div>
-          <div class="stat-card">
-            <h3>3 semanas para completar</h3>
-            <p>en 6 horas a la semana</p>
-          </div>
-          <div class="stat-card">
-            <h3>Cronograma flexible</h3>
-            <p>Aprende a tu propio ritmo</p>
-          </div>
-        </div>
-      </div>
-      
-      <div class="trust-indicators">
-        <div class="trust-stats">
-          <div class="trust-stat">
-            <div class="trust-number">98%</div>
-            <div class="trust-label">Tasa de éxito</div>
-          </div>
-          <div class="trust-stat">
-            <div class="trust-number">7 días</div>
-            <div class="trust-label">Garantía</div>
-          </div>
-          <div class="trust-stat">
-            <div class="trust-number">24/7</div>
-            <div class="trust-label">Soporte</div>
-          </div>
-        </div>
-      </div>
-      
-      <div class="course-tabs">
-        <nav class="tabs-nav">
-          <button class="tab-btn active">Acerca de</button>
-          <button class="tab-btn">Resultados</button>
-          <button class="tab-btn">Módulos</button>
-          <button class="tab-btn">Testimonios</button>
-          <button class="tab-btn">Certificación</button>
-        </nav>
-        
-        <div class="tab-content">
-          <section class="tab-panel active">
-            <h2>Qué aprenderás</h2>
-            <p><strong>Domina el arte de las entrevistas técnicas y de comportamiento para conseguir tu primer trabajo en IT.</strong> Al final del curso, serás capaz de <strong>presentarte de manera profesional, crear un CV atractivo y destacar entre otros candidatos</strong>. En esta especialización práctica, aprenderás a prepararte para preguntas técnicas difíciles, negociar tu salario con confianza y construir una presencia digital profesional que atraiga a reclutadores.</p>
-            <button class="btn ghost">Ver temario completo</button>
-            
-            <h2>Habilidades que obtendrás</h2>
-            <div class="skills-grid">
-              <span class="skill-tag">Entrevistas técnicas</span>
-              <span class="skill-tag">Creación de CV</span>
-              <span class="skill-tag">Comunicación efectiva</span>
-              <span class="skill-tag">Negociación salarial</span>
-              <span class="skill-tag">LinkedIn</span>
-              <span class="skill-tag">Networking</span>
-              <span class="skill-tag">Presentación personal</span>
-              <span class="skill-tag">Confianza</span>
-              <span class="skill-tag">Storytelling</span>
-              <span class="skill-tag">Follow-up</span>
-              <button class="btn ghost">Ver todas las habilidades</button>
-            </div>
-          </section>
-        </div>
-      </div>
-    </div>
-  </main>
 
-  <section class="urgency-section">
-    <div class="container">
-      <div class="urgency-card">
-        <span class="urgency-badge">🛡️ Garantía Total</span>
-        <h2>100% Satisfacción Garantizada</h2>
-        <p>Si no estás completamente satisfecho con tu aprendizaje en los primeros 7 días, te devolvemos todo tu dinero. <strong class="urgency-time">Sin preguntas, sin complicaciones.</strong></p>
-        <div class="urgency-actions">
-          <button class="urgency-btn">Comenzar Ahora - Riesgo Cero</button>
+  <main id="main">
+    <section class="section container">
+      <div class="section-header">
+        <div class="course-badges" style="justify-content: center; margin-bottom: 20px;">
+          <span class="badge">Principiante</span>
+          <span class="badge">Rápido</span>
         </div>
-        <p class="urgency-note">Únete a más de 67,000 estudiantes exitosos</p>
+        <h2>Entrevistas y CV</h2>
+        <p class="section-subtitle">Prepárate para entrevistas técnicas y de comportamiento. Simulacros reales, feedback
+          personalizado y scripts de respuestas.</p>
       </div>
-    </div>
-  </section>
+
+      <!-- Course Info Card -->
+      <div class="card" style="max-width: 800px; margin: 0 auto 60px;">
+        <div class="course-header">
+          <h3>Información del Curso</h3>
+        </div>
+
+        <div class="course-meta"
+          style="border-bottom: 1px solid var(--border-light); padding-bottom: 20px; margin-bottom: 20px;">
+          <span>⏱️ 2 semanas</span>
+          <span>🎯 Nivel: Principiante</span>
+          <span>👨‍🏫 Manual del Junior</span>
+        </div>
+
+        <div class="course-stats" style="justify-content: center; text-align: center;">
+          <div class="stat">
+            <span class="stat-value">400+</span>
+            <span class="stat-label">Estudiantes</span>
+          </div>
+          <div class="stat">
+            <span class="stat-value">4.9★</span>
+            <span class="stat-label">Rating</span>
+          </div>
+          <div class="stat">
+            <span class="stat-value">10+</span>
+            <span class="stat-label">Simulacros</span>
+          </div>
+        </div>
+
+        <div class="course-pricing"
+          style="text-align: center; padding: 32px 0; border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light); margin: 32px 0;">
+          <div class="price-container" style="justify-content: center;">
+            <span class="original-price">$24.99</span>
+            <span class="current-price">$14.99</span>
+            <span class="discount-badge">40% OFF</span>
+          </div>
+        </div>
+
+        <div class="course-actions">
+          <button class="btn primary btn-large">Inscríbete Ahora</button>
+        </div>
+        <p style="text-align: center; margin-top: 16px; color: var(--text-muted); font-size: 0.9rem;">
+          Prueba gratuita de 7 días incluida • Garantía de satisfacción 30 días
+        </p>
+      </div>
+
+      <!-- What You'll Learn -->
+      <div class="section-header">
+        <h2>Qué aprenderás</h2>
+      </div>
+
+      <div class="courses-grid">
+        <article class="card">
+          <div class="course-header">
+            <h3>CV Optimizado</h3>
+          </div>
+          <ul class="features-list">
+            <li>✓ Estructura profesional de CV</li>
+            <li>✓ Optimización para ATS</li>
+            <li>✓ Palabras clave efectivas</li>
+            <li>✓ Plantillas profesionales</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="course-header">
+            <h3>LinkedIn Optimization</h3>
+          </div>
+          <ul class="features-list">
+            <li>✓ Perfil atractivo</li>
+            <li>✓ Networking efectivo</li>
+            <li>✓ Contenido profesional</li>
+            <li>✓ Estrategia de búsqueda</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="course-header">
+            <h3>Entrevistas Técnicas</h3>
+          </div>
+          <ul class="features-list">
+            <li>✓ Preguntas frecuentes</li>
+            <li>✓ Ejercicios en vivo</li>
+            <li>✓ Resolución de problemas</li>
+            <li>✓ Simulacros reales</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="course-header">
+            <h3>Entrevistas de Comportamiento</h3>
+          </div>
+          <ul class="features-list">
+            <li>✓ Método STAR</li>
+            <li>✓ Historias de impacto</li>
+            <li>✓ Manejo de objeciones</li>
+            <li>✓ Negociación salarial</li>
+          </ul>
+        </article>
+      </div>
+
+      <!-- Curriculum -->
+      <div class="section-header" style="margin-top: 80px;">
+        <h2>Contenido del Curso</h2>
+      </div>
+
+      <div class="card" style="max-width: 800px; margin: 0 auto;">
+        <div class="course-features">
+          <h4>Semana 1: CV y LinkedIn</h4>
+          <ul class="features-list">
+            <li>✓ Creación de CV profesional optimizado para ATS</li>
+            <li>✓ Perfil de LinkedIn que destaca</li>
+            <li>✓ Portfolio y proyectos destacados</li>
+            <li>✓ Proyecto práctico: CV completo</li>
+          </ul>
+        </div>
+
+        <div class="course-features" style="margin-top: 32px;">
+          <h4>Semana 2: Preparación de Entrevistas</h4>
+          <ul class="features-list">
+            <li>✓ 50+ preguntas técnicas más frecuentes</li>
+            <li>✓ Método STAR para preguntas de comportamiento</li>
+            <li>✓ 10 simulacros de entrevistas reales</li>
+            <li>✓ Negociación salarial y cierre de ofertas</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <footer class="site-footer">
     <div class="container">
@@ -162,8 +209,8 @@
           </ul>
         </div>
         <div class="footer-section newsletter">
-          <h3>Sumate a nuestro News Letter</h3>
-          <p>Recibe actualizaciones sobre nuevos cursos y contenido.</p>
+          <h3>Newsletter</h3>
+          <p>Recibe actualizaciones sobre nuevos cursos.</p>
           <div class="newsletter-form">
             <input type="email" placeholder="Email" class="newsletter-input">
             <button class="btn primary newsletter-btn">Join</button>
@@ -180,6 +227,8 @@
       </div>
     </div>
   </footer>
+
   <script src="script.js"></script>
 </body>
+
 </html>

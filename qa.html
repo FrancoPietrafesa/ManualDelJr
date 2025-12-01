@@ -6,107 +6,248 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>QA Profesional — Manual del Junior</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;700&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-
-  <header class="mobile-header">
-    <a class="brand" href="index.html">Manual del Junior</a>
-    <button class="menu-toggle">☰</button>
+  <div class="page-watermark" aria-hidden="true"></div>
+  <header class="topbar">
+    <div class="container">
+      <a class="brand" href="index.html">
+        <img src="assets/logo.svg" alt="Manual del Junior" class="logo">
+        <span>Manual del Junior</span>
+      </a>
+      <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+      <nav class="topnav" id="mainNav">
+        <a href="index.html">Inicio</a>
+        <a href="cursos.html" class="active">Cursos</a>
+        <a href="metodo.html">Método</a>
+        <a href="testimonios.html">Testimonios</a>
+        <a href="contacto.html">Contacto</a>
+      </nav>
+      <div class="top-actions">
+        <button id="langToggle" class="btn ghost" type="button">EN</button>
+      </div>
+    </div>
   </header>
 
-  <div class="app-layout">
-    <aside class="sidebar">
-      <div class="sidebar-header">
-        <a class="brand" href="index.html">
-          <img src="assets/logo.svg" alt="Logo">
-          <span>Manual del Junior</span>
-        </a>
+  <main id="main">
+    <section class="section container">
+      <div class="section-header">
+        <div class="course-badges" style="justify-content: center; margin-bottom: 20px;">
+          <span class="badge">🔥 Más Popular</span>
+          <span class="badge">Principiante</span>
+        </div>
+        <h2>QA Profesional</h2>
+        <p class="section-subtitle">Conviértete en un experto en testing. Domina los patrones, técnicas y enfoques de QA
+          profesional para aprovechar eficazmente las metodologías ágiles.</p>
       </div>
-      <nav class="sidebar-nav">
-        <div class="nav-group">
-          <div class="nav-group-title">General</div>
-          <a href="index.html" class="nav-link">Inicio</a>
-          <a href="sobre-nosotros.html" class="nav-link">Sobre Nosotros</a>
-        </div>
-        <div class="nav-group">
-          <div class="nav-group-title">Aprendizaje</div>
-          <a href="cursos.html" class="nav-link active">Cursos</a>
-          <a href="metodo.html" class="nav-link">Nuestro Método</a>
-        </div>
-        <div class="nav-group">
-          <div class="nav-group-title">Comunidad</div>
-          <a href="testimonios.html" class="nav-link">Testimonios</a>
-          <a href="contacto.html" class="nav-link">Contacto</a>
-        </div>
-      </nav>
-    </aside>
 
-    <main class="main-content">
-      <div class="page-container">
-        <div class="breadcrumbs">
-          <span>Manual del Junior</span>
-          <span>Cursos</span>
-          <span>QA Profesional</span>
+      <!-- Course Info Card -->
+      <div class="card" style="max-width: 800px; margin: 0 auto 60px;">
+        <div class="course-header">
+          <h3>Información del Curso</h3>
         </div>
 
-        <h1>QA Profesional</h1>
-        <p class="lead">Conviértete en un experto en testing. Domina los patrones, técnicas y enfoques de QA profesional
-          para aprovechar eficazmente las metodologías ágiles.</p>
+        <div class="course-meta"
+          style="border-bottom: 1px solid var(--border-light); padding-bottom: 20px; margin-bottom: 20px;">
+          <span>⏱️ 4 semanas</span>
+          <span>🎯 Nivel: Principiante</span>
+          <span>👨‍🏫 Franco Pietrafesa</span>
+        </div>
 
-        <div class="card" style="margin-bottom: 40px;">
-          <div style="display: flex; gap: 20px; align-items: center; margin-bottom: 20px;">
-            <div class="instructor-avatar"
-              style="width: 50px; height: 50px; background: var(--border-color); border-radius: 50%;"></div>
-            <div>
-              <div style="font-weight: 600;">Franco Pietrafesa</div>
-              <div style="font-size: 0.9rem; color: var(--text-muted);">Instructor Principal</div>
-            </div>
+        <div class="course-stats" style="justify-content: center; text-align: center;">
+          <div class="stat">
+            <span class="stat-value">500+</span>
+            <span class="stat-label">Estudiantes</span>
           </div>
-
-          <div style="display: flex; gap: 12px; margin-bottom: 24px;">
-            <span class="badge">Principiante</span>
-            <span class="badge">4 semanas</span>
-            <span class="badge">Certificado</span>
+          <div class="stat">
+            <span class="stat-value">4.8★</span>
+            <span class="stat-label">Rating</span>
           </div>
-
-          <button class="btn primary" style="width: 100%; max-width: 300px;">Inscríbete Ahora</button>
-          <p style="font-size: 0.9rem; margin-top: 12px; color: var(--text-muted);">Prueba gratuita de 7 días incluida.
-          </p>
-        </div>
-
-        <div class="card-grid">
-          <div class="card">
-            <h3>Qué aprenderás</h3>
-            <ul style="list-style: disc; padding-left: 20px; color: #cbd5e1;">
-              <li>Fundamentos de Testing Manual y Automatizado</li>
-              <li>Creación de planes de prueba y casos de uso</li>
-              <li>Herramientas como Jira, Postman y Selenium</li>
-              <li>Metodologías Ágiles (Scrum/Kanban)</li>
-            </ul>
-          </div>
-
-          <div class="card">
-            <h3>Estadísticas del curso</h3>
-            <div class="trust-stats"
-              style="grid-template-columns: 1fr 1fr; margin-top: 0; padding: 0; border: none; background: none;">
-              <div class="trust-stat">
-                <div class="trust-number">4.8★</div>
-                <div class="trust-label">Calificación</div>
-              </div>
-              <div class="trust-stat">
-                <div class="trust-number">3k+</div>
-                <div class="trust-label">Estudiantes</div>
-              </div>
-            </div>
+          <div class="stat">
+            <span class="stat-value">20+</span>
+            <span class="stat-label">Ejercicios</span>
           </div>
         </div>
 
+        <div class="course-pricing"
+          style="text-align: center; padding: 32px 0; border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light); margin: 32px 0;">
+          <div class="price-container" style="justify-content: center;">
+            <span class="original-price">$39.99</span>
+            <span class="current-price">$19.99</span>
+            <span class="discount-badge">50% OFF</span>
+          </div>
+        </div>
+
+        <div class="course-actions">
+          <button class="btn primary btn-large">Inscríbete Ahora</button>
+        </div>
+        <p style="text-align: center; margin-top: 16px; color: var(--text-muted); font-size: 0.9rem;">
+          Prueba gratuita de 7 días incluida • Garantía de satisfacción 30 días
+        </p>
       </div>
-    </main>
-  </div>
+
+      <!-- What You'll Learn -->
+      <div class="section-header">
+        <h2>Qué aprenderás</h2>
+      </div>
+
+      <div class="courses-grid">
+        <article class="card">
+          <div class="course-header">
+            <h3>Fundamentos de Testing</h3>
+          </div>
+          <ul class="features-list">
+            <li>✓ Principios básicos de QA</li>
+            <li>✓ Tipos de testing (funcional, no funcional)</li>
+            <li>✓ Ciclo de vida del testing</li>
+            <li>✓ Metodologías ágiles (Scrum/Kanban)</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="course-header">
+            <h3>Testing Manual</h3>
+          </div>
+          <ul class="features-list">
+            <li>✓ Creación de casos de prueba</li>
+            <li>✓ Ejecución de test plans</li>
+            <li>✓ Reporte de bugs efectivo</li>
+            <li>✓ Documentación profesional</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="course-header">
+            <h3>Automatización</h3>
+          </div>
+          <ul class="features-list">
+            <li>✓ Introducción a Selenium</li>
+            <li>✓ Scripts de automatización</li>
+            <li>✓ Framework de testing</li>
+            <li>✓ CI/CD básico</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="course-header">
+            <h3>Herramientas</h3>
+          </div>
+          <ul class="features-list">
+            <li>✓ Jira para gestión de proyectos</li>
+            <li>✓ Postman para API testing</li>
+            <li>✓ Git y control de versiones</li>
+            <li>✓ Herramientas de debugging</li>
+          </ul>
+        </article>
+      </div>
+
+      <!-- Curriculum -->
+      <div class="section-header" style="margin-top: 80px;">
+        <h2>Contenido del Curso</h2>
+      </div>
+
+      <div class="card" style="max-width: 800px; margin: 0 auto;">
+        <div class="course-features">
+          <h4>Semana 1: Fundamentos</h4>
+          <ul class="features-list">
+            <li>✓ Introducción al QA Testing</li>
+            <li>✓ Tipos de testing y cuándo usarlos</li>
+            <li>✓ Metodologías ágiles aplicadas</li>
+            <li>✓ Proyecto práctico: Primer test plan</li>
+          </ul>
+        </div>
+
+        <div class="course-features" style="margin-top: 32px;">
+          <h4>Semana 2: Testing Manual</h4>
+          <ul class="features-list">
+            <li>✓ Diseño de casos de prueba efectivos</li>
+            <li>✓ Ejecución y documentación</li>
+            <li>✓ Reporte de bugs profesional</li>
+            <li>✓ Proyecto práctico: Testing de aplicación web</li>
+          </ul>
+        </div>
+
+        <div class="course-features" style="margin-top: 32px;">
+          <h4>Semana 3: Automatización</h4>
+          <ul class="features-list">
+            <li>✓ Introducción a Selenium WebDriver</li>
+            <li>✓ Creación de scripts automatizados</li>
+            <li>✓ Page Object Model</li>
+            <li>✓ Proyecto práctico: Suite de automatización</li>
+          </ul>
+        </div>
+
+        <div class="course-features" style="margin-top: 32px;">
+          <h4>Semana 4: Preparación Profesional</h4>
+          <ul class="features-list">
+            <li>✓ API Testing con Postman</li>
+            <li>✓ Integración con CI/CD</li>
+            <li>✓ Preparación para entrevistas</li>
+            <li>✓ Proyecto final: Portfolio completo</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Cursos</h3>
+          <ul>
+            <li><a href="qa.html">QA Profesional</a></li>
+            <li><a href="herramientas.html">Herramientas de IT</a></li>
+            <li><a href="entrevistas.html">Entrevistas y CV</a></li>
+            <li><a href="profesionalizacion.html">Profesionalización</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Manual Del Junior</h3>
+          <ul>
+            <li><a href="sobre-nosotros.html">Sobre nosotros</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Community</h3>
+          <ul>
+            <li><a href="#">Discord</a></li>
+            <li><a href="#">Twitter</a></li>
+          </ul>
+        </div>
+        <div class="footer-section newsletter">
+          <h3>Newsletter</h3>
+          <p>Recibe actualizaciones sobre nuevos cursos.</p>
+          <div class="newsletter-form">
+            <input type="email" placeholder="Email" class="newsletter-input">
+            <button class="btn primary newsletter-btn">Join</button>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-brand">
+          <span>Manual del Junior</span>
+        </div>
+        <div class="footer-copyright">
+          <span>© 2024 Manual del Junior Inc.</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
   <script src="script.js"></script>
 </body>
 
