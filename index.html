@@ -6,57 +6,44 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Manual del Junior — Inicio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-  <!-- Mobile Header -->
   <header class="mobile-header">
-    <a class="brand" href="index.html">
-      <span>Manual del Junior</span>
-    </a>
-    <button class="menu-toggle" aria-label="Menu">☰</button>
+    <a class="brand" href="index.html">Manual del Junior</a>
+    <button class="menu-toggle">☰</button>
   </header>
 
   <div class="app-layout">
-    <!-- Sidebar -->
     <aside class="sidebar">
       <div class="sidebar-header">
         <a class="brand" href="index.html">
-          <img src="assets/logo.svg" alt="Logo"> <!-- Ensure logo exists or use text -->
+          <img src="assets/logo.svg" alt="Logo">
           <span>Manual del Junior</span>
         </a>
       </div>
-
       <nav class="sidebar-nav">
         <div class="nav-group">
           <div class="nav-group-title">General</div>
           <a href="index.html" class="nav-link active">Inicio</a>
           <a href="sobre-nosotros.html" class="nav-link">Sobre Nosotros</a>
         </div>
-
         <div class="nav-group">
           <div class="nav-group-title">Aprendizaje</div>
           <a href="cursos.html" class="nav-link">Cursos</a>
           <a href="metodo.html" class="nav-link">Nuestro Método</a>
         </div>
-
         <div class="nav-group">
           <div class="nav-group-title">Comunidad</div>
           <a href="testimonios.html" class="nav-link">Testimonios</a>
           <a href="contacto.html" class="nav-link">Contacto</a>
         </div>
       </nav>
-
-      <div class="sidebar-footer">
-        <p style="font-size: 0.8rem; margin: 0; color: var(--text-muted);">v2.0.0 (IDE Theme)</p>
-      </div>
     </aside>
 
-    <!-- Main Content -->
     <main class="main-content">
       <div class="page-container">
         <div class="breadcrumbs">
@@ -65,50 +52,131 @@
         </div>
 
         <h1>Bienvenido al Manual del Junior</h1>
-
         <p class="lead">Tu guía definitiva para convertirte en un profesional de QA y Tecnología. Documentación, cursos
           y recursos para acelerar tu carrera.</p>
 
-        <div class="card-grid">
-          <div class="card">
-            <h3>🚀 Comienza Aquí</h3>
-            <p>Descubre nuestra ruta de aprendizaje diseñada para llevarte desde cero hasta tu primer empleo.</p>
-            <a href="cursos.html" class="btn primary">Ver Cursos</a>
+        <!-- Stats Section (Trust Indicators) -->
+        <div class="trust-stats">
+          <div class="trust-stat">
+            <div class="trust-number">1,400+</div>
+            <div class="trust-label">Estudiantes graduados</div>
           </div>
-
-          <div class="card">
-            <h3>📚 Documentación</h3>
-            <p>Accede a recursos gratuitos, guías de entrevista y plantillas de CV.</p>
-            <a href="#" class="btn ghost">Leer Guías</a>
+          <div class="trust-stat">
+            <div class="trust-number">4.8★</div>
+            <div class="trust-label">Calificación promedio</div>
+          </div>
+          <div class="trust-stat">
+            <div class="trust-number">92%</div>
+            <div class="trust-label">Conseguieron empleo</div>
+          </div>
+          <div class="trust-stat">
+            <div class="trust-number">24/7</div>
+            <div class="trust-label">Soporte disponible</div>
           </div>
         </div>
 
-        <h2>¿Por qué elegirnos?</h2>
-        <p>En Manual del Junior, no solo enseñamos teoría. Nos enfocamos en la práctica real, simulando entornos de
-          trabajo que encontrarás en la industria.</p>
-
+        <h2>Cursos Destacados</h2>
         <div class="card-grid">
           <div class="card">
-            <span class="badge">Práctico</span>
-            <h3>Ejercicios Reales</h3>
-            <p>Trabaja con casos de uso extraídos de proyectos reales de empresas tech.</p>
+            <span class="badge">Más Popular</span>
+            <h3>QA Profesional</h3>
+            <p>Del tester novato al profesional. Domina testing manual, automatización y comunicación.</p>
+            <a href="qa.html" class="btn primary">Ver Curso</a>
           </div>
           <div class="card">
-            <span class="badge">Comunidad</span>
-            <h3>Soporte 24/7</h3>
-            <p>Únete a nuestro Discord y nunca te quedes trabado en un problema.</p>
+            <span class="badge">Intermedio</span>
+            <h3>Herramientas de IT</h3>
+            <p>Git, Docker, CI/CD y AWS. Las herramientas que todo profesional debe conocer.</p>
+            <a href="herramientas.html" class="btn primary">Ver Curso</a>
           </div>
-          <div class="card">
-            <span class="badge">Certificado</span>
-            <h3>Validación</h3>
-            <p>Obtén certificados verificables al completar tus rutas de aprendizaje.</p>
+        </div>
+
+        <!-- Urgency Section -->
+        <div class="urgency-card">
+          <span class="urgency-badge">🔥 OFERTA POR TIEMPO LIMITADO</span>
+          <h3>No pierdas esta oportunidad</h3>
+          <p>Solo quedan 48 horas para acceder a los cursos con hasta 50% de descuento</p>
+
+          <div class="urgency-countdown">
+            <div class="countdown-item">
+              <span class="countdown-number">01</span>
+              <span class="countdown-label">Días</span>
+            </div>
+            <div class="countdown-item">
+              <span class="countdown-number">23</span>
+              <span class="countdown-label">Horas</span>
+            </div>
+            <div class="countdown-item">
+              <span class="countdown-number">45</span>
+              <span class="countdown-label">Min</span>
+            </div>
+            <div class="countdown-item">
+              <span class="countdown-number">30</span>
+              <span class="countdown-label">Seg</span>
+            </div>
+          </div>
+
+          <button class="btn primary">Aprovechar oferta ahora</button>
+          <p class="urgency-note">✓ Acceso inmediato ✓ Garantía 30 días ✓ Soporte incluido</p>
+        </div>
+
+        <h2>Casos de éxito destacados</h2>
+        <div class="success-grid">
+          <div class="success-item">
+            <div class="success-icon">🚀</div>
+            <div class="success-stat">María, 28 años</div>
+            <div class="success-desc">De administrativa a QA Lead en 6 meses</div>
+          </div>
+          <div class="success-item">
+            <div class="success-icon">💪</div>
+            <div class="success-stat">Carlos, 35 años</div>
+            <div class="success-desc">Cambio de carrera completo con éxito</div>
+          </div>
+          <div class="success-item">
+            <div class="success-icon">⭐</div>
+            <div class="success-stat">Sofia, 24 años</div>
+            <div class="success-desc">Primer trabajo en tech después del curso</div>
+          </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="faq-container">
+          <h2>Preguntas Frecuentes</h2>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>¿Cómo accedo a los cursos después de comprar?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Una vez completado el pago, recibirás un email con las credenciales de acceso a nuestra plataforma
+                donde podrás ver todos los contenidos del curso inmediatamente.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>¿Los cursos tienen certificado?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Sí, al completar cada curso recibes un certificado digital verificable que puedes agregar a tu LinkedIn
+                y CV.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>¿Hay soporte durante el curso?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Absolutamente. Tenemos una comunidad activa en Discord donde puedes hacer preguntas y recibir ayuda
+                tanto de instructores como de otros estudiantes.</p>
+            </div>
           </div>
         </div>
 
       </div>
     </main>
   </div>
-
   <script src="script.js"></script>
 </body>
 
